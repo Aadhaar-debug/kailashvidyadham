@@ -156,6 +156,7 @@ body {
   align-items: center; /* Centers items vertically */
   justify-content: space-between; 
   font-weight: 500;
+  
 }
 
 
@@ -245,6 +246,9 @@ body {
     align-items: center; /* Centers items vertically */
     justify-content: space-between; 
     font-weight: 700;
+    font-size: 2vh;
+    color: rgb(255, 255, 255);
+    
   }
   .heading1 , .heading2 , .line1 {
     display: flex;
@@ -302,10 +306,12 @@ body {
     align-items: center; /* Centers items vertically */
     justify-content: space-between; 
     font-weight: 700;
+    font-size: 2vh;
+    color: rgb(255, 255, 255);
   }
   .heading1 , .heading2 , .line1 {
     display: flex;
-    color: white;
+    color: rgb(191, 0, 0);
     flex-direction: column;
     align-items: center;
     justify-content: center;
