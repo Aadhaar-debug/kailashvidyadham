@@ -251,6 +251,9 @@ body {
     margin-left: -2vh;
     
   }
+  .navops {
+    visibility: hidden;
+  }
   .heading1 , .heading2 , .line1 {
     display: flex;
     color: rgb(191, 0, 0);
@@ -289,7 +292,7 @@ body {
     font-size: calc(0.5rem + 0.5vw);
   }
   .navbar {
-    background-color: rgb(237, 29, 67);
+    background-color: rgb(191, 0, 0);
     display: flex;
     flex-direction: row;
     align-items: center; /* Centers items vertically */
@@ -310,6 +313,9 @@ body {
     font-size: 1.5vh;
     color: rgb(255, 255, 255);
     margin-left: -2vh;
+  }
+  .navops {
+    visibility: hidden;
   }
   .heading1 , .heading2 , .line1 {
     display: flex;
