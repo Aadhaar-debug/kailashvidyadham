@@ -259,7 +259,7 @@ body {
   }
   .navmenu , .navlist {
     display: block;
-    margin-right: -25%;
+    margin-right: -20%;
   }
   .heading1 , .heading2 , .line1 {
     display: flex;
@@ -323,6 +323,10 @@ body {
   }
   .navops {
     display: none;
+  }
+  .navmenu , .navlist {
+    display: block;
+    margin-right: -20%;
   }
   .heading1 , .heading2 , .line1 {
     display: flex;
