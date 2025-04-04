@@ -33,6 +33,10 @@ const App = () => {
                 </button>
           </div>
         </div>
+        <div className="navmenu">
+        <div style={{ fontSize: "32px", color: "white", cursor: "pointer" }}>☰</div>
+        </div>
+        <div className="navlist"></div>
 
         
       </div>

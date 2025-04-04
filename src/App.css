@@ -68,7 +68,10 @@ body {
   left: 30%;
 }
 .navops ,.navops1 {
-  margin-right:-30%;
+  margin-right:-5%;
+}
+.navmenu , .navlist {
+  display:none ;
 }
 .search-container {
   position: relative;
@@ -252,7 +255,11 @@ body {
     
   }
   .navops {
-    visibility: hidden;
+    display: none;
+  }
+  .navmenu , .navlist {
+    display: block;
+    margin-right: -25%;
   }
   .heading1 , .heading2 , .line1 {
     display: flex;
@@ -275,7 +282,7 @@ body {
     
     position: fixed; /* Keeps it in place when scrolling */
     bottom: 10vh; /* Adjusts distance from the bottom */
-    right: 20px;   /* Adjusts distance from the right */
+    right: 10vh;   /* Adjusts distance from the right */
     color: white;
     display: flex;
     align-items: center;
@@ -315,7 +322,7 @@ body {
     margin-left: -2vh;
   }
   .navops {
-    visibility: hidden;
+    display: none;
   }
   .heading1 , .heading2 , .line1 {
     display: flex;
@@ -337,7 +344,7 @@ body {
     
     position: fixed; /* Keeps it in place when scrolling */
     bottom: 10vh;  /* Adjusts distance from the bottom */
-    right: 20px;   /* Adjusts distance from the right */
+    right: 10vh;   /* Adjusts distance from the right */
     color: white;
     display: flex;
     align-items: center;
