@@ -1,38 +1,336 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(1rem + 0.5vw);
+}
+
+.image-container {
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 95vh;
+  object-fit: cover;
+  margin-top: 5vh;
+  
+}
+.centeredImage {
+  background: rgba(191, 0, 0, 0.5);
+}
+.heading1 , .heading2 , .line1  {
+  display: flex;
+  color: rgb(191, 0, 0);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(1rem + 0.5vw);
+  position: relative;
+  bottom: 50vh;
+}
+.heading2 {
+  font-size: calc(2rem + 0.5vw);
+}
+#poojaicon , #vedicicon , #fireicon {
+
+  height:10vh;
+  width: 10vh;
+  margin-bottom: 5vh;
+  margin-left: 4%;
+}
+.heading3 {
+  display: flex;
+  color: rgb(191, 0, 0);
+  flex-direction: row;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  bottom: 20vh;
+  height:1vh;
+  width: 100%;
+  font-weight: 500;
+  margin-left: -2%;
+}
+.line1 {
+  margin-top: 1.5vh;
+  background-color: rgb(191, 0, 0);
+  border-radius: 99%;
+  height:0.3vh;
+  width:40%;
+  left: 30%;
+}
+.navops ,.navops1 {
+  margin-right:-30%;
+}
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 200px;
+  outline: none;
+}
+
+.search-container button {
+  position: absolute;
+  right: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.search-container button:hover {
+  color: #555;
+}
+
+.viewservices {
+  height: 2vh;
+  width: 5vh;
+  background-color: crimson;
+}
+.view-services-button {
+  background-color: rgb(191, 0, 0);
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 35vh; /* Moves it below the temple image */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.view-services-button:hover {
+  background-color: darkred;
+}
+
+
+.white-space {
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+}
+
+.crimson-space {
+  background-color: rgb(191, 0, 0);
+  width: 100%;
+  height: 30vh;
+  
+}
+.navbar {
+  background-color: rgb(191, 0, 0);
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centers items vertically */
+  justify-content: space-between; /* Distributes items evenly */
+  width: 100%;
+  height: 10vh;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-align: center;
+  padding: 0 30vh; /* Adds 30vh margin on left & right */
+}
+.navlog {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centers items vertically */
+  justify-content: space-between; 
+  font-weight: 500;
+}
+
+
+
+.maroon-space {
+  background-color: maroon;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: flex-end; /* Align text to the bottom */
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+
+.footer-text {
   color: white;
+  font-size: 0.7rem;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+}
+.image-container {
+  width: 100%;
+  height: 110vh;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.image-container img {
+  width: 100%;
+  height: 95vh;
+  object-fit: cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.centered-image {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vh; /* Adjust size as needed */
+  max-height: 20vh;
+  max-width: 150px; /* Prevent it from getting too large */
+  border-radius: 25px;
+}
+.chat {
+  height: 9vh;
+  width: 30vh;
+  background-color: rgb(191,0,0);
+  
+  position: fixed; /* Keeps it in place when scrolling */
+  bottom: 20px;  /* Adjusts distance from the bottom */
+  right: 20px;   /* Adjusts distance from the right */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px; /* Makes it circular */
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for a floating effect */
+}
+.chat:hover {
+  transform: scale(1.1); /* Enlarges the button smoothly */
+  transition: all .3s ease-in-out;
+}
+
+/* Responsive font size */
+@media (max-width: 768px) {
+  .footer-text {
+    font-size: calc(0.5rem + 0.5vw);
   }
-  to {
-    transform: rotate(360deg);
+  .navbar {
+    background-color: rgb(191, 0, 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centers items vertically */
+    justify-content: space-between; /* Distributes items evenly */
+    width: 100%;
+    height: 10vh;
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+    text-align: center;
+    padding: 0 10vh; /* Adds 30vh margin on left & right */
   }
+  .navlog {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centers items vertically */
+    justify-content: space-between; 
+    font-weight: 700;
+  }
+  .heading1 , .heading2 , .line1 {
+    display: flex;
+    color: rgb(191, 0, 0);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vh;
+    font-weight: 600;
+    position: relative;
+    bottom: 50vh;
+  }
+  .heading3 {
+    font-size: 2.3vh;
+  }
+  .chat {
+    height: 8vh;
+    width: 25vh;
+    background-color: rgb(191,0,0);
+    
+    position: fixed; /* Keeps it in place when scrolling */
+    bottom: 20px;  /* Adjusts distance from the bottom */
+    right: 20px;   /* Adjusts distance from the right */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px; /* Makes it circular */
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for a floating effect */
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .footer-text {
+    font-size: calc(0.5rem + 0.5vw);
+  }
+  .navbar {
+    background-color: rgb(237, 29, 67);
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centers items vertically */
+    justify-content: space-between; /* Distributes items evenly */
+    width: 100%;
+    height: 10vh;
+    color: gold;
+    font-size: 8px;
+    text-align: center; /* Adds 30vh margin on left & right */
+    padding: 0 10vh; /* Adds 30vh margin on left & right */
+  }
+  .navlog {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centers items vertically */
+    justify-content: space-between; 
+    font-weight: 700;
+  }
+  .heading1 , .heading2 , .line1 {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(.9rem + 0.5vw);
+    position: relative;
+    bottom: 50vh;
+  }
+  .heading2 {
+    font-size: calc(1.5rem + 0.5vw);
+  }
+  .chat {
+    height: 8vh;
+    width: 25vh;
+    background-color: rgb(191,0,0);
+    
+    position: fixed; /* Keeps it in place when scrolling */
+    bottom: 20px;  /* Adjusts distance from the bottom */
+    right: 20px;   /* Adjusts distance from the right */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px; /* Makes it circular */
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for a floating effect */
+  }
+  
 }
