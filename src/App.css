@@ -246,7 +246,7 @@ body {
     align-items: center; /* Centers items vertically */
     justify-content: space-between; 
     font-weight: 700;
-    font-size: 2vh;
+    font-size: 1.5vh;
     color: rgb(255, 255, 255);
     
   }
@@ -306,7 +306,7 @@ body {
     align-items: center; /* Centers items vertically */
     justify-content: space-between; 
     font-weight: 700;
-    font-size: 2vh;
+    font-size: 1.5vh;
     color: rgb(255, 255, 255);
   }
   .heading1 , .heading2 , .line1 {
