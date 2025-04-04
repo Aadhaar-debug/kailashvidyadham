@@ -237,7 +237,7 @@ body {
     color: rgb(255, 255, 255);
     font-size: 10px;
     text-align: center;
-    padding: 0 10vh; /* Adds 30vh margin on left & right */
+    padding: 0 2vh; /* Adds 30vh margin on left & right */
   }
   .navlog {
     display: flex;
@@ -266,7 +266,7 @@ body {
     background-color: rgb(191,0,0);
     
     position: fixed; /* Keeps it in place when scrolling */
-    bottom: 20px;  /* Adjusts distance from the bottom */
+    bottom: 10vh; /* Adjusts distance from the bottom */
     right: 20px;   /* Adjusts distance from the right */
     color: white;
     display: flex;
@@ -279,7 +279,7 @@ body {
   
 }
 
-@media (max-width: 200px) {
+@media (max-width: 480px) {
   .footer-text {
     font-size: calc(0.5rem + 0.5vw);
   }
@@ -294,7 +294,7 @@ body {
     color: gold;
     font-size: 8px;
     text-align: center; /* Adds 30vh margin on left & right */
-    padding: 0 10vh; /* Adds 30vh margin on left & right */
+    padding: 0 2vh; /* Adds 30vh margin on left & right */
   }
   .navlog {
     display: flex;
@@ -322,7 +322,7 @@ body {
     background-color: rgb(191,0,0);
     
     position: fixed; /* Keeps it in place when scrolling */
-    bottom: 20px;  /* Adjusts distance from the bottom */
+    bottom: 10vh;  /* Adjusts distance from the bottom */
     right: 20px;   /* Adjusts distance from the right */
     color: white;
     display: flex;
