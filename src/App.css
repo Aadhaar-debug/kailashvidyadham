@@ -290,6 +290,7 @@ body {
   .heading3 {
     font-size: 1.3vh;
     font-weight: 800;
+    margin-bottom: 10vh;
   }
   #poojaicon , #vedicicon , #fireicon {
     height:8vh;
@@ -363,6 +364,7 @@ body {
   .heading3 {
     font-size: 1.3vh;
     font-weight: 800;
+    margin-bottom: 10vh;
   }
   .heading2 {
     font-size: calc(1.5rem + 0.5vw);
