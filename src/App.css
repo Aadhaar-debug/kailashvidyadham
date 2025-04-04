@@ -282,7 +282,7 @@ body {
     
     position: fixed; /* Keeps it in place when scrolling */
     bottom: 10vh; /* Adjusts distance from the bottom */
-    right: 10vh;   /* Adjusts distance from the right */
+    right: 5vh;   /* Adjusts distance from the right */
     color: white;
     display: flex;
     align-items: center;
@@ -348,7 +348,7 @@ body {
     
     position: fixed; /* Keeps it in place when scrolling */
     bottom: 10vh;  /* Adjusts distance from the bottom */
-    right: 10vh;   /* Adjusts distance from the right */
+    right: 5vh;   /* Adjusts distance from the right */
     color: white;
     display: flex;
     align-items: center;
