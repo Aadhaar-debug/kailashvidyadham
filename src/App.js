@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-
+// js
 const App = () => {
 
   const [showFirstText, setShowFirstText] = useState(true);
