@@ -304,8 +304,8 @@ body {
     background-color: rgb(191,0,0);
     
     position: fixed; /* Keeps it in place when scrolling */
-    bottom: 10vh; /* Adjusts distance from the bottom */
-    right: 5vh;   /* Adjusts distance from the right */
+    bottom: 2vh; /* Adjusts distance from the bottom */
+    right:2vh;   /* Adjusts distance from the right */
     color: white;
     display: flex;
     align-items: center;
