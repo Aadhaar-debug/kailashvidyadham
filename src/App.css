@@ -115,7 +115,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   position: absolute;
-  bottom: 41vh; /* Moves it below the temple image */
+  bottom: 35vh; /* Moves it below the temple image */
   left: 50%;
   transform: translateX(-50%);
   transition: background-color 0.3s ease;
@@ -261,6 +261,22 @@ body {
     display: block;
     margin-right: -20%;
   }
+  .view-services-button {
+    background-color: rgb(191, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 41vh; /* Moves it below the temple image */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.3s ease;
+  }
+  
   .heading1 , .heading2 , .line1 {
     display: flex;
     color: rgb(191, 0, 0);
@@ -282,72 +298,6 @@ body {
     
     position: fixed; /* Keeps it in place when scrolling */
     bottom: 10vh; /* Adjusts distance from the bottom */
-    right: 5vh;   /* Adjusts distance from the right */
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px; /* Makes it circular */
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for a floating effect */
-  }
-  
-}
-
-@media (max-width: 480px) {
-  .footer-text {
-    font-size: calc(0.5rem + 0.5vw);
-  }
-  .navbar {
-    background-color: rgb(191, 0, 0);
-    display: flex;
-    flex-direction: row;
-    align-items: center; /* Centers items vertically */
-    justify-content: space-between; /* Distributes items evenly */
-    width: 100%;
-    height: 10vh;
-    color: gold;
-    font-size: 8px;
-    text-align: center; /* Adds 30vh margin on left & right */
-    padding: 0 5vh; /* Adds 30vh margin on left & right */
-  }
-  .navlog {
-    display: flex;
-    flex-direction: row;
-    align-items: center; /* Centers items vertically */
-    justify-content: space-between; 
-    font-weight: 700;
-    font-size: 1.5vh;
-    color: rgb(255, 255, 255);
-    margin-left: -2vh;
-  }
-  .navops {
-    display: none;
-  }
-  .navmenu , .navlist {
-    display: block;
-    margin-right: -20%;
-  }
-  .heading1 , .heading2 , .line1 {
-    display: flex;
-    color: rgb(191, 0, 0);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(.9rem + 0.5vw);
-    position: relative;
-    bottom: 50vh;
-  }
-  .heading2 {
-    font-size: calc(1.5rem + 0.5vw);
-  }
-  .chat {
-    height: 8vh;
-    width: 25vh;
-    background-color: rgb(191,0,0);
-    
-    position: fixed; /* Keeps it in place when scrolling */
-    bottom: 10vh;  /* Adjusts distance from the bottom */
     right: 5vh;   /* Adjusts distance from the right */
     color: white;
     display: flex;
