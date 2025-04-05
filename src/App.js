@@ -90,7 +90,7 @@ const App = () => {
         </div>
 
 
-        <button className="view-services-button">Donate Now</button>
+        <button className="view-services-button">Book Now</button>
 
         <div className="heading3">
           <img src="/pooja-icon.png" id="poojaicon"></img>
