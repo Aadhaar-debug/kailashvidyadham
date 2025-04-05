@@ -101,7 +101,10 @@ body {
 .search-container button:hover {
   color: #555;
 }
-        
+
+.quotes {
+  margin-top: -3vh;
+}
 
 
 .viewservices {
