@@ -69,7 +69,8 @@ body {
   left: 30%;
 }
 .navops ,.navops1 {
-  margin-right:-5%;
+  margin-right:-0%;
+  font-weight: 500;
 }
 .navmenu , .navthing {
   display:none ;
@@ -110,8 +111,10 @@ body {
 }
 .view-services-button {
   background-color: rgb(191, 0, 0);
+  height: 7vh;
+  width: 25vh;
   color: rgb(255, 255, 255);
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
   padding: 10px 20px;
   border: none;
