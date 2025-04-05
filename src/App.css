@@ -38,6 +38,8 @@ body {
 }
 .heading2 {
   font-size: calc(2rem + 0.5vw);
+  display: flex;
+  flex-direction: row;
 }
 #poojaicon , #vedicicon , #fireicon {
   height:10vh;
@@ -229,6 +231,9 @@ body {
   .footer-text {
     font-size: calc(0.5rem + 0.5vw);
   }
+  #protext {
+    display: none;
+  }
   .navbar {
     background-color: rgb(191, 0, 0);
     display: flex;
@@ -247,8 +252,8 @@ body {
     flex-direction: row;
     align-items: center; /* Centers items vertically */
     justify-content: space-between; 
-    font-weight: 700;
-    font-size: 1.5vh;
+    font-weight: 900;
+    font-size: 2vh;
     color: rgb(255, 255, 255);
     margin-left: -2vh;
     
@@ -288,8 +293,8 @@ body {
     bottom: 55vh;
   }
   .heading3 {
-    font-size: 1.3vh;
-    font-weight: 800;
+    font-size: 1.4vh;
+    font-weight: 1000;
     margin-bottom: 12vh;
   }
   #poojaicon , #vedicicon , #fireicon {
@@ -321,6 +326,9 @@ body {
   .footer-text {
     font-size: calc(0.5rem + 0.5vw);
   }
+  #protext {
+    display: none;
+  }
   .navbar {
     background-color: rgb(191, 0, 0);
     display: flex;
@@ -339,8 +347,8 @@ body {
     flex-direction: row;
     align-items: center; /* Centers items vertically */
     justify-content: space-between; 
-    font-weight: 700;
-    font-size: 1.5vh;
+    font-weight: 900;
+    font-size: 25vh;
     color: rgb(255, 255, 255);
     margin-left: -2vh;
   }
@@ -362,8 +370,8 @@ body {
     bottom: 50vh;
   }
   .heading3 {
-    font-size: 1.3vh;
-    font-weight: 800;
+    font-size: 1.4vh;
+    font-weight: 1000;
     margin-bottom: 12vh;
   }
   .heading2 {

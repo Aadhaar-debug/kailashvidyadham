@@ -56,7 +56,11 @@ const App = () => {
         <div className="quotes">
           <div className="heading1">Perform your pooja with the Best group of</div>
           <div className="line1"></div>
-          <div className="heading2">Professional Purohits & Pandits</div>  
+
+          <div className="heading2">
+            <div id="protext">Professional&nbsp;</div>
+            <div>Purohits & Pandits</div>  
+          </div>
         </div>
 
 
