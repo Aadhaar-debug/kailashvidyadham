@@ -348,7 +348,7 @@ body {
     align-items: center; /* Centers items vertically */
     justify-content: space-between; 
     font-weight: 900;
-    font-size: 25vh;
+    font-size: 2vh;
     color: rgb(255, 255, 255);
     margin-left: -2vh;
   }
