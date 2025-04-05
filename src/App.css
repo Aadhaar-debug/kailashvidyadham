@@ -151,7 +151,7 @@ body {
 }
 
 .crimson-space {
-  background-color: rgb(191, 0, 0);
+  background-color: rgb(255, 255, 255);
   width: 100%;
   height: 100vh;
   margin-top: -10vh;
@@ -266,7 +266,7 @@ body {
     padding: 0 5vh; /* Adds 30vh margin on left & right */
   }
   .crimson-space {
-    background-color: rgb(191, 0, 0);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     height: 100vh;
     border-radius: 50px;
@@ -412,7 +412,7 @@ body {
     margin-right: -20%;
   }
   .crimson-space {
-    background-color: rgb(191, 0, 0);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     height: 100vh;
     border-radius: 50px;
