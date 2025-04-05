@@ -90,7 +90,7 @@ const App = () => {
         </div>
 
 
-        <button className="view-services-button">Donate Now</button>
+        <button className="view-services-button">Book Now</button>
 
         <div className="heading3">
           <img src="/pooja-icon.png" id="poojaicon"></img>
@@ -114,7 +114,7 @@ const App = () => {
       </div>
 
 
-      <div className="white-space"></div>
+      
       <div className="crimson-space"></div>
       <div className="maroon-space">
         <p className="footer-text">Kailashvidyadham © 2025. All Rights Reserved.</p>
