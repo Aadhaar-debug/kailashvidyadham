@@ -33,13 +33,39 @@ const App = () => {
                 </button>
           </div>
         </div>
-        <div className="navmenu">
-        <div style={{ fontSize: "32px", color: "white", cursor: "pointer" }}>☰</div>
+        <div className="navmenu" onClick={() => {
+          const nav = document.querySelector('.navlist');
+          nav.style.width = nav.style.width === '60%' ? '0%' : '60%';
+        }}>
+          <div style={{ fontSize: "32px", color: "white", cursor: "pointer" }}>
+            ☰
+          </div>
         </div>
-        <div className="navlist"></div>
+        
+        <div className="navthing"></div>
 
         
       </div>
+
+
+
+      <div className="navlist">
+        <div
+          className="closebtn"
+          onClick={() => {
+            const nav = document.querySelector('.navlist');
+            nav.style.width = '0%';
+          }}
+        >
+          <button className="navlistclosebtn">
+            ✖
+          </button>
+        </div>
+
+        {/* your nav items here */}
+      </div>
+
+
 
 
 

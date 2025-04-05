@@ -71,7 +71,7 @@ body {
 .navops ,.navops1 {
   margin-right:-5%;
 }
-.navmenu , .navlist {
+.navmenu , .navthing {
   display:none ;
 }
 .search-container {
@@ -100,6 +100,8 @@ body {
 .search-container button:hover {
   color: #555;
 }
+        
+
 
 .viewservices {
   height: 2vh;
@@ -261,9 +263,34 @@ body {
   .navops {
     display: none;
   }
-  .navmenu , .navlist {
+  .navmenu , .navthing {
     display: block;
     margin-right: -20%;
+  }
+
+  .navlist {
+    right: 0;
+    height: 100%;
+    width: 0%;
+    background-color: rgb(191, 0, 0);
+    position: fixed;
+    z-index: 100000;
+    transition: 1s ease-in-out;
+  }
+
+  .navlistclosebtn {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(191, 0, 0);
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;  /* optional: remove for sharp edges */
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   .view-services-button {
     background-color: rgb(191, 0, 0);
@@ -355,9 +382,34 @@ body {
   .navops {
     display: none;
   }
-  .navmenu , .navlist {
+  .navmenu , .navthing {
     display: block;
     margin-right: -20%;
+  }
+
+  .navlist {
+    right: 0;
+    height: 100%;
+    width: 0%;
+    background-color: rgb(191, 0, 0);
+    position: fixed;
+    z-index: 100000;
+    transition: 1s ease-in-out;
+  }
+
+  .navlistclosebtn {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(191, 0, 0);
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;  /* optional: remove for sharp edges */
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   .heading1 , .heading2 , .line1 {
     display: flex;
