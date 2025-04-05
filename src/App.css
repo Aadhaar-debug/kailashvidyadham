@@ -144,7 +144,11 @@ body {
 .crimson-space {
   background-color: rgb(191, 0, 0);
   width: 100%;
-  height: 30vh;
+  height: 100vh;
+  border-radius: 50px;
+  margin-top: -17vh;
+  position: relative;
+
   
 }
 .navbar {

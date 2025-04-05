@@ -114,7 +114,6 @@ const App = () => {
       </div>
 
 
-      <div className="white-space"></div>
       <div className="crimson-space"></div>
       <div className="maroon-space">
         <p className="footer-text">Kailashvidyadham © 2025. All Rights Reserved.</p>
