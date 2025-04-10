@@ -9,12 +9,15 @@
     align-items: center;
     flex-direction: column;
   }
-  
+  .home-content img {
+    height: 20vh;
+    border-radius: 25px;
+  }
   .home-content {
     color: white;
     text-align: center;
     padding: 20px;
-    backdrop-filter: brightness(0.9); /* Optional: Slight dark effect behind text */
+    /* backdrop-filter: brightness(0.9); */
   }
   
   .banner-button {

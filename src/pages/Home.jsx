@@ -1,18 +1,25 @@
 import React from "react";
 import "./Home.css";
 import banner from "../assets/images/kailashbanner.png";
+import logo from "../assets/images/crimson_gold_temple.png";  // Import your logo image
 
 const Home = () => {
   return (
-    <div
-      className="home-container"
-      style={{ backgroundImage: `url(${banner})` }}
-    >
+
+    <div>
+      <div className="home-container"style={{ backgroundImage: `url(${banner})` }}>
+      
       <div className="home-content">
-        <h1>Welcome to Kailash Vidyadham</h1>
-        <p>Spiritual. Peaceful. Divine. Sacred. Eternal.</p>
+        <img src={logo} alt="Logo" className="banner-logo" />
+        <h3>Perform your pooja with the Best group of</h3>
+        <h1>Professional Purohits & Pandits</h1>
         <button className="banner-button">Contact Us</button>
+        
       </div>
+    </div>
+
+    
+      
     </div>
   );
 };
