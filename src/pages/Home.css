@@ -22,5 +22,14 @@
     .banner img {
       object-fit: contain;      /* Add space from sides if needed */
     }
+    .banner-container {
+        aspect-ratio: 4 / 5;
+      }
+    
+      .banner-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
   }
   
