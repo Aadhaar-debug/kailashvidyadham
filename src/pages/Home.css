@@ -58,6 +58,23 @@
   .banner-button:hover {
     background-color: darkred;
   }
+  .progressicon1 , .progressicon2 , .progressicon3 {
+    height: 80px;
+    width: 80px;
+  }
+  .progressicon1 { 
+    margin-left: -5vh;
+  }
+  .progressicon2 , .progressicon3 { 
+    margin-left: 15vh;
+  }
+  .progressicons {
+    margin-top: 5vh;
+    display : flex;
+    flex-direction : row;
+    color: rgb(191,0,0);
+    background-color: black;
+  }
   
   
 
@@ -89,5 +106,23 @@
       cursor: pointer;
       border-radius: 5px;
       transition: background 0.3s ease;
+    }
+    .progressicons {
+      height: 15vh;
+      background-color: transparent;
+    }
+    .progressicon1 , .progressicon2 , .progressicon3 {
+      height: 80px;
+      width: 80px;
+    }
+    .progressicon1 { 
+      margin-left: 4vh;
+    }
+    .progressicon2 , .progressicon3 { 
+      margin-left: -5vh;
+    }
+    .progressicons h3 {
+      font-size: 15px;
+      margin-bottom: 4vh;
     }
   }
