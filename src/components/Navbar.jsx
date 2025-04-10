@@ -13,7 +13,7 @@ const Navbar = () => {
           <div className="logo">
             <img src={logo} alt="Logo" />
           </div>
-          <span className="brand-name">Kailash Vidyadham</span>
+          <span className="brand-name">Kailash Vidya dham</span>
         </div>
 
         <div className="link-section">
@@ -43,11 +43,13 @@ const Navbar = () => {
       </nav>
 
       {/* Golden Moving News Strip */}
-      <div className="news-strip">
-        <div className="news-text">
-          Welcome to Kailash Vidyadham | Admissions Open | Excellence in Education | Join Us Today!
+      {/* Golden Moving News Strip */}
+        <div className="news-strip">
+            <div className="news-text">
+                For more information contact Shree Mahant Divyanand Saraswati Maharaj Athyaksh Sanchalak for any queries. Ph Number - 9419362813 and Email - akhandbharat64@gmail.com. We are happy to help you anytime. Om Namah Shivay.
+            </div>
         </div>
-      </div>
+
     </>
   );
 };

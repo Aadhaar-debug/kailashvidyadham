@@ -74,6 +74,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    margin-top: -1vh;
   }
   
   .news-text {
