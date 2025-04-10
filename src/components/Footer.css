@@ -1,0 +1,22 @@
+.footer {
+    background-color: rgb(191, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .footer-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-image img {
+    width: 120px; /* adjust as needed */
+    margin: 1rem 0;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+  

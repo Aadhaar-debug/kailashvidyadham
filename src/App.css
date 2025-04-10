@@ -1,3 +1,20 @@
+/* This makes sure your entire page uses flex column layout */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* This pushes the footer to bottom */
+.content-wrap {
+  flex: 1;
+}
+
 .App {
   text-align: center;
 }
