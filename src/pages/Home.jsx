@@ -12,6 +12,7 @@ const Home = () => {
       <div className="home-content">
         <img src={logo} alt="Logo" className="banner-logo" />
         <h3>Perform your pooja with the Best group of</h3>
+        <div className="dividingline"></div>
         <h1>Professional Purohits & Pandits</h1>
         <button className="banner-button">Book Now</button>
         

@@ -9,10 +9,7 @@
     align-items: center;
     flex-direction: column;
   }
-  .home-content img {
-    height: 20vh;
-    border-radius: 25px;
-  }
+  
   .home-content {
     color: white;
     text-align: center;
@@ -31,11 +28,47 @@
     border-radius: 5px;
     transition: background 0.3s ease;
   }
+
+  .home-content img {
+    margin-top: -18vh;
+    height: 20vh;
+    border-radius: 25px;
+  }
+
+  .dividingline {
+    height: 0.5vh;
+    width: 70vh;
+    border-radius: 50%;
+    background-color: rgb(191,0,0);
+
+  }
   .home-content h3 , h1 {
     color: rgb(191,0,0);
+  }
+  .home-content h1 {
+    margin-top: -0.1svh;
   }
   
   .banner-button:hover {
     background-color: darkred;
   }
   
+  
+
+
+
+
+
+  @media screen and (max-width: 768px) {
+
+
+    .home-content h1{
+      font-size: 25px;
+    }
+    .home-content h3{
+      font-size: 15px;
+    }
+    .dividingline {
+      width: 55vh;
+    }
+  }
