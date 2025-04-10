@@ -111,27 +111,50 @@
         margin-right: 0%;
       }
   
-    .nav-links {
-      display: none;
-    }
-  
-    .nav-links-mobile {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      right: 0;
-      background-color: rgb(191, 0, 0);
-      width: 100%;
-      text-align: center;
-      padding: 1rem 0;
-      gap: 1rem;
-      z-index: 10;
-    }
-  
-    .nav-links-mobile input {
-      margin: 0 auto;
-      width: 80%;
-    }
+      .nav-links {
+        display: none;
+      }
+      
+      .nav-links-mobile {
+        display: flex;
+        flex-direction: column;   /* Search bar comes first */
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: rgb(191, 0, 0);
+        width: 60%;                        /* Slide in to 60% width */
+        height: 95vh;
+        text-align: center;
+        padding: 0rem 0;
+        gap: 1rem;
+        z-index: 10;
+        transition: all 1s ease-in-out;
+      }
+      
+      .nav-links-mobile a,
+      .nav-links-mobile input {
+        width: 80%;
+        margin: 0 auto;
+        padding: 0.5rem 0;
+        text-decoration: none;
+        color: white;
+        border-bottom: 0.3vh solid rgba(255, 255, 255, 0.3);  /* Separator Line */
+      }
+      
+      .nav-links-mobile a:last-child,
+      .nav-links-mobile input:last-child {
+        border-bottom: none;  /* Remove last line */
+      }
+      
+      .nav-links-mobile input {
+        background-color: rgb(84, 31, 31);
+        color: black;
+        border: none;
+        outline: none;
+        padding: 0.5rem;
+        border-radius: 5px;
+        display: none;
+      }
+      
   }
   
