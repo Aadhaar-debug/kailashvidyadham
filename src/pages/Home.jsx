@@ -10,7 +10,7 @@ const Home = () => {
   return (
 
     <div>
-      <div className="home-container"style={{ backgroundImage: `url(${banner})` }}>
+      <div className="home-container"style={{ backgroundImage: `url(${banner})` , height : '90vh'}}>
         <div className="home-content">
           <img src={logo} alt="Logo" className="banner-logo" />
 
