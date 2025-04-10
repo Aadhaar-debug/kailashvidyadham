@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/images/removebg-kailash_logo.png";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
             className="mobile-menu-icon"
             onClick={() => setIsMobile(!isMobile)}
           >
-            {isMobile ? "X" : "≡"}
+            {isMobile ? <FaTimes size={25} color="white" /> : <FaBars size={25} color="white" />}
           </button>
 
           <div className={isMobile ? "nav-links-mobile" : "nav-links"}>
