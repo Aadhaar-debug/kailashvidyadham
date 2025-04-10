@@ -1,27 +1,34 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   return (
     <nav className="navbar">
-      <h1 className="logo">YourLogo</h1>
-
-      <div className={isMobile ? "nav-links-mobile" : "nav-links"}>
-        <Link to="/" onClick={() => setIsMobile(false)}>Home</Link>
-        <Link to="/about" onClick={() => setIsMobile(false)}>About</Link>
-        <Link to="/services" onClick={() => setIsMobile(false)}>Services</Link>
-        <Link to="/contact" onClick={() => setIsMobile(false)}>Contact</Link>
-        <a href="https://your-medium-blog-link.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobile(false)}>
-          Blogs
-        </a>
+      <div className="logo-section">
+        <div className="logo">YourLogo</div>
+        <span className="brand-name">Kailash Vidyadham</span>
       </div>
 
-      <button className="mobile-menu-icon" onClick={() => setIsMobile(!isMobile)}>
-        {isMobile ? "✕" : "☰"}
-      </button>
+      <div className="link-section">
+        <button className="mobile-menu-icon" onClick={() => setIsMobile(!isMobile)}>
+            {isMobile ? "X" : "≡"}
+        </button>
+
+        <div className={isMobile ? "nav-links-mobile" : "nav-links"}>
+            <a href="#home" onClick={() => setIsMobile(false)}>Home</a>
+            <a href="#about" onClick={() => setIsMobile(false)}>About</a>
+            <a href="#services" onClick={() => setIsMobile(false)}>Services</a>
+            <a href="#contact" onClick={() => setIsMobile(false)}>Contact</a>
+
+            <input
+            type="text"
+            className="search-bar"
+            placeholder="Search..."
+            />
+        </div>
+      </div>
     </nav>
   );
 };
