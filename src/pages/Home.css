@@ -1,0 +1,15 @@
+.home-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .banner img {
+    width: 100%;        /* Image will auto-fit to width */
+    height: auto;       /* Maintain original height ratio */
+    object-fit: cover;  /* Crop if necessary */
+    display: block;
+    margin: 0 auto;     /* Center the image horizontally */
+  }
+  
