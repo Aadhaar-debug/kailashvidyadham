@@ -62,6 +62,16 @@
     .mobile-menu-icon {
       display: block;
     }
+    .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-left: 0%;
+      }
+      
+      .link-section {
+        margin-right: 0%;
+      }
   
     .nav-links {
       display: none;
