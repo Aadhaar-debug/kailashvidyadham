@@ -112,7 +112,7 @@
       background-color: transparent;
     }
     .progressicon1 , .progressicon2 , .progressicon3 {
-      height: 80px;
+      height: 70px;
       width: 80px;
     }
     .progressicon1 { 
@@ -122,7 +122,7 @@
       margin-left: -5vh;
     }
     .progressicons h3 {
-      font-size: 15px;
+      font-size: 14px;
       margin-bottom: 4vh;
     }
   }
