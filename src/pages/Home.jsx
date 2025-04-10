@@ -13,7 +13,7 @@ const Home = () => {
         <img src={logo} alt="Logo" className="banner-logo" />
         <h3>Perform your pooja with the Best group of</h3>
         <h1>Professional Purohits & Pandits</h1>
-        <button className="banner-button">Contact Us</button>
+        <button className="banner-button">Book Now</button>
         
       </div>
     </div>

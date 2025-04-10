@@ -25,11 +25,14 @@
     margin-top: 20px;
     font-size: 18px;
     border: none;
-    background-color: crimson;
+    background-color: rgb(191,0,0);
     color: white;
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s ease;
+  }
+  .home-content h3 , h1 {
+    color: rgb(191,0,0);
   }
   
   .banner-button:hover {
