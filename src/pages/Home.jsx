@@ -55,13 +55,13 @@ const Home = () => {
             <div className="newscontent">
               <div style={{color : 'gold' , fontSize  :'25px' , fontWeight: '700'}}>
                   <ul><h5 style={{fontSize : '25px'}}>What's New</h5></ul>
-                  <ul style={{marginTop : '-2vh', fontSize : '15px', width :'35vh'}}><p>Morning Daily Pooja Timing shifted from 9AM to 7AM in the morning</p></ul>
-                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>Devotee Service actions live now</p></ul>
-                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>Devotee Accommodations available now</p></ul>
-                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>Temple Premises Under CCTV Surveillance 24x7</p></ul>
-                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>Special Maha Aarti Event Scheduled on Sunday Evening</p></ul>
-                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>Online Donations & Offerings Portal is Live Now</p></ul>
-                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>Free Prasadam Distribution from 12PM to 3PM Everyday</p></ul>
+                  <ul style={{marginTop : '-2vh', fontSize : '15px', width :'35vh'}}><p>- Morning Daily Pooja Timing shifted from 9AM to 7AM in the morning</p></ul>
+                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Devotee Service actions live now</p></ul>
+                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Devotee Accommodations available now</p></ul>
+                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Temple Premises Under CCTV Surveillance 24x7</p></ul>
+                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Special Maha Aarti Event Scheduled on Sunday Evening</p></ul>
+                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Online Donations & Offerings Portal is Live Now</p></ul>
+                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Free Prasadam Distribution from 12PM to 3PM Everyday</p></ul>
 
               </div>
             </div>
