@@ -10,12 +10,6 @@
     flex-direction: column;
   }
 
-  .card {
-    width: 20rem;
-    margin-left: 0vh;
-    background-color: rgb(233, 166, 166);
-    padding: 5vh;
-  }
   
   .home-content {
     color: white;
@@ -111,10 +105,7 @@
     width: 30%;
     border-radius: 50px;
   }
-  .devoteeservices {
-    width: 170%;
-    margin-left: -35%;
-  }
+  
   .onlineformcontainer {
     width: 69%;
     margin-left: 1%;
@@ -176,9 +167,63 @@
     background-color: crimson;
     color: white;
   }
+  .devoteeservicescontainer {
+    height: 60vh;
+    width: 90%;
+    background-color: white;
+    margin-top: 10vh;
+    border-radius: 50px;
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 5%;
+  }
+  .card {
+    height: 95%;
+    width: 35vh;
+    border-radius: 50px;
+    background-color: rgb(191,0,0);
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  .card img {
+    height: 100px;
+    width: 100px;
+  }
+  .cardtextandtitle {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    width: 80%;
+    margin-top: 5%;
+  }
   
   
   
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -248,13 +293,7 @@
       border-radius: 50px;
       padding: 2vh;
     }
-    .devoteeservices {
-      margin-left: -13%;
-    }
-    .card {
-      width: 20rem;
-      background-color: rgb(233, 166, 166);
-    }
+    
     .onlineformandnewscontainer {
       height:160vh;
       width: 100%;
@@ -330,6 +369,28 @@
     .online-form button:hover {
       background-color: crimson;
       color: white;
+    }
+    .devoteeservicescontainer {
+      height: 300vh;
+      width: 100%;
+      background-color: white;
+      margin-top: 5vh;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      margin-left: 0%;
+    }
+    
+    .card {
+      height: 50vh;
+      width: 90%;
+      border-radius: 50px;
+      background-color: rgb(191,0,0);
+    }
+    .card:hover {
+      transform: scale(1.05);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
     }
     
   }

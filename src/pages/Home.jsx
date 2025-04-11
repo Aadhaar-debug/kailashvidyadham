@@ -91,60 +91,60 @@ const Home = () => {
           </div>
         </div>
 
-        <div style={{ marginTop:'10vh',fontSize: '40px',color: 'gold' ,display:'flex', alignItems:'center', justifyContent:'center'}}>Devotee Services</div>
+        <div style={{ marginTop:'15vh',fontSize: '40px',color: 'gold' ,display:'flex', alignItems:'center', justifyContent:'center'}}>Devotee Services</div>
 
-        <div className="devoteeservices">
-          <div style={{ width: '80%', margin: 'auto', marginTop: '5vh' }}>
-            <div className="row justify-content-center" style={{ rowGap: '10%' }}>
-
-              <div className="col-md-2 mb-4">
-                <div className="card" >
-                  <img className="card-img-top" src={accomodation} alt="Card image cap" />
-                  <div className="card-body">
-                    <h5 className="card-title">Card Title 1</h5>
-                    <p className="card-text">Some content here...</p>
-                    <a href="#" className="btn btn-primary">Read More</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-md-2 mb-4">
-                <div className="card">
-                  <img className="card-img-top" src={accomodation} alt="Card image cap" />
-                  <div className="card-body">
-                    <h5 className="card-title">Card Title 2</h5>
-                    <p className="card-text">Some content here...</p>
-                    <a href="#" className="btn btn-primary">Read More</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-md-2 mb-4">
-                <div className="card">
-                  <img className="card-img-top" src={accomodation} alt="Card image cap" />
-                  <div className="card-body">
-                    <h5 className="card-title">Card Title 3</h5>
-                    <p className="card-text">Some content here...</p>
-                    <a href="#" className="btn btn-primary">Read More</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-md-2 mb-4">
-                <div className="card">
-                  <img className="card-img-top" src={accomodation} alt="Card image cap" />
-                  <div className="card-body">
-                    <h5 className="card-title">Card Title 5</h5>
-                    <p className="card-text">Some content here...</p>
-                    <a href="#" className="btn btn-primary">Read More</a>
-                  </div>
-                </div>
-              </div>
-
+        <div className="devoteeservicescontainer">
+          <div className="card">
+            <img src={prasaddaan} alt="prasaddaan" className="prasaddaan" />
+            <div className="cardtextandtitle">
+              <h3>Prasad Daan</h3>
+              <p>Devotees were willing toprovidethe needyand incoming shadaloos withfood prasadammay donatevia the given link below</p>
+              <a href="https://example.com" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p>Link &gt;</p>
+              </a>
+            </div>
+          </div>
+          <div className="card">
+            <img src={seva} alt="prasaddaan" className="prasaddaan" />
+            <div className="cardtextandtitle">
+              <h3>Seva</h3>
+              <p>Devotees were willing toprovidethe needyand incoming shadaloos withfood prasadammay donatevia the given link below</p>
+              <a href="https://example.com" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p>Link &gt;</p>
+              </a>
+            </div>
+          </div>
+          <div className="card">
+            <img src={accomodation} alt="prasaddaan" className="prasaddaan" />
+            <div className="cardtextandtitle">
+              <h3>Accomodation</h3>
+              <p>Devotees were willing toprovidethe needyand incoming shadaloos withfood prasadammay donatevia the given link below</p>
+              <a href="https://example.com" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p>Link &gt;</p>
+              </a>
+            </div>
+          </div>
+          <div className="card">
+            <img src={donation} alt="prasaddaan" className="prasaddaan" />
+            <div className="cardtextandtitle">
+              <h3>Donation</h3>
+              <p>Devotees were willing toprovidethe needyand incoming shadaloos withfood prasadammay donatevia the given link below</p>
+              <a href="https://example.com" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p>Link &gt;</p>
+              </a>
+            </div>
+          </div>
+          <div className="card">
+            <img src={poojaicon} alt="prasaddaan" className="prasaddaan" />
+            <div className="cardtextandtitle">
+              <h3>Poojaicon</h3>
+              <p>Devotees were willing toprovidethe needyand incoming shadaloos withfood prasadammay donatevia the given link below</p>
+              <a href="https://example.com" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p>Link &gt;</p>
+              </a>
             </div>
           </div>
         </div>
-
 
 
 
