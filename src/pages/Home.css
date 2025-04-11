@@ -483,8 +483,8 @@
       justify-content: center;
     }
     .aboutbackgroundimage img {
-      margin-top: 0vh;
-      width: 90%;
+      margin-top: -10vh;
+      width: 40vh;
       height: 60vh;
     }
     
