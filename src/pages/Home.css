@@ -259,6 +259,16 @@
     width: 90vh;
     margin-left: 8%;
   }
+  .social-icons a {
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: gold;
+    transform: scale(1.2);
+  }
+  
   
   
 

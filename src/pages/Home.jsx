@@ -259,6 +259,13 @@ const Home = () => {
                     <div>- -Welfare Events for Underprivileged </div>
                     <div>&nbsp;</div>
                     <div>As it continues to grow and evolve, Kalash with Yadam Temple remains committed to being more than just a place of worship — it’s a beacon of hope, service, and spiritual transformation for all who walk through its doors.</div>
+                    <div className="social-icons" style={{ display: 'flex', gap: '20px', fontSize: '30px', color: 'gold' }}>
+                      <a href="https://instagram.com" target="_blank"><i className="bi bi-instagram"></i></a>
+                      <a href="https://youtube.com" target="_blank"><i className="bi bi-youtube"></i></a>
+                      <a href="https://facebook.com" target="_blank"><i className="bi bi-facebook"></i></a>
+                      <a href="https://twitter.com" target="_blank"><i className="bi bi-twitter-x"></i></a>
+                      <a href="mailto:someone@example.com"><i className="bi bi-envelope-fill"></i></a>
+                    </div>
                   </div>
                 </div>
                 
