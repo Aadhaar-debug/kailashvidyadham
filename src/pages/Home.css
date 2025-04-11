@@ -238,8 +238,11 @@
       border-radius: 50px;
       display: flex;
       flex-direction: column;
-      
-  
+
+    }
+    .newscontent {
+      margin-left: 5%;
+      margin-top: 15%;
     }
     .newscontainer {
       background-color: rgb(191,0,0);

@@ -55,13 +55,13 @@ const Home = () => {
             <div className="newscontent">
               <div style={{color : 'gold' , fontSize  :'25px' , fontWeight: '700'}}>
                 What's New
-                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
-                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
-                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
-                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
-                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
-                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
-                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbbvcdsjdcbvdj</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdjbvd</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdjdcb</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdjdcb</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdjdcb</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdjdcb</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdjdcb</h5></ul>
               </div>
             </div>
           </div>
