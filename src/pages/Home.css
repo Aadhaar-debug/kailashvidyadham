@@ -125,14 +125,14 @@
     max-width: 100%;
     margin-top: 1%;
     padding: 25px;
-    background-color: #efefef;
+    background-color: #ffffff;
     border-radius: 40px;
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
   }
   
   .online-form input {
     padding: 12px 15px;
-    background: #c1bbbb;
+    background: #dedede;
     color: rgb(130, 128, 119);
     border: 1px solid rgb(191,0,0);
     border-radius: 8px;
