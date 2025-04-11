@@ -14,7 +14,7 @@ const Home = () => {
         <div className="home-content">
           <img src={logo} alt="Logo" className="banner-logo" />
 
-          <h3>Perform your pooja with the Best group of</h3>
+          <h3 style={{marginTop : '2vh'}}>Perform your pooja with the Best group of</h3>
           <div className="dividingline"></div>
           <h1 style={{color :'rgb(191,0,0)'}}>Professional Purohits & Pandits</h1>
 
