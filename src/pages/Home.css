@@ -329,7 +329,7 @@
     }
     .maincontainer2 {
       background-color: rgb(255, 255, 255);
-      height: 890vh;
+      height: 830vh;
       width: 100%;
       margin-top: -6vh;
       border-radius: 50px;
@@ -338,7 +338,7 @@
     .mainmaincontainer2-1 {
       background-color: rgb(191,0,0);
       width: 100%;
-      height: 880vh;
+      height: 820vh;
       border-radius: 50px;
       padding: 2vh;
     }
@@ -468,8 +468,8 @@
     }
     .aboutbackgroundimage {
       width: 100%;
-      height: 260vh;
-      margin-top: 160vh;
+      height: 200vh;
+      margin-top: 100vh;
       background-color: rgb(184, 97, 97);
       background-image: 
       linear-gradient(rgba(184, 97, 97, 0.6), rgba(184, 97, 97, 0.6)),
@@ -485,11 +485,12 @@
     .aboutbackgroundimage img {
       margin-top: 0vh;
       width: 40vh;
-      height: 80vh;
+      height: 60vh;
     }
     
     .homeabouttext {
       margin-top: 5vh;
+      font-size: 15px;
       color: white;
       width: 40vh;
     }

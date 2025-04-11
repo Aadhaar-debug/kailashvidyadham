@@ -242,14 +242,11 @@ const Home = () => {
                     <p>QRHQ+3JG, Chinore, Jammu, Jammu and Kashmir 180013</p>
                   </div>
                   <div>
-                    <p>For over 60 years, the sacred Kalash with Yadam Temple, located in the 
-                      heart of Chinur, Jammu, has stood not just as a place of worship, but 
-                      as a symbol of service, compassion, and community care.
-                      Deeply rooted in the values of humanity and devotion, this temple has 
-                      dedicated itself to uplifting those in need — serving orphanages, old 
-                      age homes, widowed women, abandoned children, and even stray animals.
-                       It has become a spiritual home for souls seeking peace, purpose, and
-                        divine connection.
+                    <p>For over 60 years, the sacred Kalash with Yadam Temple in Chinur, Jammu,
+                       has stood as a symbol of devotion, compassion, and community service — 
+                       serving orphanages, old age homes, widows, abandoned children, and even
+                        stray animals. A true spiritual home for those seeking peace and 
+                        purpose.
                       With a legacy like no other, the temple has been the proud host of over
                        1,25,000+ marriage ceremonies, bringing together lives and families 
                        across generations. Supported by a dedicated group of 5000+ priests 
