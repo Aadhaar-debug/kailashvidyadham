@@ -9,6 +9,13 @@
     align-items: center;
     flex-direction: column;
   }
+
+  .card {
+    width: 20rem;
+    margin-left: 0vh;
+    background-color: rgb(233, 166, 166);
+    padding: 5vh;
+  }
   
   .home-content {
     color: white;
@@ -103,6 +110,10 @@
     height: 100%;
     width: 30%;
     border-radius: 50px;
+  }
+  .devoteeservices {
+    width: 170%;
+    margin-left: -35%;
   }
   .onlineformcontainer {
     width: 69%;
@@ -238,10 +249,11 @@
       padding: 2vh;
     }
     .devoteeservices {
-      margin-left: 12%;
+      margin-left: -5%;
     }
     .card {
       width: 20rem;
+      background-color: rgb(233, 166, 166);
     }
     .onlineformandnewscontainer {
       height:160vh;

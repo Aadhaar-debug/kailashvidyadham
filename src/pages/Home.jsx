@@ -6,6 +6,10 @@ import logo from "../assets/images/crimson_gold_temple.png";
 import fireicon from "../assets/images/fire-icon.png";  
 import vedicicon from "../assets/images/vedic-icon.png";  
 import poojaicon from "../assets/images/pooja-icon.png";  
+import accomodation from "../assets/images/Accomodation.png";  
+import prasaddaan from "../assets/images/Prasaddaan.png";  
+import seva from "../assets/images/seva.png";  
+import donation from "../assets/images/donation.png";  
 
 const Home = () => {
   return (
@@ -90,25 +94,57 @@ const Home = () => {
         <div style={{ marginTop:'10vh',fontSize: '40px',color: 'gold' ,display:'flex', alignItems:'center', justifyContent:'center'}}>Devotee Services</div>
 
         <div className="devoteeservices">
-          <div style={{ width: '100%', margin: 'auto', marginTop: '5vh' }}>
-            <div className="row justify-content-center" style={{ rowGap: '1vh' }}>
+          <div style={{ width: '80%', margin: 'auto', marginTop: '5vh' }}>
+            <div className="row justify-content-center" style={{ rowGap: '10%' }}>
 
-              {[1, 2, 3, 4, 5].map((item) => (
-                <div className="col-md-2 mb-4" key={item}>
-                  <div className="card">
-                    <img className="card-img-top" src={templeImage} alt="Card image cap" />
-                    <div className="card-body">
-                      <h5 className="card-title">Card Title</h5>
-                      <p className="card-text">Some content here...</p>
-                      <a href="#" className="btn btn-primary">Read More</a>
-                    </div>
+              <div className="col-md-2 mb-4">
+                <div className="card">
+                  <img className="card-img-top" src={accomodation} alt="Card image cap" />
+                  <div className="card-body">
+                    <h5 className="card-title">Card Title 1</h5>
+                    <p className="card-text">Some content here...</p>
+                    <a href="#" className="btn btn-primary">Read More</a>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              <div className="col-md-2 mb-4">
+                <div className="card">
+                  <img className="card-img-top" src={accomodation} alt="Card image cap" />
+                  <div className="card-body">
+                    <h5 className="card-title">Card Title 2</h5>
+                    <p className="card-text">Some content here...</p>
+                    <a href="#" className="btn btn-primary">Read More</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-md-2 mb-4">
+                <div className="card">
+                  <img className="card-img-top" src={accomodation} alt="Card image cap" />
+                  <div className="card-body">
+                    <h5 className="card-title">Card Title 3</h5>
+                    <p className="card-text">Some content here...</p>
+                    <a href="#" className="btn btn-primary">Read More</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-md-2 mb-4">
+                <div className="card">
+                  <img className="card-img-top" src={accomodation} alt="Card image cap" />
+                  <div className="card-body">
+                    <h5 className="card-title">Card Title 5</h5>
+                    <p className="card-text">Some content here...</p>
+                    <a href="#" className="btn btn-primary">Read More</a>
+                  </div>
+                </div>
+              </div>
 
             </div>
           </div>
         </div>
+
 
 
 
