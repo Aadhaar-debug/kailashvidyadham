@@ -1,5 +1,7 @@
 import React from "react";
 import "./Home.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import banner from "../assets/images/kailashbanner.png";
 import templeImage from '../assets/images/crimson_gold_temple.png';
 import logo from "../assets/images/crimson_gold_temple.png";  
@@ -10,6 +12,10 @@ import accomodation from "../assets/images/Accomodation.png";
 import prasaddaan from "../assets/images/Prasaddaan.png";  
 import seva from "../assets/images/seva.png";  
 import donation from "../assets/images/donation.png";  
+import photo4 from "../assets/images/photo (4).jpeg";   
+import photo18 from "../assets/images/photo (18).jpeg";   
+import photo19 from "../assets/images/photo (19).jpeg";   
+import photo20 from "../assets/images/photo (20).jpeg";   
 
 const Home = () => {
   return (
@@ -145,6 +151,84 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+
+        <div style={{ marginTop:'15vh',fontSize: '40px',color: 'gold' ,display:'flex', alignItems:'center', justifyContent:'center'}}>Photo Gallery</div>
+          <div className="photogallerycontainer">
+            <div className="photogallerycontainer-2">
+              <div className="container" style={{ marginTop: '5vh' }}>
+                <div 
+                  id="carouselExampleIndicators" 
+                  className="carousel slide" 
+                  data-bs-ride="carousel" 
+                  data-bs-interval="3000"
+                >
+                  
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <img 
+                        src={photo4} 
+                        alt="prasaddaan" 
+                        className="prasaddaan" 
+                        style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '50px' }} 
+                      />
+                    </div>
+                    <div className="carousel-item">
+                      <img 
+                        src={photo18} 
+                        alt="prasaddaan" 
+                        className="prasaddaan" 
+                        style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '50px' }} 
+                      />
+                    </div>
+                    <div className="carousel-item">
+                      <img 
+                        src={photo19} 
+                        alt="prasaddaan" 
+                        className="prasaddaan" 
+                        style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '50px' }} 
+                      />
+                    </div>
+                  </div>
+
+                  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon"></span>
+                  </button>
+                  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span className="carousel-control-next-icon"></span>
+                  </button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            height: '100vh' ,
+            marginTop : '-45vh'
+            }}>
+              <a 
+                href="https://google.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ 
+                  textDecoration: 'none', 
+                  backgroundColor: 'rgb(191,0,0)', 
+                  color: 'gold', 
+                  padding: '15px 30px', 
+                  borderRadius: '10px', 
+                  fontSize: '1.5rem',  // approx h3 size
+                  fontWeight: 'bold' 
+                }}
+              >
+                View More >
+              </a>
+            </div>
+
+          
+
 
 
 
