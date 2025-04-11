@@ -55,7 +55,7 @@ const Home = () => {
             <div className="newscontent">
               <div style={{color : 'gold' , fontSize  :'25px' , fontWeight: '700'}}>
                   <ul><h5 style={{fontSize : '25px'}}>What's New</h5></ul>
-                  <ul style={{marginTop : '-2vh', fontSize : '15px' , width  :'35vh'}}><p>Morning Daily Pooja Timing shifted</p></ul>
+                  <ul style={{marginTop : '-2vh', fontSize : '15px' , width  :'35vh'}}><p>Morning Daily Pooja Timing shifted from 9AM to 7AM in the morning</p></ul>
                   <ul style={{marginTop : '-2vh', fontSize : '15px' , width  :'35vh'}}><p>Devotee Service actions live now</p></ul>
                   <ul style={{marginTop : '-2vh', fontSize : '15px' , width  :'35vh'}}><p>Devotee Accomodations available now</p></ul>
                   <ul style={{marginTop : '-2vh', fontSize : '15px' , width  :'35vh'}}><p>Morning Daily Pooja Timing shifted</p></ul>
