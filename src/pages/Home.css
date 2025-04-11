@@ -73,6 +73,96 @@
     flex-direction : row;
     color: rgb(191,0,0);
   }
+  .maincontainer2 {
+    background-color: rgb(255, 255, 255);
+    height: 200vh;
+    width: 98%;
+    margin-top: -6vh;
+    border-radius: 50px;
+    padding: 2vh;
+  }
+  .mainmaincontainer2-1 {
+    background-color: rgb(191,0,0);
+    width: 98%;
+    height: 190vh;
+    border-radius: 50px;
+    padding: 2vh;
+  }
+  .onlineformandnewscontainer {
+    height:70vh;
+    width: 98%;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    padding: 2vh;
+
+  }
+  .newscontainer {
+    background-color: rgb(191,0,0);
+    height: 100%;
+    width: 30%;
+    border-radius: 50px;
+  }
+  .onlineformcontainer {
+    width: 69%;
+    margin-left: 1%;
+    background-color: gold;
+    height: 100%;
+    border-radius: 50px;
+  }
+  .onlineform {
+    margin: 2%;
+  }
+  .newscontent {
+    margin-left: 15%;
+    margin-top: 10%;
+  }
+  .online-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+    margin-top: 1%;
+    padding: 25px;
+    background-color: #efefef;
+    border-radius: 40px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+  }
+  
+  .online-form input {
+    padding: 12px 15px;
+    background: #c1bbbb;
+    color: rgb(130, 128, 119);
+    border: 1px solid rgb(191,0,0);
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .online-form input:focus {
+    border-color: crimson;
+    background: #111;
+  }
+  
+  .online-form button {
+    padding: 12px;
+    background-color: rgb(191,0,0);
+    color: gold;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .online-form button:hover {
+    background-color: crimson;
+    color: white;
+  }
+  
   
   
 
@@ -126,4 +216,91 @@
       font-size: 14px;
       margin-bottom: 4vh;
     }
+    .maincontainer2 {
+      background-color: rgb(255, 255, 255);
+      height: 200vh;
+      width: 95%;
+      margin-top: -6vh;
+      border-radius: 50px;
+      padding: 2vh;
+    }
+    .mainmaincontainer2-1 {
+      background-color: rgb(191,0,0);
+      width: 95%;
+      height: 198vh;
+      border-radius: 50px;
+      padding: 2vh;
+    }
+    .onlineformandnewscontainer {
+      height:160vh;
+      width: 94%;
+      background-color: white;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      
+  
+    }
+    .newscontainer {
+      background-color: rgb(191,0,0);
+      height: 100vh;
+      width: 100%;
+      border-radius: 50px;
+    }
+    .onlineformcontainer {
+      width: 98%;
+      margin-left: 1%;
+      margin-top: 1vh;
+      background-color: gold;
+      height: 100vh;
+      border-radius: 50px;
+    }
+    .onlineform {
+      margin: 10%;
+    }
+    .online-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 100%;
+      margin-top: 2%;
+      padding: 25px;
+      background-color: #efefef;
+      border-radius: 25px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    }
+    
+    .online-form input {
+      padding: 12px 15px;
+      background: #c1bbbb;
+      color: rgb(130, 128, 119);
+      border: 1px solid rgb(191,0,0);
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      transition: 0.3s;
+    }
+    
+    .online-form input:focus {
+      border-color: crimson;
+      background: #111;
+    }
+    
+    .online-form button {
+      padding: 12px;
+      background-color: rgb(191,0,0);
+      color: gold;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .online-form button:hover {
+      background-color: crimson;
+      color: white;
+    }
+    
   }

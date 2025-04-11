@@ -44,10 +44,55 @@ const Home = () => {
               </div>
             </div>
       </div>
+    </div> 
+
+
+
+    <div className="maincontainer2">
+      <div className="mainmaincontainer2-1">
+        <div className="onlineformandnewscontainer">
+          <div className="newscontainer">
+            <div className="newscontent">
+              <div style={{color : 'gold' , fontSize  :'25px' , fontWeight: '700'}}>
+                What's New
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
+                  <ul style={{marginTop : '-2vh'}}><h5>Newsgvsdbvhjdcbvdj</h5></ul>
+              </div>
+            </div>
+          </div>
+          <div className="onlineformcontainer">
+            <div className="onlineform">
+              <div style={{color : 'rgb(191,0,0)' , fontSize  :'25px' , fontWeight: '700'}}>
+                <div style={{marginLeft : '2vh'}}>Apply Online</div>
+                <form className="online-form">
+                  <input type="text" placeholder="Your Name" required />
+
+                  <input type="email" placeholder="Your Email" required />
+
+                  <input type="tel" placeholder="Your Phone" required />
+
+                  <input type="text" placeholder="Booking From Date" required />
+
+                  <input type="text" placeholder="Booking To Date" required />
+
+                  <input type="text" placeholder="Pooja Category / Message" required />
+
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    
-      
+
+
     </div>
   );
 };
