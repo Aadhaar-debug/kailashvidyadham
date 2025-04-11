@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import banner from "../assets/images/kailashbanner.png";
+import templeImage from '../assets/images/crimson_gold_temple.png';
 import logo from "../assets/images/crimson_gold_temple.png";  
 import fireicon from "../assets/images/fire-icon.png";  
 import vedicicon from "../assets/images/vedic-icon.png";  
@@ -85,6 +86,34 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <div style={{ marginTop:'10vh',fontSize: '40px',color: 'gold' ,display:'flex', alignItems:'center', justifyContent:'center'}}>Devotee Services</div>
+
+        <div className="devoteeservices">
+          <div style={{ width: '100%', margin: 'auto', marginTop: '5vh' }}>
+            <div className="row justify-content-center" style={{ rowGap: '1vh' }}>
+
+              {[1, 2, 3, 4, 5].map((item) => (
+                <div className="col-md-2 mb-4" key={item}>
+                  <div className="card">
+                    <img className="card-img-top" src={templeImage} alt="Card image cap" />
+                    <div className="card-body">
+                      <h5 className="card-title">Card Title</h5>
+                      <p className="card-text">Some content here...</p>
+                      <a href="#" className="btn btn-primary">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
       </div>
     </div>
 

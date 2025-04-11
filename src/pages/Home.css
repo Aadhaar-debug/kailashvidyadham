@@ -224,7 +224,7 @@
     }
     .maincontainer2 {
       background-color: rgb(255, 255, 255);
-      height: 200vh;
+      height: 600vh;
       width: 100%;
       margin-top: -6vh;
       border-radius: 50px;
@@ -233,9 +233,15 @@
     .mainmaincontainer2-1 {
       background-color: rgb(191,0,0);
       width: 100%;
-      height: 198vh;
+      height: 580vh;
       border-radius: 50px;
       padding: 2vh;
+    }
+    .devoteeservices {
+      margin-left: 12%;
+    }
+    .card {
+      width: 20rem;
     }
     .onlineformandnewscontainer {
       height:160vh;
