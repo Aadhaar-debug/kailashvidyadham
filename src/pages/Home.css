@@ -76,7 +76,7 @@
   }
   .maincontainer2 {
     background-color: rgb(255, 255, 255);
-    height: 450vh;
+    height: 430vh;
     width: 100%;
     margin-top: -6vh;
     border-radius: 50px;
@@ -85,7 +85,7 @@
   .mainmaincontainer2-1 {
     background-color: rgb(191,0,0);
     width: 100%;
-    height: 300vh;
+    height: 420vh;
     border-radius: 50px;
     padding: 2vh;
   }
@@ -232,7 +232,33 @@
     width: 100%;
     height: 30vh;
   }
-  
+  .homeaboutcontainer {
+    width: 100%;
+    height:110vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .aboutbackgroundimage {
+    width: 90%;
+    height: 100vh;
+    background-color: rgb(184, 97, 97);
+    background-image: 
+  linear-gradient(rgba(184, 97, 97, 0.6), rgba(184, 97, 97, 0.6)),
+  url("/src/assets/images/mandir2.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .homeabouttext {
+    margin-top: 5vh;
+    color: white;
+    width: 90vh;
+    margin-left: 8%;
+  }
   
   
 
@@ -303,7 +329,7 @@
     }
     .maincontainer2 {
       background-color: rgb(255, 255, 255);
-      height: 710vh;
+      height: 860vh;
       width: 100%;
       margin-top: -6vh;
       border-radius: 50px;
@@ -312,7 +338,7 @@
     .mainmaincontainer2-1 {
       background-color: rgb(191,0,0);
       width: 100%;
-      height: 700vh;
+      height: 850vh;
       border-radius: 50px;
       padding: 2vh;
     }
@@ -432,5 +458,41 @@
       background-color: rgb(191,0,0);
       border-radius: 50px;
     }
+    .homeaboutcontainer {
+      width: 100%;
+      height:110vh;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .aboutbackgroundimage {
+      width: 100%;
+      height: 230vh;
+      margin-top: 125vh;
+      background-color: rgb(184, 97, 97);
+      background-image: 
+      linear-gradient(rgba(184, 97, 97, 0.6), rgba(184, 97, 97, 0.6)),
+      url("/src/assets/images/mandir2.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .aboutbackgroundimage img {
+      margin-top: 0vh;
+      height: 80vh;
+    }
+    
+    .homeabouttext {
+      margin-top: 5vh;
+      color: white;
+      width: 50vh;
+    }
+    
+    
     
   }

@@ -15,7 +15,7 @@ import donation from "../assets/images/donation.png";
 import photo4 from "../assets/images/photo (4).jpeg";   
 import photo18 from "../assets/images/photo (18).jpeg";   
 import photo19 from "../assets/images/photo (19).jpeg";   
-import photo20 from "../assets/images/photo (20).jpeg";   
+import templeimage10 from "../assets/images/templeimage.jpg";   
 
 const Home = () => {
   return (
@@ -97,7 +97,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div style={{ marginTop:'15vh',fontSize: '40px',color: 'gold' ,display:'flex', alignItems:'center', justifyContent:'center'}}>Devotee Services</div>
+        <div style={{ marginTop:'15vh',fontSize: '35px',color: 'gold' ,display:'flex', alignItems:'center', justifyContent:'center'}}>Devotee Services</div>
 
         <div className="devoteeservicescontainer">
           <div className="card">
@@ -225,6 +225,47 @@ const Home = () => {
               >
                 View More >
               </a>
+            </div>
+
+
+            <div style={{ marginTop:'-25vh',fontSize: '35px',color: 'gold' ,display:'flex', alignItems:'center', justifyContent:'center'}}>About</div>
+
+
+            <div className="homeaboutcontainer">
+              <div className="aboutbackgroundimage">
+                <div>
+                  <img src={templeimage10} alt="prasaddaan" className="prasaddaan" style={{borderRadius:'50px'}}/>
+                </div>
+                <div className="homeabouttext">
+                  <h1 style={{color:'gold'}}>Kailash Vidya Dham</h1>
+                  <div>
+                    <p>QRHQ+3JG, Chinore, Jammu, Jammu and Kashmir 180013</p>
+                  </div>
+                  <div>
+                    <p>For over 60 years, the sacred Kalash with Yadam Temple, located in the 
+                      heart of Chinur, Jammu, has stood not just as a place of worship, but 
+                      as a symbol of service, compassion, and community care.
+                      Deeply rooted in the values of humanity and devotion, this temple has 
+                      dedicated itself to uplifting those in need — serving orphanages, old 
+                      age homes, widowed women, abandoned children, and even stray animals.
+                       It has become a spiritual home for souls seeking peace, purpose, and
+                        divine connection.
+                      With a legacy like no other, the temple has been the proud host of over
+                       1,25,000+ marriage ceremonies, bringing together lives and families 
+                       across generations. Supported by a dedicated group of 5000+ priests 
+                       and scholars, and offering over 600+ unique types of Pooja services, Kalash with Yadam is truly a one-of-a-kind spiritual powerhouse.
+                      Beyond religious practices, the temple has also been at the forefront 
+                      of various social causes and government-organized initiatives like:</p>
+                    <div>- Beti Bachao Beti Padhao Campaign</div>
+                    <div>- Gaumata Raksha Drives</div>
+                    <div>- Support for Homeless & Hostage Victims</div>
+                    <div>- -Welfare Events for Underprivileged </div>
+                    <div>&nbsp;</div>
+                    <div>As it continues to grow and evolve, Kalash with Yadam Temple remains committed to being more than just a place of worship — it’s a beacon of hope, service, and spiritual transformation for all who walk through its doors.</div>
+                  </div>
+                </div>
+                
+              </div>
             </div>
 
           
