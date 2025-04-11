@@ -329,7 +329,7 @@
     }
     .maincontainer2 {
       background-color: rgb(255, 255, 255);
-      height: 860vh;
+      height: 870vh;
       width: 100%;
       margin-top: -6vh;
       border-radius: 50px;
@@ -338,7 +338,7 @@
     .mainmaincontainer2-1 {
       background-color: rgb(191,0,0);
       width: 100%;
-      height: 850vh;
+      height: 860vh;
       border-radius: 50px;
       padding: 2vh;
     }
@@ -468,7 +468,7 @@
     }
     .aboutbackgroundimage {
       width: 100%;
-      height: 230vh;
+      height: 260vh;
       margin-top: 125vh;
       background-color: rgb(184, 97, 97);
       background-image: 
@@ -484,13 +484,14 @@
     }
     .aboutbackgroundimage img {
       margin-top: 0vh;
+      width: 40vh;
       height: 80vh;
     }
     
     .homeabouttext {
       margin-top: 5vh;
       color: white;
-      width: 50vh;
+      width: 40vh;
     }
     
     
