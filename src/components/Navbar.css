@@ -109,6 +109,7 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
+      margin-top: -2vh;
     }
     .logo-section {
         display: flex;
