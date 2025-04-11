@@ -67,7 +67,7 @@ const Home = () => {
           <div className="onlineformcontainer">
             <div className="onlineform">
               <div style={{color : 'rgb(191,0,0)' , fontSize  :'25px' , fontWeight: '700'}}>
-                <div style={{marginLeft : '2vh'}}>Apply Online</div>
+                <div style={{marginLeft : '2vh' , marginTop : '-1vh' , marginBottom : '1vh'}}>Apply Online</div>
                 <form className="online-form">
                   <input type="text" placeholder="Your Name" required />
 
