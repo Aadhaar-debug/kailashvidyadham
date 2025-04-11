@@ -3,7 +3,7 @@
     color: white;
     padding: 1rem 2rem;
     display: flex;
-    height: 8vh;
+    height: 10vh;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -74,7 +74,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    margin-top: -1vh;
+    margin-top: 0vh;
   }
   
   .news-text {
@@ -99,6 +99,16 @@
   @media (max-width: 768px) {
     .mobile-menu-icon {
       display: block;
+    }
+    .navbar {
+      background-color: rgb(191, 0, 0);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      height: 10vh;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
     }
     .logo-section {
         display: flex;
@@ -155,6 +165,27 @@
         border-radius: 5px;
         display: none;
       }
+      .news-strip {
+        background-color: gold;
+        color: black;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        height: 3vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-top: 0vh;
+      }
+      
+      .news-text {
+        display: inline-block;
+        padding-left: 100%;
+        animation: moveText 15s linear infinite;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+      
       
   }
   

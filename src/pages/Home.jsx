@@ -16,7 +16,7 @@ const Home = () => {
 
           <h3>Perform your pooja with the Best group of</h3>
           <div className="dividingline"></div>
-          <h1>Professional Purohits & Pandits</h1>
+          <h1 style={{color :'rgb(191,0,0)'}}>Professional Purohits & Pandits</h1>
 
           <button className="banner-button">Book Now</button>
       </div>
@@ -26,21 +26,21 @@ const Home = () => {
               <img src={fireicon} alt="fireicon" className="progressicon1" />
               <div style={{display : 'flex' , flexDirection : 'column'}}>
                 <div><h3>125000+</h3></div>
-                <div style={{marginTop : '-6vh'}}><h3>Poojas Performed</h3></div>
+                <div className="progressiontitle"><h3>Poojas Performed</h3></div>
               </div>
             </div>
             <div style={{display : 'flex'}}>
               <img src={vedicicon} alt="vedicicon" className="progressicon2" />
               <div style={{display : 'flex' , flexDirection : 'column'}}>
                 <div><h3>600+</h3></div>
-                <div style={{marginTop : '-6vh'}}><h3>Vedic Priests</h3></div>
+                <div className="progressiontitle"><h3>Vedic Priests</h3></div>
               </div>
             </div>
             <div style={{display : 'flex'}}>
               <img src={poojaicon} alt="poojaicon" className="progressicon3" />
               <div style={{display : 'flex' , flexDirection : 'column'}}>
                 <div><h3>5000+</h3></div>
-                <div style={{marginTop : '-6vh'}}><h3>Types of Poojas</h3></div>
+                <div className="progressiontitle"><h3>Types of Poojas</h3></div>
               </div>
             </div>
       </div>
@@ -77,9 +77,7 @@ const Home = () => {
 
                   <input type="tel" placeholder="Your Phone" required />
 
-                  <input type="text" placeholder="Booking From Date" required />
-
-                  <input type="text" placeholder="Booking To Date" required />
+                  <input type="text" placeholder="Booking To and From Date" required />
 
                   <input type="text" placeholder="Pooja Category / Message" required />
 
