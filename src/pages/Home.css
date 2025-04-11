@@ -247,7 +247,8 @@
 
     }
     .newscontent {
-      margin-left: 5%;
+      height: 20vh;
+      margin-left: 0%;
       margin-top: 10%;
     }
     .newscontainer {
