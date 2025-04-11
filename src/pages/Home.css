@@ -400,7 +400,7 @@
     
     .online-form input:focus {
       border-color: crimson;
-      background: #111;
+      background: #ffffff;
     }
     
     .online-form button {
