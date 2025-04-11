@@ -254,7 +254,7 @@
     justify-content: center;
   }
   .homeabouttext {
-    margin-top: 5vh;
+    margin-top: 0vh;
     color: white;
     width: 90vh;
     margin-left: 8%;
@@ -372,7 +372,7 @@
       border-radius: 50px;
     }
     .onlineform {
-      margin: 10%;
+      margin: 5%;
       margin-top: 15%;
     }
     .online-form {
