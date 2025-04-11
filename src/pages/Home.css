@@ -260,14 +260,14 @@
     }
     .onlineform {
       margin: 10%;
-      margin-top: 20%;
+      margin-top: 15%;
     }
     .online-form {
       display: flex;
       flex-direction: column;
       gap: 15px;
       max-width: 100%;
-      margin-top: 2%;
+      margin-top: 10%;
       padding: 25px;
       background-color: #efefef;
       border-radius: 25px;
