@@ -90,7 +90,7 @@
     padding: 2vh;
   }
   .onlineformandnewscontainer {
-    height:70vh;
+    height:85vh;
     width: 100%;
     background-color: white;
     border-radius: 50px;
@@ -101,7 +101,7 @@
   }
   .newscontainer {
     background-color: rgb(191,0,0);
-    height: 100%;
+    height: 80vh;
     width: 30%;
     border-radius: 50px;
   }
@@ -110,14 +110,14 @@
     width: 69%;
     margin-left: 1%;
     background-color: gold;
-    height: 100%;
+    height: 80vh;
     border-radius: 50px;
   }
   .progressiontitle {
     margin-top: -2vh;
   }
   .onlineform {
-    margin: 2%;
+    margin: 3%;
   }
   .newscontent {
     margin-left: 5%;
@@ -128,7 +128,7 @@
     flex-direction: column;
     gap: 10px;
     max-width: 100%;
-    margin-top: 0%;
+    margin-top: 2%;
     padding: 25px;
     background-color: #ffffff;
     border-radius: 40px;
