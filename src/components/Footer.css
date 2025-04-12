@@ -40,18 +40,27 @@
     justify-content: center;
     align-items: center;
     color: white;
-    height: 5vh;
+    height: 8vh;
     background-color: maroon;
 }
 .footerabout{
     display: block;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding: 2vh;
     align-items: center;
     justify-content: space-around;
     color: white;
-    height: 50vh;
+    height: 61vh;
     background-color: rgb(191,0,0);
+}
+.about {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    background-color: rgb(191,0,0);
+    align-items: center;
 }
 
 .divider2 {
