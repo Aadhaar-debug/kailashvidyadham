@@ -8,6 +8,9 @@
     align-items: center;
     position: relative;
   }
+  .navsocialicons {
+    display: none;
+  }
   
   .logo-section {
     display: flex;
@@ -166,6 +169,23 @@
         border-radius: 5px;
         display: none;
       }
+
+      .navsocialicons {
+        display: block;
+        margin-top: 0vh;
+        width: 100%;
+        display: flex;
+        background-color: rgb(191, 0, 0);
+      }
+      .navphonenumber {
+        margin-top: 80%;
+      }
+
+
+
+
+
+
       .news-strip {
         background-color: gold;
         color: black;
