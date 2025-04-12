@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css"; // Import the CSS file for styling
 import googleplayios   from "../assets/images/googleplayios.png"; // Import the image for the app download section
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Footer = () => {
   return (
@@ -24,28 +25,68 @@ const Footer = () => {
       </div>
 
       {/* Second Section */}
-      <div className="footer-section second-section">
+      <div className="footerabout">
         <div className="column">
           <h3>About</h3>
-          <p>Learn more about our temple and its history.</p>
-        </div>
-        <div className="column">
-          <h3>Support</h3>
-          <p>Contact us for support or inquiries.</p>
-        </div>
-        <div className="column">
-          <h3>Locations</h3>
-          <p>Find our temple locations near you.</p>
+          <p>Overview</p>
+          <p>Temple</p>
+          <p>Temple Story</p>
+          <p>General Information</p>
+          <p>GoSamrakshana Trust</p>
         </div>
         <div className="column">
           <h3>Donations</h3>
-          <p>Support us by making a donation.</p>
+          <p>Overview</p>
+          <p>e-Hundi</p>
+          <p>AnnaPrasadam Trust</p>
+          <p>Agama Patasala Trust</p>
+          <p>GoSamrakshana Trust</p>
         </div>
+        <div className="column">
+          <h3>About</h3>
+          <p>Overview</p>
+          <p>Temple</p>
+          <p>Temple Story</p>
+          <p>General Information</p>
+          <p>GoSamrakshana Trust</p>
+        </div>
+        <div className="column">
+          <h3>Donations</h3>
+          <p>Overview</p>
+          <p>e-Hundi</p>
+          <p>AnnaPrasadam Trust</p>
+          <p>Agama Patasala Trust</p>
+          <p>GoSamrakshana Trust</p>
+        </div>
+
+        <div className="divider2"></div>
+
+        <div className="aboutsocials">
+          <h3>Follow Us</h3>
+          <div className="social-icons">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-youtube"></i>
+            </a>
+            <a href="mailto:example@gmail.com">
+              <i className="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
       </div>
 
       {/* Third Section */}
-      <div className="footer-section third-section">
-        <p>&copy; 2023 Kailash Vidyadham. All rights reserved.</p>
+      <div className="Copyright">
+        <div><p style={{marginTop:'2vh'}}>&copy; 2023 Kailash Vidyadham. All rights reserved.</p></div>
       </div>
     </footer>
   );
