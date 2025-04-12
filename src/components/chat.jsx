@@ -24,10 +24,18 @@ const ChatButton = () => {
     };
 
     return (
+        <a
+        href="https://wa.me/919419362813"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ textDecoration: 'none' }}
+        >
         <button style={buttonStyle}>
             <FaWhatsapp style={iconStyle} />
             Chat
         </button>
+        </a>
+
     );
 };
 
