@@ -1,0 +1,76 @@
+.download-subscribe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 25vh;
+    margin-top: 20px;
+    background-color: maroon;
+}
+.btn {
+    background-color: rgb(191,0,0);
+    border-color: gold;
+    color: gold;
+}
+.divider {
+    width: 2PX;
+    height: 100px;
+    background-color: #eb2929;
+    margin-left: 10VH;
+    margin-RIGHT: 10VH;
+}
+.subscribe input {
+    margin-right: 4vh;
+    border-radius: 25px;
+    height: 5vh;
+}
+.download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .download-subscribe {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        height: 50vh;
+        margin-top: 20px;
+        background-color: maroon;
+    }
+    .download {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .subscribe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .download-subscribe h2 {
+    }
+    .divider {
+        width: 90%;
+        height: 3px;
+        background-color: #eb2929;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        
+    }
+    .btn {
+        background-color: rgb(191,0,0);
+        border-color: gold;
+        color: gold;
+    }
+    
+}
