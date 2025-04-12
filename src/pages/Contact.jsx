@@ -1,21 +1,24 @@
 const Contact = () => {
   return (
-    <div className="flex flex-col items-center justify-center text-center px-4 py-20 gap-8">
-
-      <h1 className="text-4xl md:text-5xl font-bold text-purple-600">
-        Contact Us
-      </h1>
-
-      <p className="max-w-2xl text-gray-600 text-lg">
-        Let’s build something great together. Reach out anytime.
-      </p>
-
-      <div className="flex flex-col gap-4 text-gray-700 text-lg">
-        <p>Email: <a href="mailto:hello@yourdomain.com" className="text-purple-600 hover:underline">hello@yourdomain.com</a></p>
-        <p>Phone: <a href="tel:+919999999999" className="text-purple-600 hover:underline">+91 99999 99999</a></p>
-        <p>Location: New Delhi, India</p>
+    <div style={{ backgroundColor: 'rgb(191,0,0)', color: 'white', padding: '20px', textAlign: 'center' }}>
+      <h1 style={{color:'gold' , marginTop:'5vh' , marginBottom:'5vh'}}>Contact Us</h1>
+      <p>Phone: +91-9419362813</p>
+      <p>Email - akhandbharat@gmail.com</p>
+      <p>Address: QRHQ+3JG , Upper Chinore , Jammu, Jammu and Kashmir , 180013</p>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '5vh', marginTop: '10px' , marginBottom:'5vh'}}> 
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style={{ width: '30px', height: '30px' }} />
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" style={{ width: '30px', height: '30px' }} />
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style={{ width: '30px', height: '30px' }} />
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" style={{ width: '30px', height: '30px' }} />
+        </a>
       </div>
-
     </div>
   )
 }
