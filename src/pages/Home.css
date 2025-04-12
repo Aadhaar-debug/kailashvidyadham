@@ -34,6 +34,19 @@
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s ease;
+    animation: pulse 1s ease-in-out infinite;
+    transition: transform 0.3s ease-in-out;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.12);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 
   .home-content img {
