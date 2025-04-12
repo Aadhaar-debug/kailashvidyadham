@@ -7,6 +7,7 @@ import About from './pages/About'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Chat from './components/chat'
+import MoveToTop from './components/movetotop'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           </Routes>
         </div>
 
+        <MoveToTop />
         <Chat />
         <Footer />
       </div>
