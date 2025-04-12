@@ -2,13 +2,13 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer style={{ height: "120vh", display: "flex", flexDirection: "column" }}>
+    <footer style={{ height: "130vh", display: "flex", flexDirection: "column" }}>
       {/* First Part */}
       <div
         style={{
           height: "30vh",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
           padding: "20px",
           backgroundColor: "maroon",
@@ -23,14 +23,20 @@ const Footer = () => {
               style={{ height: "50px", marginRight: "10px" }}
             />
           </a>
-          <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Download_on_the_App_Store_Badge.svg"
-              alt="Apple App Store"
-              style={{ height: "50px" }}
-            />
-          </a>
         </div>
+
+
+        <div style={{
+          height : '20vh',
+          width : '0.3vh',
+          backgroundColor : 'white',
+          marginLeft : '15vh',
+          marginRight : '15vh',
+        }}>
+
+        </div>
+
+
         <div>
           <h3>Subscribe to Our Newsletter</h3>
           <form>
@@ -39,7 +45,7 @@ const Footer = () => {
               placeholder="Enter your email"
               style={{
                 padding: "10px",
-                marginRight: "10px",
+                marginRight: "0px",
                 border: "1px solid #ccc",
                 borderRadius: "5px",
               }}
@@ -73,21 +79,41 @@ const Footer = () => {
         }}
       >
         <div>
-          <h3>About</h3>
-          <p>Learn more about our temple and its history.</p>
+          <h3>Donations</h3>
+          <p>Overview</p>
+          <p>e-Hundi</p>
+          <p>AnnaPrasadam Trust</p>
+          <p>Agama Patasala Trust</p>
+          <p>GoSamrakshana Trust</p>
+          <p>Pranadana Trust</p>
+          <p>Srisaila TV</p>
+          <p>Swachh Srisailam</p>
         </div>
         <div>
-          <h3>Contact</h3>
-          <p>Email: info@temple.com</p>
-          <p>Phone: +123 456 7890</p>
-        </div>
-        <div>
-          <h3>Services</h3>
-          <p>Explore the services we offer to our devotees.</p>
+          <h3>Online Booking</h3>
+          <p>Overview</p>
+          <p>Pratyaksha Seva Booking</p>
+          <p>Paroksha Seva Booking</p>
+          <p>Darshanam Tickets</p>
+          <p>Donations</p>
+          <p>Accommodation</p>
+          <p>Publications</p>
         </div>
         <div>
           <h3>Locations</h3>
-          <p>Find our temple locations near you.</p>
+          <p>Jammu</p>
+          <p>Maharashtra</p>
+          <p>Bengaluru</p>
+          <p>Rishikesh</p>
+          <p>Haridwar</p>
+          <p>Dharamshala</p>
+        </div>
+        <div>
+          <h3>Support</h3>
+          <p>FAQ's</p>
+          <p>Facilities to Pilgrims</p>
+          <p>Connectivity</p>
+          <p>Contact Us</p>
         </div>
       </div>
 
@@ -103,8 +129,24 @@ const Footer = () => {
           padding: "20px",
         }}
       >
-        <p>&copy; {new Date().getFullYear()} Kailash Vidyadham. All rights reserved.</p>
-        <p>Contact us: info@kailashvidyadham.com | +123 456 7890</p>
+        <p style={{marginTop : '2vh'}}>&copy; {new Date().getFullYear()} Kailash Vidyadham. All rights reserved.</p>
+        
+      </div>
+
+      {/* Third Part */}
+      <div
+        style={{
+          height: "0.5vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "rgb(216, 205, 205)",
+          padding: "20px",
+        }}
+      >
+        <p style={{marginTop : '2vh'}}> Site Developed By Pingfence</p>
+        
       </div>
     </footer>
   );
