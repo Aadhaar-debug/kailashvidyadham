@@ -3,7 +3,6 @@ import "./Home.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import banner from "../assets/images/kailashbanner.png";
-import templeImage from '../assets/images/crimson_gold_temple.png';
 import logo from "../assets/images/crimson_gold_temple.png";  
 import fireicon from "../assets/images/fire-icon.png";  
 import vedicicon from "../assets/images/vedic-icon.png";  
