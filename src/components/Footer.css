@@ -30,6 +30,9 @@
     align-items: center;
     justify-content: center;
 }
+.download img {
+    width: 50vh;
+}
 
 @media screen and (max-width: 768px) {
     
@@ -50,14 +53,16 @@
         justify-content: center;
         gap: 10px;
     }
+    .download img {
+        width: 50vh;
+    }
+   
     .subscribe {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 10px;
-    }
-    .download-subscribe h2 {
     }
     .divider {
         width: 90%;
