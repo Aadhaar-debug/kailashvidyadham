@@ -94,7 +94,7 @@ const Footer = () => {
 
       {/* Third Section */}
       <div className="Copyright">
-        <div><p style={{marginTop:'2vh'}}>&copy; 2023 Kailash Vidyadham. All rights reserved.</p></div>
+        <div><p style={{marginTop:'2vh'}}>&copy; 2025 Kailash Vidyadham. All rights reserved.</p></div>
       </div>
     </footer>
   );
