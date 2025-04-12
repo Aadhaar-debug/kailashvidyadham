@@ -11,6 +11,10 @@
   .navsocialicons {
     display: none;
   }
+
+  .navphonenumber {
+    display: none;
+  }
   
   .logo-section {
     display: flex;
