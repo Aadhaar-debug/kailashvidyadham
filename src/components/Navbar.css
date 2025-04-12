@@ -184,6 +184,7 @@
         background-color: rgb(191, 0, 0);
       }
       .navphonenumber {
+        display: block;
         margin-top: 110%;
       }
 
