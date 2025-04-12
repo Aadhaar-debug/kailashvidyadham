@@ -54,7 +54,8 @@
         gap: 10px;
     }
     .download img {
-        width: 50vh;
+        width: 45vh;
+        height: 10vh;
     }
    
     .subscribe {
