@@ -89,6 +89,10 @@
   .social-icons a:hover {
     color: gold;
   }
+  .pingfencelogo {
+    width: 1px;
+    height: 1px;
+  }
   
 
 @media screen and (max-width: 768px) {

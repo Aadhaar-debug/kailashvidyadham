@@ -3,6 +3,7 @@ import "./Footer.css"; // Import the CSS file for styling
 import googleplayios   from "../assets/images/googleplayios.png"; // Import the image for the app download section
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import footerbg from "../assets/images/footerbg.png"; // Import the background image for the footer
+import pingfence from "../assets/images/pingfecne.png"; // Import the pingfence image
 
 const Footer = () => {
   return (
@@ -95,6 +96,7 @@ const Footer = () => {
       {/* Third Section */}
       <div className="Copyright">
         <div><p style={{marginTop:'2vh'}}>&copy; 2025 Kailash Vidyadham. All rights reserved.</p></div>
+        <div><img src={pingfence} alt="pingfence" style={{ width: '25px', height: '25px' }} className="img-fluid" /></div>
       </div>
     </footer>
   );
