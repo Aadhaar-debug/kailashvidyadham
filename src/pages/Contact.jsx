@@ -27,7 +27,7 @@ const Contact = () => {
           <img src={photo22} alt="Contact" />
         </div>
         <div className="contacttext">
-          <h2 style={{marginTop:'3vh'}} >Send a Message</h2>
+          <h2 style={{marginTop:'8vh',}} >Send a Message</h2>
           <form>
             <div style={{ marginBottom: '10px' }}>
               <label htmlFor="name" style={{ display: 'block', marginBottom: '5px' }}>Name:</label>
