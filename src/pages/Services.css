@@ -1,3 +1,26 @@
+.servicescontainer {
+  height: 160vh;
+  background-color: rgb(191,0,0);
+  margin-bottom: -3vh;
+  padding: 3vh;
+}
+.card {
+  background-color: white;
+  border-radius: 15px;
+}
+.servicecatalog {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3%;
+  gap: 5%;
+}
+.servicesearchbar {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  width: 100%;
+}
 .image-container {
     position: relative;
     width: 100%;
@@ -7,9 +30,6 @@
     background-size: cover;
     background-position: center;
   }
-  
-
-
 .gradient-overlay {
     position: absolute;
     top: 0;
@@ -18,5 +38,29 @@
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)); /* or any gradient */
     pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .servicescontainer {
+    height: 550vh;
+  }
+  .carousel-inner {
+    width: 90%;
+    margin-left: 5%;
+  }
+  .servicecatalog {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    width: 100%;
+    height: 35vh;
+    margin-top: 5vh;
+  }
+  .image-container {
+    height: 30vh;
+  }
+  
 }
   

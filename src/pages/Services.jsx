@@ -13,73 +13,217 @@ import { useEffect } from 'react';
 
 const Services = () => {
   return (
-    <div
+    <div className='servicescontainer'>
+
+        <div className="servicesearchbar">
+          <form className="container-fluid">
+            <div className="input-group">
+              <span className="input-group-text" id="basic-addon1">🔍</span>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search Service"
+                aria-label="Search Service"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+          </form>
+        </div>
+
+
+      <div
       id="carouselExample"
       className="carousel slide"
       data-bs-ride="carousel"
       style={{ maxHeight: '60vh', overflow: 'hidden' }}
-    >
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img
-            src={photo5}
-            className="d-block w-100"
-            alt="Slide 1"
-            style={{ objectFit: 'cover', height: '40vh' }}
-          />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>First Slide</h5>
-            <p>Some representative placeholder content.</p>
+      >
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img
+              src={photo5}
+              className="d-block w-100"
+              alt="Slide 1"
+              style={{ objectFit: 'cover', height: '40vh', borderRadius:'25px' }}
+            />
+            <div className="carousel-caption d-none d-md-block">
+              <h5>First Slide</h5>
+              <p>Some representative placeholder content.</p>
+            </div>
+          </div>
+
+          <div className="carousel-item">
+            <img
+              src={photo19}
+              className="d-block w-100"
+              alt="Slide 2"
+              style={{ objectFit: 'cover', height: '40vh', borderRadius:'25px' }}
+            />
+            <div className="carousel-caption d-none d-md-block">
+              <h5>Second Slide</h5>
+              <p>Another cool caption.</p>
+            </div>
+          </div>
+
+          <div className="carousel-item">
+            <img
+              src={photo16}
+              className="d-block w-100"
+              alt="Slide 3"
+              style={{ objectFit: 'cover', height: '40vh', borderRadius:'25px' }}
+            />
+            <div className="carousel-caption d-none d-md-block">
+              <h5>Third Slide</h5>
+              <p>Final caption here.</p>
+            </div>
           </div>
         </div>
 
-        <div className="carousel-item">
-          <img
-            src={photo19}
-            className="d-block w-100"
-            alt="Slide 2"
-            style={{ objectFit: 'cover', height: '40vh' }}
-          />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Second Slide</h5>
-            <p>Another cool caption.</p>
-          </div>
-        </div>
+        {/* Controls */}
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
 
-        <div className="carousel-item">
-          <img
-            src={photo16}
-            className="d-block w-100"
-            alt="Slide 3"
-            style={{ objectFit: 'cover', height: '40vh' }}
-          />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Third Slide</h5>
-            <p>Final caption here.</p>
-          </div>
-        </div>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
 
-      {/* Controls */}
-      <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="prev"
-      >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
 
-      <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="next"
-      >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
+      <div className="servicecards">
+        
+
+        <div className="servicecatalog">
+          <div className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">
+                With supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">
+                With supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">
+                With supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">
+                With supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="servicecatalog">
+          <div className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">
+                With supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">
+                With supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">
+                With supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">
+                With supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="servicecatalog">
+          <div className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">
+                With supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">
+                With supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">
+                With supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div className="card" style={{ width: '18rem' }}>
+            <div className="card-body">
+              <h5 className="card-title">Special title treatment</h5>
+              <p className="card-text">
+                With supporting text below as a natural lead-in to additional content.
+              </p>
+              <a href="#" className="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
     </div>
   );
 };
