@@ -1,5 +1,5 @@
 .servicescontainer {
-  height: 160vh;
+  height: 180vh;
   background-color: rgb(191,0,0);
   margin-bottom: -3vh;
   padding: 3vh;
@@ -39,10 +39,17 @@
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)); /* or any gradient */
     pointer-events: none;
 }
+.servicecards {
+  border-radius: 25px;
+  background-color: rgb(228, 90, 77);
+  padding: 0.2vh;
+  margin-top: 5vh;
+  height: 110vh;
+}
 
 @media screen and (max-width: 768px) {
   .servicescontainer {
-    height: 550vh;
+    height: 570vh;
   }
   .carousel-inner {
     width: 90%;
@@ -54,12 +61,17 @@
     justify-content: center;
   }
   .card {
-    width: 100%;
+    width: 100vh;
     height: 35vh;
     margin-top: 5vh;
   }
   .image-container {
     height: 30vh;
+  }
+  .servicecards {
+    border-radius: 25px;
+    height: 500vh;
+    background-color: rgb(228, 90, 77);
   }
   
 }
