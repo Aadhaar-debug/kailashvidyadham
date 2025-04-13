@@ -1,5 +1,8 @@
 .mothercontainer {
-    height:140vh;
+    height:130vh;
+}
+.contactothertext {
+    margin-top: 10vh;
 }
 
 .contactcontain {
@@ -35,7 +38,7 @@
 }
 @media screen and (max-width: 768px) {
     .mothercontainer {
-        height:185vh;
+        height:190vh;
     }
     
     .contactcontain {
