@@ -47,6 +47,11 @@
         width: 100%;
         height: 40%;
     }
+    .contactphoto img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50px;
+    }
     .contacttext {
         width: 100%;
         height: 58%;
