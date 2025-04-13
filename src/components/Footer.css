@@ -17,7 +17,7 @@
     height: 100px;
     background-color: #eb2929;
     margin-left: 10VH;
-    margin-RIGHT: 10VH;
+    margin-right: 10VH;
 }
 .subscribe input {
     margin-right: 1vh;
@@ -58,7 +58,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin-left: 5vh;
+    margin-left: 0vh;
     justify-content: space-between;
     background-color: rgb(191,0,0);
     align-items: center;
@@ -70,7 +70,7 @@
     background-color: #ea5d5d;
 }
 .aboutsocials {
-    margin-right: 10vh;
+    margin-right: 0vh;
 }
 .social-icons {
     display: flex;
