@@ -95,8 +95,8 @@ const Footer = () => {
 
       {/* Third Section */}
       <div className="Copyright">
+      <div><img src={pingfence} alt="pingfence" style={{ width: '25px', height: '25px' }} className="img-fluid" /></div>
         <div><p style={{marginTop:'2vh'}}>&copy; 2025 Kailash Vidyadham. All rights reserved.</p></div>
-        <div><img src={pingfence} alt="pingfence" style={{ width: '25px', height: '25px' }} className="img-fluid" /></div>
       </div>
     </footer>
   );
