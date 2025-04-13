@@ -193,11 +193,11 @@
     justify-content: space-around;
     margin-left: 5%;
   }
-  .card {
+  .dscard {
     height: 95%;
     width: 35vh;
     border-radius: 50px;
-    background-color: rgb(214, 61, 61);
+    background-color: rgb(191,0,0);
     display: flex;
     flex-direction: column;
     align-items: center ;
@@ -208,12 +208,13 @@
     transition: all 0.3s ease-in-out;
     cursor: pointer;
   }
-  .card img {
+  .dscard img {
     height: 100px;
     width: 100px;
+    background-color: rgb(191,0,0);
   }
   .cardtextandtitle {
-    color: white;
+    color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -453,7 +454,7 @@
       margin-left: 0%;
     }
     
-    .card {
+    .dscard {
       height: 50vh;
       width: 90%;
       border-radius: 50px;
@@ -516,6 +517,17 @@
       font-size: 13px;
       color: white;
       width: 35vh;
+    }
+
+    .cardtextandtitle {
+      color: rgb(255, 255, 255);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 25px;
+      width: 80%;
+      margin-top: 5%;
     }
     
     

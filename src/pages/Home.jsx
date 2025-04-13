@@ -99,7 +99,7 @@ const Home = () => {
         <div style={{ marginTop:'15vh',fontSize: '35px',color: 'gold' ,display:'flex', alignItems:'center', justifyContent:'center'}}>Devotee Services</div>
 
         <div className="devoteeservicescontainer">
-          <div className="card">
+          <div className="dscard">
             <img src={prasaddaan} alt="prasaddaan" className="prasaddaan" />
             <div className="cardtextandtitle">
               <h3>Prasad Daan</h3>
@@ -109,7 +109,7 @@ const Home = () => {
               </a>
             </div>
           </div>
-          <div className="card">
+          <div className="dscard">
             <img src={seva} alt="prasaddaan" className="prasaddaan" />
             <div className="cardtextandtitle">
               <h3>Seva</h3>
@@ -119,7 +119,7 @@ const Home = () => {
               </a>
             </div>
           </div>
-          <div className="card">
+          <div className="dscard">
             <img src={accomodation} alt="prasaddaan" className="prasaddaan" />
             <div className="cardtextandtitle">
               <h3>Accomodation</h3>
@@ -129,7 +129,7 @@ const Home = () => {
               </a>
             </div>
           </div>
-          <div className="card">
+          <div className="dscard">
             <img src={donation} alt="prasaddaan" className="prasaddaan" />
             <div className="cardtextandtitle">
               <h3>Donation</h3>
@@ -139,7 +139,7 @@ const Home = () => {
               </a>
             </div>
           </div>
-          <div className="card">
+          <div className="dscard">
             <img src={poojaicon} alt="prasaddaan" className="prasaddaan" />
             <div className="cardtextandtitle">
               <h3>Poojaicon</h3>
