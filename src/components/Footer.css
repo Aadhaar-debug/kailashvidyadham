@@ -58,6 +58,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    margin-left: 5vh;
     justify-content: space-between;
     background-color: rgb(191,0,0);
     align-items: center;
@@ -67,6 +68,9 @@
     height: 25vh;
     width: 2px;
     background-color: #ea5d5d;
+}
+.aboutsocials {
+    margin-right: 10vh;
 }
 .social-icons {
     display: flex;
