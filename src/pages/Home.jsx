@@ -104,7 +104,7 @@ const Home = () => {
             <div className="cardtextandtitle">
               <h3>Prasad Daan</h3>
               <p>Contribute to our sacred Prasad distribution service. Your donation helps provide blessed food to devotees and the needy, continuing our tradition of spiritual nourishment.</p>
-              <a href="/prasad-daan" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="/prasad-daan" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <p>Contribute &gt;</p>
               </a>
             </div>
@@ -114,7 +114,7 @@ const Home = () => {
             <div className="cardtextandtitle">
               <h3>Temple Seva</h3>
               <p>Participate in various temple services including flower decoration, bhajan singing, and helping with daily rituals. Join our community of dedicated sevaks.</p>
-              <a href="/seva" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="/seva" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <p>Join Seva &gt;</p>
               </a>
             </div>
@@ -124,7 +124,7 @@ const Home = () => {
             <div className="cardtextandtitle">
               <h3>Yatri Nivas</h3>
               <p>Comfortable and peaceful accommodation for pilgrims and devotees. Clean rooms, vegetarian meals, and a spiritual environment for your stay.</p>
-              <a href="/accommodation" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="/accommodation" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <p>Book Stay &gt;</p>
               </a>
             </div>
@@ -134,7 +134,7 @@ const Home = () => {
             <div className="cardtextandtitle">
               <h3>Temple Donation</h3>
               <p>Support our temple's activities, maintenance, and charitable initiatives. Your contributions help us serve the community better and maintain our sacred traditions.</p>
-              <a href="/donate" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="/donate" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <p>Donate Now &gt;</p>
               </a>
             </div>
@@ -144,7 +144,7 @@ const Home = () => {
             <div className="cardtextandtitle">
               <h3>Special Pujas</h3>
               <p>Book special pujas for various occasions including birthdays, anniversaries, and festivals. Our experienced priests perform all rituals with devotion and precision.</p>
-              <a href="/book-puja" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="/book-puja" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <p>Book Puja &gt;</p>
               </a>
             </div>

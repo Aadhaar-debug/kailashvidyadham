@@ -90,6 +90,32 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='gold' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+.form-group select option {
+    background-color: rgb(191,0,0);
+    color: white;
+    padding: 0.75rem;
+}
+
+.form-group select:invalid {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group select:focus option {
+    color: white;
+}
+
 .submit-button {
     background-color: gold;
     color: rgb(191,0,0);
@@ -193,4 +219,29 @@
     .social-links {
         gap: 1rem;
     }
+}
+
+.status-message {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.status-message.success {
+    background-color: rgba(0, 128, 0, 0.1);
+    color: #006400;
+    border: 1px solid #006400;
+}
+
+.status-message.error {
+    background-color: rgba(220, 20, 60, 0.1);
+    color: #dc143c;
+    border: 1px solid #dc143c;
+}
+
+.submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
