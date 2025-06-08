@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from 'react-helmet-async';
 import "./About.css";
 import mandir2 from "../assets/images/mandir2.jpg";
 import photo13 from "../assets/images/photo (13).jpeg";
@@ -6,6 +7,13 @@ import photo13 from "../assets/images/photo (13).jpeg";
 const About = () => {
   return (
     <div className="about-container">
+      <Helmet>
+        <title>About Kailash Vidya Dham - History, Mission & Vision | Temple in Jammu</title>
+        <meta name="description" content="Learn about Kailash Vidya Dham's rich history, spiritual mission, and dedication to Vedic education. Discover our temple's journey of serving the community for over six decades." />
+        <meta name="keywords" content="Kailash Vidya Dham history, temple mission, Vedic education center, spiritual heritage, Jammu temple history" />
+        <link rel="canonical" href="https://kailashvidyadham.com/about" />
+      </Helmet>
+
       {/* Hero Image Section */}
       <div className="image-container">
         <div className="gradient-overlay"></div>

@@ -2,21 +2,25 @@
 body, html, #root {
   height: 100%;
   margin: 0;
+  background-color: rgb(191, 0, 0);
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: rgb(191, 0, 0);
 }
 
 /* This pushes the footer to bottom */
 .content-wrap {
   flex: 1;
+  background-color: rgb(191, 0, 0);
 }
 
 .App {
   text-align: center;
+  background-color: rgb(191, 0, 0);
 }
 
 .App-logo {
@@ -31,7 +35,7 @@ body, html, #root {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgb(191, 0, 0);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -42,7 +46,7 @@ body, html, #root {
 }
 
 .App-link {
-  color: #61dafb;
+  color: gold;
 }
 
 @keyframes App-logo-spin {
@@ -65,16 +69,19 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(191, 0, 0);
 }
 
 .app-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: rgb(191, 0, 0);
 }
 
 .content-wrap {
   flex: 1;
+  background-color: rgb(191, 0, 0);
 }
 
 /* Global transitions */
@@ -85,6 +92,7 @@ a, button, .card {
 /* Consistent spacing */
 section {
   padding: 2rem 0;
+  background-color: rgb(191, 0, 0);
 }
 
 .container {
@@ -92,6 +100,7 @@ section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  background-color: rgb(191, 0, 0);
 }
 
 /* Responsive text */

@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import emailjs from '@emailjs/browser';
 import photo22 from '../assets/images/photo (22).jpeg'
 import Popup from '../components/Popup';
@@ -78,6 +79,13 @@ const Contact = () => {
 
   return (
     <div className="mothercontainer">
+      <Helmet>
+        <title>Contact Kailash Vidya Dham | Book Pujas & Temple Services in Jammu</title>
+        <meta name="description" content="Contact Kailash Vidya Dham for puja bookings, spiritual guidance, and temple services. Reach out to our experienced priests and temple administration for all your spiritual needs." />
+        <meta name="keywords" content="contact temple, book puja, temple services, spiritual guidance, temple location, priest consultation" />
+        <link rel="canonical" href="https://kailashvidyadham.com/contact" />
+      </Helmet>
+
       <h1 className="page-title" style={{color:'gold'}}>Contact Us</h1>
       
       <div className="contactcontain">
