@@ -1,156 +1,233 @@
+.footer {
+    width: 100%;
+    background-color: rgb(191,0,0);
+    color: white;
+}
+
 .download-subscribe {
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    height: 25vh;
-    margin-top: 20px;
-    background-color: maroon;
-}
-.btn {
+    height: auto;
+    padding: 2rem;
     background-color: rgb(191,0,0);
-    border-color: gold;
+}
+
+.download, .subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.download h2, .subscribe h2 {
     color: gold;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
-.divider {
-    width: 2PX;
-    height: 100px;
-    background-color: #eb2929;
-    margin-left: 10VH;
-    margin-right: 10VH;
+
+.download p, .subscribe p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    max-width: 300px;
 }
-.subscribe input {
-    margin-right: 1vh;
-    border-radius: 10px;
-    height: 5vh;
-}
-.download {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+
 .download img {
-    width: 50vh;
+    max-width: 200px;
+    height: auto;
 }
-.Copyright {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 8vh;
-    background-color: maroon;
+
+.btn {
+    background-color: gold;
+    border: none;
+    color: rgb(191,0,0);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
-.footerabout{
-    display: block;
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.divider {
+    width: 2px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 3rem;
+}
+
+.subscribe-form {
     display: flex;
-    flex-direction: column;
-    padding: 2vh;
+    gap: 1rem;
     align-items: center;
-    justify-content: space-around;
-    color: white;
-    height: 61vh;
+}
+
+.subscribe input {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border: none;
+    min-width: 250px;
+    font-size: 0.9rem;
+}
+
+.footerabout {
+    padding: 2rem;
     background-color: rgb(191,0,0);
 }
+
 .about {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin-left: 0vh;
+    flex-wrap: wrap;
     justify-content: space-between;
-    background-color: rgb(191,0,0);
-    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.column h3 {
+    color: gold;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.column p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.column p:hover {
+    color: gold;
 }
 
 .divider2 {
-    height: 25vh;
-    width: 2px;
-    background-color: #ea5d5d;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 2rem 0;
 }
+
 .aboutsocials {
-    margin-right: 0vh;
+    width: 100%;
+    text-align: center;
 }
+
+.contact-info {
+    margin: 1.5rem 0;
+}
+
+.contact-info p {
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info i {
+    color: gold;
+    margin-right: 0.5rem;
+    width: 20px;
+}
+
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .social-icons a {
-    font-size: 24px;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .social-icons a:hover {
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
     color: gold;
-  }
-  .pingfencelogo {
-    width: 1px;
-    height: 1px;
-  }
-  
+    transform: translateY(-3px);
+}
+
+.Copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.Copyright img {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.Copyright img:hover {
+    opacity: 1;
+}
+
+.Copyright p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
 
 @media screen and (max-width: 768px) {
-    
     .download-subscribe {
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        height: 50vh;
-        margin-top: 20px;
-        background-color: rgb(165, 14, 14);
+        padding: 1rem;
     }
-    .footerabout{
-        display: none;
-    }
-    .download {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
-    .download img {
-        width: 40vh;
-        height: 10vh;
-    }
-   
-    .subscribe {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
+
     .divider {
-        width: 90%;
-        height: 3px;
-        background-color: #eb2929;
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-        
+        width: 80%;
+        height: 1px;
+        margin: 1.5rem 0;
     }
-    .btn {
-        background-color: rgb(191,0,0);
-        border-color: gold;
-        color: gold;
-    }
-    .Copyright {
-        display: flex;
-        flex-direction: row;
+
+    .subscribe-form {
+        flex-direction: column;
         width: 100%;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        height: 7vh;
-        background-color: maroon;
+        max-width: 300px;
     }
-    
+
+    .subscribe input {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .about {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .column {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .download img {
+        max-width: 150px;
+    }
+
+    .social-icons {
+        gap: 1rem;
+    }
+
+    .Copyright {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }

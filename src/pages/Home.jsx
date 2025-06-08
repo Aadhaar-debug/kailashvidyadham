@@ -32,24 +32,24 @@ const Home = () => {
       </div>
       
       <div className="progressicons">
-            <div style={{display : 'flex'}}>
+            <div className="progress-item">
               <img src={fireicon} alt="fireicon" className="progressicon1" />
-              <div style={{display : 'flex' , flexDirection : 'column'}}>
-                <div><h3>125000+</h3></div>
+              <div>
+                <h3>125000+</h3>
                 <div className="progressiontitle"><h3>Poojas Performed</h3></div>
               </div>
             </div>
-            <div style={{display : 'flex'}}>
+            <div className="progress-item">
               <img src={vedicicon} alt="vedicicon" className="progressicon2" />
-              <div style={{display : 'flex' , flexDirection : 'column'}}>
-                <div><h3>600+</h3></div>
+              <div>
+                <h3>600+</h3>
                 <div className="progressiontitle"><h3>Vedic Priests</h3></div>
               </div>
             </div>
-            <div style={{display : 'flex'}}>
+            <div className="progress-item">
               <img src={poojaicon} alt="poojaicon" className="progressicon3" />
-              <div style={{display : 'flex' , flexDirection : 'column'}}>
-                <div><h3>5000+</h3></div>
+              <div>
+                <h3>5000+</h3>
                 <div className="progressiontitle"><h3>Types of Poojas</h3></div>
               </div>
             </div>
@@ -65,12 +65,12 @@ const Home = () => {
             <div className="newscontent">
               <div style={{color : 'gold' , fontSize  :'25px' , fontWeight: '700'}}>
                   <ul><h5 style={{fontSize : '25px'}}>What's New</h5></ul>
-                  <ul style={{marginTop : '0vh', fontSize : '15px', width :'35vh'}}><p>- Morning Daily Pooja Timing shifted from 9AM to 7AM in the morning</p></ul>
-                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Devotee Service actions live now</p></ul>
-                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Devotee Accommodations available now</p></ul>
-                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Temple Premises Under CCTV Surveillance 24x7</p></ul>
-                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Special Maha Aarti Event Scheduled on Sunday Evening</p></ul>
-                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Online Donations & Offerings Portal is Live Now</p></ul>
+                  <ul style={{marginTop : '0vh', fontSize : '15px', width :'35vh'}}><p>- Special Navratri Celebrations Starting Next Week</p></ul>
+                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Daily Ganga Aarti at 6:30 PM</p></ul>
+                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- New Meditation Hall Now Open</p></ul>
+                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Monthly Bhagavad Gita Classes</p></ul>
+                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Special Puja Services for Festivals</p></ul>
+                  <ul style={{marginTop : '-1vh', fontSize : '15px', width :'35vh'}}><p>- Online Darshan Available Now</p></ul>
               </div>
             </div>
           </div>
@@ -103,49 +103,49 @@ const Home = () => {
             <img src={prasaddaan} alt="prasaddaan" className="prasaddaan" />
             <div className="cardtextandtitle">
               <h3>Prasad Daan</h3>
-              <p>Devotees were willing toprovidethe needyand incoming shadaloos withfood prasadammay donatevia the given link below</p>
-              <a href="https://example.com" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <p>Link &gt;</p>
+              <p>Contribute to our sacred Prasad distribution service. Your donation helps provide blessed food to devotees and the needy, continuing our tradition of spiritual nourishment.</p>
+              <a href="/prasad-daan" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p>Contribute &gt;</p>
               </a>
             </div>
           </div>
           <div className="dscard">
-            <img src={seva} alt="prasaddaan" className="prasaddaan" />
+            <img src={seva} alt="seva" className="prasaddaan" />
             <div className="cardtextandtitle">
-              <h3>Seva</h3>
-              <p>Devotees were willing toprovidethe needyand incoming shadaloos withfood prasadammay donatevia the given link below</p>
-              <a href="https://example.com" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <p>Link &gt;</p>
+              <h3>Temple Seva</h3>
+              <p>Participate in various temple services including flower decoration, bhajan singing, and helping with daily rituals. Join our community of dedicated sevaks.</p>
+              <a href="/seva" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p>Join Seva &gt;</p>
               </a>
             </div>
           </div>
           <div className="dscard">
-            <img src={accomodation} alt="prasaddaan" className="prasaddaan" />
+            <img src={accomodation} alt="accommodation" className="prasaddaan" />
             <div className="cardtextandtitle">
-              <h3>Accomodation</h3>
-              <p>Devotees were willing toprovidethe needyand incoming shadaloos withfood prasadammay donatevia the given link below</p>
-              <a href="https://example.com" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <p>Link &gt;</p>
+              <h3>Yatri Nivas</h3>
+              <p>Comfortable and peaceful accommodation for pilgrims and devotees. Clean rooms, vegetarian meals, and a spiritual environment for your stay.</p>
+              <a href="/accommodation" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p>Book Stay &gt;</p>
               </a>
             </div>
           </div>
           <div className="dscard">
-            <img src={donation} alt="prasaddaan" className="prasaddaan" />
+            <img src={donation} alt="donation" className="prasaddaan" />
             <div className="cardtextandtitle">
-              <h3>Donation</h3>
-              <p>Devotees were willing toprovidethe needyand incoming shadaloos withfood prasadammay donatevia the given link below</p>
-              <a href="https://example.com" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <p>Link &gt;</p>
+              <h3>Temple Donation</h3>
+              <p>Support our temple's activities, maintenance, and charitable initiatives. Your contributions help us serve the community better and maintain our sacred traditions.</p>
+              <a href="/donate" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p>Donate Now &gt;</p>
               </a>
             </div>
           </div>
           <div className="dscard">
-            <img src={poojaicon} alt="prasaddaan" className="prasaddaan" />
+            <img src={poojaicon} alt="pooja" className="prasaddaan" />
             <div className="cardtextandtitle">
-              <h3>Poojaicon</h3>
-              <p>Devotees were willing toprovidethe needyand incoming shadaloos withfood prasadammay donatevia the given link below</p>
-              <a href="https://example.com" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <p>Link &gt;</p>
+              <h3>Special Pujas</h3>
+              <p>Book special pujas for various occasions including birthdays, anniversaries, and festivals. Our experienced priests perform all rituals with devotion and precision.</p>
+              <a href="/book-puja" target="_blank" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <p>Book Puja &gt;</p>
               </a>
             </div>
           </div>
@@ -206,7 +206,7 @@ const Home = () => {
             justifyContent: 'center', 
             alignItems: 'center', 
             height: '100vh' ,
-            marginTop : '-45vh'
+            marginTop : '-40vh'
             }}>
               <a 
                 href="https://google.com" 
@@ -222,7 +222,7 @@ const Home = () => {
                   fontWeight: 'bold' 
                 }}
               >
-                View More >
+                View More 
               </a>
             </div>
 
@@ -241,33 +241,32 @@ const Home = () => {
                     <p>QRHQ+3JG, Chinore, Jammu, Jammu and Kashmir 180013</p>
                   </div>
                   <div>
-                    <p>For over 60 years, the sacred Kalash with Yadam Temple in Chinur, Jammu,
-                       has stood as a symbol of devotion, compassion, and community service — 
-                       serving orphanages, old age homes, widows, abandoned children, and even
-                        stray animals. A true spiritual home for those seeking peace and 
-                        purpose.
-                      With a legacy like no other, the temple has been the proud host of over
-                       1,25,000+ marriage ceremonies, bringing together lives and families 
-                       across generations. Supported by a dedicated group of 5000+ priests 
-                       and scholars, and offering over 600+ unique types of Pooja services, Kalash with Yadam is truly a one-of-a-kind spiritual powerhouse.
-                      Beyond religious practices, the temple has also been at the forefront 
-                      of various social causes and government-organized initiatives like:</p>
-                    <div>- Beti Bachao Beti Padhao Campaign</div>
-                    <div>- Gaumata Raksha Drives</div>
-                    <div>- Support for Homeless & Hostage Victims</div>
-                    <div>- -Welfare Events for Underprivileged </div>
-                    <div>&nbsp;</div>
-                    <div>As it continues to grow and evolve, Kalash with Yadam Temple remains committed to being more than just a place of worship — it’s a beacon of hope, service, and spiritual transformation for all who walk through its doors.</div>
-                    <div className="social-icons" style={{ display: 'flex', gap: '20px', fontSize: '30px', color: 'gold' }}>
-                      <a href="https://instagram.com" target="_blank"><i className="bi bi-instagram"></i></a>
-                      <a href="https://youtube.com" target="_blank"><i className="bi bi-youtube"></i></a>
-                      <a href="https://facebook.com" target="_blank"><i className="bi bi-facebook"></i></a>
-                      <a href="https://twitter.com" target="_blank"><i className="bi bi-twitter-x"></i></a>
-                      <a href="mailto:someone@example.com"><i className="bi bi-envelope-fill"></i></a>
-                    </div>
+                    <p>For over six decades, Kailash Vidya Dham has been a beacon of spiritual enlightenment 
+                       and service to humanity. Our temple complex serves as a sacred space for devotees 
+                       seeking divine connection, knowledge of ancient scriptures, and the practice of 
+                       traditional rituals. We maintain the highest standards of Vedic traditions while 
+                       embracing modern amenities to serve our growing community of devotees.</p>
+                  </div>
+                  <div style={{marginTop: '1rem'}}>
+                    <p>Our temple stands as a testament to the timeless wisdom of Sanatan Dharma, featuring 
+                       intricately designed sanctums, meditation halls, and learning spaces. The main temple 
+                       structure, built according to traditional Vastu Shastra principles, creates an 
+                       atmosphere of divine harmony and peace.</p>
+                  </div>
+                  <div style={{marginTop: '1rem'}}>
+                    <p>Join us in this spiritual journey as we continue to serve as a center for 
+                       spiritual growth, cultural preservation, and community welfare. Experience the 
+                       divine presence and timeless wisdom that has guided countless souls on their 
+                       path to enlightenment.</p>
+                  </div>
+                  <div className="social-icons" style={{ display: 'flex', gap: '20px', fontSize: '30px', color: 'gold', marginTop: '1.5rem' }}>
+                    <a href="https://instagram.com" target="_blank"><i className="bi bi-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank"><i className="bi bi-youtube"></i></a>
+                    <a href="https://facebook.com" target="_blank"><i className="bi bi-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i className="bi bi-twitter-x"></i></a>
+                    <a href="mailto:someone@example.com"><i className="bi bi-envelope-fill"></i></a>
                   </div>
                 </div>
-                
               </div>
             </div>
 

@@ -1,0 +1,284 @@
+.service-details-wrapper {
+  background-color: rgb(191,0,0);
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.service-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgb(191,0,0);
+  color: white;
+}
+
+.service-details-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+}
+
+.service-category-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: gold;
+  color: rgb(191,0,0);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.service-details-header h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.service-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.service-info-card,
+.service-requirements-card,
+.service-benefits-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.service-info-card h3,
+.service-requirements-card h3,
+.service-benefits-card h3 {
+  color: gold;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.service-info-card h3::after,
+.service-requirements-card h3::after,
+.service-benefits-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: gold;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  color: gold;
+  background: rgba(255, 215, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.info-item h4 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.info-item p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.requirements-list,
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.requirements-list li,
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.requirements-list li:last-child,
+.benefits-list li:last-child {
+  border-bottom: none;
+}
+
+.requirement-icon,
+.benefit-icon {
+  color: gold;
+  font-size: 1.2rem;
+}
+
+.booking-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+  border-radius: 20px;
+  padding: 3rem;
+  color: white;
+  text-align: center;
+  margin-top: 3rem;
+  backdrop-filter: blur(10px);
+}
+
+.booking-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.booking-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: gold;
+}
+
+.booking-content p {
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.booking-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: gold;
+  color: rgb(191,0,0);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: rgb(255, 215, 0);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-icon {
+  transform: translateX(3px);
+}
+
+.service-not-found {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: white;
+}
+
+.service-not-found h2 {
+  color: gold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.service-not-found p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .service-details-wrapper {
+    padding: 1rem 0.5rem;
+  }
+  
+  .service-details-container {
+    padding: 1rem;
+  }
+
+  .service-details-header {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .service-details-header h1 {
+    font-size: 2rem;
+  }
+
+  .service-details-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .booking-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+} 
