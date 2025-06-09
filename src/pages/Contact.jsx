@@ -5,10 +5,10 @@ import photo22 from '../assets/images/photo (22).jpeg'
 import Popup from '../components/Popup';
 import "./Contact.css"
 
-// EmailJS configuration
-const EMAILJS_SERVICE_ID = "service_88qgzcb";    // Service ID
-const EMAILJS_TEMPLATE_ID = "template_zutdekc";   // Template ID
-const EMAILJS_PUBLIC_KEY = "pEg0lOxyUihV_deAI";  // Public Key
+// EmailJS configuration from environment variables
+const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
 const Contact = () => {
   const form = useRef();
