@@ -26,7 +26,7 @@
     height: 8vh;
     width: auto;  /* This keeps the aspect ratio correct */
     object-fit: contain;  /* Ensures image fits well */
-}
+  }
 
   
   .link-section {
@@ -119,11 +119,12 @@
       position: relative;
       margin-top: -1vh;
     }
+    
     .logo-section {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        margin-left: 0%;
+        gap: 0.5rem;
+        margin-left: 10%;
       }
       
       .link-section {
@@ -187,6 +188,19 @@
       .navphonenumber {
         display: block;
         margin-top: 35vh;
+      }
+      .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-left: 10%;
+      }
+      
+      .logo img {
+        height: 8vh;
+        margin-left: 2vh;
+        width: auto;  /* This keeps the aspect ratio correct */
+        object-fit: contain;  /* Ensures image fits well */
       }
 
 
