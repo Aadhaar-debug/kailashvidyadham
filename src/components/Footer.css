@@ -2,6 +2,8 @@
     width: 100%;
     background-color: rgb(191,0,0);
     color: white;
+    position: relative;
+    z-index: 2;
 }
 
 .download-subscribe {

@@ -9,6 +9,8 @@ import ScripturesLibrary from '../pages/ScripturesLibrary';
 import Vedas from '../pages/Vedas';
 import BhagavadGita from '../pages/BhagavadGita';
 import Puranas from '../pages/Puranas';
+import GitaScriptures from '../pages/GitaScriptures';
+import BhagavadGitaDetail from '../pages/BhagavadGitaDetail';
 
 const AllRoutes = () => {
   return (
@@ -16,6 +18,8 @@ const AllRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/scriptures-library" element={<ScripturesLibrary />} />
+      <Route path="/scriptures/gita" element={<GitaScriptures />} />
+      <Route path="/scriptures/gita/bhagavad-gita" element={<BhagavadGitaDetail />} />
       <Route path="/vedas" element={<Vedas />} />
       <Route path="/bhagavad-gita" element={<BhagavadGita />} />
       <Route path="/puranas" element={<Puranas />} />

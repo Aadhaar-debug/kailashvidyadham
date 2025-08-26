@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    z-index: 2;
   }
   .navsocialicons {
     display: none;
@@ -83,6 +84,7 @@
     align-items: center;
     position: relative;
     margin-top: 0vh;
+    z-index: 2;
   }
   
   .news-text {

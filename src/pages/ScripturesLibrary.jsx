@@ -1,207 +1,482 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ScripturesLibrary.css';
-import vedasIcon from '../assets/images/vedic-icon.png';
-import templeIcon from '../assets/images/templeimage.jpg';
-import poojaIcon from '../assets/images/pooja-icon.png';
+import { FaHome, FaBookOpen, FaPlay, FaWrench, FaBars, FaSearch, FaChevronDown, FaChevronRight, FaFacebook, FaInstagram, FaYoutube, FaSpotify, FaTwitter } from 'react-icons/fa';
 
 const ScripturesLibrary = () => {
+  const [activeTab, setActiveTab] = useState('explore');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
+  const [expandedSections, setExpandedSections] = useState({
+    shastra: true,
+    spiritualTeachers: true,
+    vedicStudies: true,
+    devotionalCollection: true,
+    nonVedic: true
+  });
 
-  const categories = [
+  const filters = [
+    'Trending', 'Vaishnava', 'Shaiva', 'Shakta', 'Hindi', 'English', 
+    'Gujarati', 'Marathi', 'Bengali', 'Telugu', 'Punjabi', 'Kannada', 
+    'Odia', 'Ganapatya', 'Saura'
+  ];
+
+  const shastraCategories = [
     {
-      title: "Vedas",
-      description: "The oldest sacred texts of Hinduism - Rigveda, Yajurveda, Samaveda, Atharvaveda",
-      icon: vedasIcon,
-      path: "/vedas",
-      color: "#8B0000",
-      type: "vedic"
+      name: 'Gītā',
+      description: 'Bhagavad-gītā • Aṣṭāvakra • Jñāneśvarī • Īśvara • Rudra • Uddhav • Gītā-sangraha • Veṇu • Hanumad • Etc',
+      count: 41,
+      path: '/scriptures/gita'
     },
     {
-      title: "Upanishads",
-      description: "Philosophical texts that form the basis of Vedanta",
-      icon: poojaIcon,
-      path: "/upanishads",
-      color: "#B22222",
-      type: "philosophical"
+      name: 'Rāmāyaṇa',
+      description: 'Valmiki • Tulasi • Bhushundi • Yogvashishtha • Kamba • Anand • Adbhut etc Ramayanas.',
+      count: 17,
+      path: '/scriptures/ramayana'
     },
     {
-      title: "Puranas",
-      description: "Ancient texts containing myths, legends, and religious teachings",
-      icon: templeIcon,
-      path: "/puranas",
-      color: "#DC143C",
-      type: "mythological"
+      name: 'Mahābhārata',
+      description: 'Vaishmpayana Muni to Sages. The biggest epic poem in the world consisting 18 Parvas and 1,00,000 shlokas. Bhagvad Gita is part of Mahabharata\'s Bhishma Parva.',
+      count: 7,
+      path: '/scriptures/mahabharata'
     },
     {
-      title: "Epics",
-      description: "Ramayana and Mahabharata - The great Indian epics",
-      icon: vedasIcon,
-      path: "/epics",
-      color: "#8B0000",
-      type: "epic"
+      name: 'Purāṇa',
+      description: 'Srimad Bhagavatam • Shiv Puran • Agni Puran • Vayu Puran • Garud Puran etc.',
+      count: 18,
+      path: '/scriptures/purana'
     },
     {
-      title: "Bhagavad Gita",
-      description: "The sacred song of Lord Krishna",
-      icon: poojaIcon,
-      path: "/bhagavad-gita",
-      color: "#B22222",
-      type: "philosophical"
+      name: 'Upa–Purāṇa',
+      description: 'Ganesh Puran • Narsimha Puran • Kalki Puran • Datt Puran • Shivdharm Puran',
+      count: 14,
+      path: '/scriptures/upa-purana'
     },
     {
-      title: "Dharma Shastras",
-      description: "Texts on religious law and duties",
-      icon: templeIcon,
-      path: "/dharma-shastras",
-      color: "#DC143C",
-      type: "legal"
+      name: 'Veda',
+      description: 'Rigveda • Yajurveda • Samveda • Atharva Veda etc.',
+      count: 4,
+      path: '/scriptures/veda'
     },
     {
-      title: "Deities",
-      description: "Hindu gods and goddesses with their stories",
-      icon: vedasIcon,
-      path: "/deities",
-      color: "#8B0000",
-      type: "mythological"
+      name: 'Upaniṣad',
+      description: 'Brihadaranyak • Taitarey • Mantrik • Aatma • Sarvasaar etc.',
+      count: 112,
+      path: '/scriptures/upanishad'
     },
     {
-      title: "Temples",
-      description: "Sacred temples and pilgrimage sites",
-      icon: templeIcon,
-      path: "/temples",
-      color: "#B22222",
-      type: "pilgrimage"
+      name: 'Smṛti',
+      description: 'Manusmriti • Yagyavalkya Smriti • Atri Smriti • Yama Smriti etc.',
+      count: 21,
+      path: '/scriptures/smriti'
     },
     {
-      title: "Festivals",
-      description: "Hindu festivals and celebrations",
-      icon: poojaIcon,
-      path: "/festivals",
-      color: "#DC143C",
-      type: "cultural"
+      name: 'Upa–Smṛti',
+      description: 'Bharadvajah • Prajapati • Gobhil • Vishvamitra • Baudhayana etc.',
+      count: 5,
+      path: '/scriptures/upa-smriti'
     },
     {
-      title: "Rituals & Practices",
-      description: "Sacred rituals, ceremonies, and spiritual practices",
-      icon: vedasIcon,
-      path: "/rituals",
-      color: "#8B0000",
-      type: "practical"
+      name: 'Tantra Śāstra',
+      description: 'Rudra Yamala • Brahma Yamala • Skanda Yamala etc.',
+      count: 43,
+      path: '/scriptures/tantra'
+    },
+    {
+      name: 'Saṁhitā',
+      description: 'Dhanurved Samhita • Ravan Samhita • Agasatya Samhita • Parasara Samhita • Bhrigu Samhita etc.',
+      count: 13,
+      path: '/scriptures/samhita'
+    },
+    {
+      name: 'Darśana',
+      description: 'Charvak Darshan • Jain Darshan • Bauddha Darshan etc.',
+      count: 8,
+      path: '/scriptures/darshana'
+    },
+    {
+      name: 'Nīti',
+      description: 'Chanakya Niti • Vidura Niti • Sukra Niti • Kamandakiya Niti etc.',
+      count: 5,
+      path: '/scriptures/niti'
+    },
+    {
+      name: 'Sūtra',
+      description: 'Brahma Sutra • Vaisesika Sutra • Aapastamba Dharma Sutra etc.',
+      count: 17,
+      path: '/scriptures/sutra'
+    },
+    {
+      name: 'Āgama',
+      description: 'Shaiva Agamas • Mrugendra Agama • Kamika Agama • Raurava Agama etc.',
+      count: 13,
+      path: '/scriptures/agama'
+    },
+    {
+      name: 'Other Śāstras',
+      description: 'Vaimanika Shastra • Kautilya Arth Shastra • Rasayan Shastra etc.',
+      count: 2,
+      path: '/scriptures/other-shastras'
     }
   ];
 
-  const filterOptions = [
-    { value: 'all', label: 'All Scriptures' },
-    { value: 'vedic', label: 'Vedic Texts' },
-    { value: 'philosophical', label: 'Philosophical' },
-    { value: 'mythological', label: 'Mythological' },
-    { value: 'epic', label: 'Epics' },
-    { value: 'legal', label: 'Legal & Ethical' },
-    { value: 'pilgrimage', label: 'Pilgrimage' },
-    { value: 'cultural', label: 'Cultural' },
-    { value: 'practical', label: 'Rituals & Practices' }
+  const spiritualTeachersCategories = [
+    {
+      name: 'Gaudiya Vaishnav Acharyas',
+      description: 'Srila Prabhupada • Bhakti Siddhanta Saraswati • Bhakti Vinoda Thakur • Six Gosvamis....',
+      count: 5,
+      path: '/spiritual-teachers/gaudiya-vaishnav'
+    },
+    {
+      name: 'Advaita Vedanta Acharyas',
+      description: 'Adi Shankaracharya • Karpatri Maharaj • Sivananda Swami',
+      count: 7,
+      path: '/spiritual-teachers/advaita-vedanta'
+    },
+    {
+      name: 'Sri Vaishnava Sampradaya Acharyas',
+      description: 'Ramanujacharya',
+      count: 1,
+      path: '/spiritual-teachers/sri-vaishnava'
+    },
+    {
+      name: 'Madhva Vaishnava Sampradaya Acharyas',
+      description: 'Madhvacahrya',
+      count: 1,
+      path: '/spiritual-teachers/madhva-vaishnava'
+    },
+    {
+      name: 'Rudra Vaishnava Sampradaya Acharyas',
+      description: 'Vallabhacharya',
+      count: 1,
+      path: '/spiritual-teachers/rudra-vaishnava'
+    },
+    {
+      name: 'Kumar Vaishnava Sampradaya Acharyas',
+      description: 'Nimbarkacharya',
+      count: 1,
+      path: '/spiritual-teachers/kumar-vaishnava'
+    }
   ];
 
-  const filteredCategories = categories.filter(category => {
-    const matchesSearch = category.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         category.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesFilter = selectedFilter === 'all' || category.type === selectedFilter;
-    return matchesSearch && matchesFilter;
-  });
+  const vedicStudiesCategories = [
+    {
+      name: 'Ayurveda',
+      description: 'Sushruta Samhita • Ashtang Hridayam • Sadhak Sanjivani • Surya Chikitsa • Jal Chikitsa • Saundarya Nikhar • Chikitsa Pattiya • Bharatiya Aushadhiya....',
+      count: 40,
+      path: '/vedic-studies/ayurveda'
+    },
+    {
+      name: 'Astrology',
+      description: 'Ank Vidya • Sachitra Jyotish • Jyotish Samhita • Dynamic Astrology etc.',
+      count: 42,
+      path: '/vedic-studies/astrology'
+    },
+    {
+      name: 'Brahmacharya',
+      description: 'Brahmacharya Sadhna • Brahmacharya Ki Shakti • Krishna Bhavnamrit Mein Brahmacharya • Brahmacharya Hi Jivan....',
+      count: 14,
+      path: '/vedic-studies/brahmacharya'
+    },
+    {
+      name: 'Yoga',
+      description: 'Patanjali Yoga • Yoga Darshan • Hatha Yoga • Nad Yoga etc.',
+      count: 28,
+      path: '/vedic-studies/yoga'
+    },
+    {
+      name: 'Vastu',
+      description: 'Vastu Shastra • Vastu For House • Vastu Basics and other Vastu Books.',
+      count: 15,
+      path: '/vedic-studies/vastu'
+    },
+    {
+      name: 'Cosmology',
+      description: 'All Vedic references on Vedic Cosmology from all Shastras.',
+      count: 11,
+      path: '/vedic-studies/cosmology'
+    },
+    {
+      name: 'History',
+      description: 'Chhatrapati Shivaji Maharaj • Maharana Pratap • Sanatan Ithihaas....',
+      count: 55,
+      path: '/vedic-studies/history'
+    },
+    {
+      name: 'Palmistry',
+      description: '.',
+      count: 2,
+      path: '/vedic-studies/palmistry'
+    },
+    {
+      name: 'Samskaras',
+      description: 'Garbhadhan Sanskar • 16 Sanskar & Other books on Sanskaras.',
+      count: 'Coming Soon',
+      path: '/vedic-studies/samskaras'
+    },
+    {
+      name: 'Vedic Maths',
+      description: 'Vedic Formulaes • Vedic Tricks • Vedic Way....',
+      count: 16,
+      path: '/vedic-studies/vedic-maths'
+    }
+  ];
+
+  const devotionalCollectionCategories = [
+    {
+      name: 'Aaratisa',
+      description: 'Mangalaarti • Ganesh Arti • Krishna Aarati etc',
+      count: 25,
+      path: '/devotional/aaratisa'
+    },
+    {
+      name: 'Ashtakas',
+      description: 'Shri Rudrashtakam • Damodarashtakam • Radhashtakam • Kripa Kataksh etc.',
+      count: 35,
+      path: '/devotional/ashtakas'
+    },
+    {
+      name: 'Bhajans',
+      description: 'Vaishnav Geet • Shaiva Bhajans • Krishna Bhajan • Bhajan Sangrah etc.',
+      count: 18,
+      path: '/devotional/bhajans'
+    },
+    {
+      name: 'Chalisas',
+      description: 'Hanuman Chalisa • Shiv Chalisa • Krsna Chalisa • Saraswati Chalisa etc.',
+      count: 25,
+      path: '/devotional/chalisas'
+    },
+    {
+      name: 'Kathaas',
+      description: 'Ekadashi Utpatti Kathas • Pooja Vidhis • Nitya Karma Puja Prakash etc.',
+      count: 46,
+      path: '/devotional/kathaas'
+    },
+    {
+      name: 'Suktas',
+      description: 'Agni Sukta • Rudra Sukta • Shree Sukta • Agni Sukta • Surya Sukta etc.',
+      count: 32,
+      path: '/devotional/suktas'
+    },
+    {
+      name: 'Stotram',
+      description: 'Ram Raksha Stotram • Shiv Tandav Stotram • Shiv Mahima Stotram • Ram Raksha Stotra etc.',
+      count: 19,
+      path: '/devotional/stotram'
+    },
+    {
+      name: 'Sahastranaam',
+      description: 'Vishnu Sahastranaam • Ram Sahastranaam • Krsna Shastranaam • Hanuman Sahastranaam etc.',
+      count: 9,
+      path: '/devotional/sahastranaam'
+    },
+    {
+      name: 'Kawachas',
+      description: 'Powerful chants (Kawachas) bring safety by warding off darkness.',
+      count: 19,
+      path: '/devotional/kawachas'
+    }
+  ];
+
+  const nonVedicCategories = [
+    {
+      name: 'Art',
+      description: 'Art books will be found here.',
+      count: 'Coming Soon',
+      path: '/non-vedic/art'
+    },
+    {
+      name: 'Branding',
+      description: 'Branding books will be found here.',
+      count: 'Coming Soon',
+      path: '/non-vedic/branding'
+    },
+    {
+      name: 'Design',
+      description: 'Design books will be found here.',
+      count: 'Coming Soon',
+      path: '/non-vedic/design'
+    },
+    {
+      name: 'Money',
+      description: 'Money books will be found here.',
+      count: 'Coming Soon',
+      path: '/non-vedic/money'
+    },
+    {
+      name: 'Marketing',
+      description: 'Marketing books will be found here.',
+      count: 'Coming Soon',
+      path: '/non-vedic/marketing'
+    },
+    {
+      name: 'Psychology',
+      description: 'Psychology books will be found here.',
+      count: 'Coming Soon',
+      path: '/non-vedic/psychology'
+    },
+    {
+      name: 'Self Improvement',
+      description: 'Self Improvement books will be found here.',
+      count: 'Coming Soon',
+      path: '/non-vedic/self-improvement'
+    }
+  ];
+
+  const toggleSection = (sectionName) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [sectionName]: !prev[sectionName]
+    }));
+  };
+
+  const renderCategoryList = (categories) => (
+    <div className="scriptures-list">
+      {categories.map((category, index) => (
+        <Link to={category.path} key={index} className="scripture-item">
+          <div className="scripture-icon">
+            <FaBookOpen />
+          </div>
+          <div className="scripture-content">
+            <div className="scripture-header">
+              <h3>{category.name}</h3>
+              <span className="scripture-count">{category.count}</span>
+            </div>
+            <p className="scripture-description">{category.description}</p>
+          </div>
+          <FaChevronRight className="arrow-icon" />
+        </Link>
+      ))}
+    </div>
+  );
 
   return (
     <div className="scriptures-library">
-      <div className="library-header">
-        <h1>Hindu Scriptures Library</h1>
-        <p>Discover the vast ocean of knowledge from ancient Hindu texts and traditions</p>
-        <div className="library-stats">
-          <div className="stat">
-            <span className="stat-number">1000+</span>
-            <span className="stat-label">Sacred Texts</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">5000+</span>
-            <span className="stat-label">Years of Wisdom</span>
-          </div>
-          <div className="stat">
-            <span className="stat-number">18</span>
-            <span className="stat-label">Major Puranas</span>
+      {/* Left Sidebar Navigation */}
+      <div className="sidebar">
+        <nav className="sidebar-nav">
+          <Link to="/" className="nav-item">
+            <FaHome className="nav-icon" />
+            <span>Home</span>
+          </Link>
+          <Link to="/scriptures-library" className="nav-item active">
+            <FaBookOpen className="nav-icon" />
+            <span>Library</span>
+          </Link>
+          <Link to="/courses" className="nav-item">
+            <FaPlay className="nav-icon" />
+            <span>Courses</span>
+          </Link>
+          <Link to="/store" className="nav-item">
+            <FaWrench className="nav-icon" />
+            <span>Yoddha Store</span>
+          </Link>
+          <Link to="/more" className="nav-item">
+            <FaBars className="nav-icon" />
+            <span>More</span>
+          </Link>
+        </nav>
+
+        <div className="sidebar-footer">
+          <div className="social-icons">
+            <FaFacebook className="social-icon" />
+            <FaInstagram className="social-icon" />
+            <FaYoutube className="social-icon" />
+            <FaSpotify className="social-icon" />
+            <FaTwitter className="social-icon" />
           </div>
         </div>
       </div>
 
-      {/* Search and Filter Section - Moved to top */}
-      <div className="search-filter-section">
+      {/* Main Content Area */}
+      <div className="main-content">
+        {/* Content Header */}
+        <div className="content-header">
+          <div className="tab-navigation">
+            <button 
+              className={`tab ${activeTab === 'explore' ? 'active' : ''}`}
+              onClick={() => setActiveTab('explore')}
+            >
+              Explore
+            </button>
+            <button 
+              className={`tab ${activeTab === 'favourites' ? 'active' : ''}`}
+              onClick={() => setActiveTab('favourites')}
+            >
+              Favourites
+            </button>
+          </div>
+
+          {/* Search Bar */}
         <div className="search-container">
+            <FaSearch className="search-icon" />
           <input 
             type="text" 
-            placeholder="Search for specific texts, verses, or topics..."
-            className="scripture-search"
+              placeholder="Q Find in veducation library"
+              className="search-input"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button className="search-btn">Search</button>
         </div>
         
-        <div className="filter-container">
-          <label htmlFor="filter-select" className="filter-label">Filter by Category:</label>
-          <select 
-            id="filter-select"
-            className="filter-select"
-            value={selectedFilter}
-            onChange={(e) => setSelectedFilter(e.target.value)}
-          >
-            {filterOptions.map(option => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
+          {/* Filter Buttons */}
+          <div className="filter-buttons">
+            {filters.map((filter, index) => (
+              <button
+                key={index}
+                className={`filter-btn ${selectedFilter === filter.toLowerCase() ? 'active' : ''}`}
+                onClick={() => setSelectedFilter(filter.toLowerCase())}
+              >
+                {filter}
+              </button>
             ))}
-          </select>
-        </div>
+          </div>
       </div>
 
-      <div className="categories-grid">
-        {filteredCategories.map((category, index) => (
-          <Link to={category.path} key={index} className="category-card">
-            <div className="category-icon">
-              <img src={category.icon} alt={category.title} />
+        {/* Scripture Categories */}
+        <div className="scriptures-section">
+          {/* Śāstra Section */}
+          <div className="section-header" onClick={() => toggleSection('shastra')}>
+            <h2>Śāstra (शास्त्र)</h2>
+            <FaChevronDown className={`dropdown-icon ${expandedSections.shastra ? 'expanded' : ''}`} />
             </div>
-            <div className="category-content">
-              <h3>{category.title}</h3>
-              <p>{category.description}</p>
-            </div>
-            <div className="category-overlay" style={{ backgroundColor: category.color }}></div>
-          </Link>
-        ))}
-      </div>
+          {expandedSections.shastra && renderCategoryList(shastraCategories)}
 
-      {filteredCategories.length === 0 && (
-        <div className="no-results">
-          <h3>No scriptures found</h3>
-          <p>Try adjusting your search terms or filter selection</p>
+          {/* Spiritual Teachers Section */}
+          <div className="section-header" onClick={() => toggleSection('spiritualTeachers')}>
+            <h2>Spiritual Teachers (आचार्य/गुरु)</h2>
+            <FaChevronDown className={`dropdown-icon ${expandedSections.spiritualTeachers ? 'expanded' : ''}`} />
         </div>
-      )}
+          {expandedSections.spiritualTeachers && renderCategoryList(spiritualTeachersCategories)}
 
-      <div className="featured-section">
-        <h2>Featured Scriptures</h2>
-        <div className="featured-grid">
-          <div className="featured-item">
-            <h3>Bhagavad Gita</h3>
-            <p>The divine song of Lord Krishna, containing 700 verses of spiritual wisdom</p>
-            <Link to="/bhagavad-gita" className="featured-link">Read Now</Link>
+          {/* Vedic Studies Section */}
+          <div className="section-header" onClick={() => toggleSection('vedicStudies')}>
+            <h2>Vedic Studies (अन्य वेदांग)</h2>
+            <FaChevronDown className={`dropdown-icon ${expandedSections.vedicStudies ? 'expanded' : ''}`} />
           </div>
-          <div className="featured-item">
-            <h3>Rigveda</h3>
-            <p>The oldest of the four Vedas, containing hymns and mantras</p>
-            <Link to="/vedas/rigveda" className="featured-link">Read Now</Link>
+          {expandedSections.vedicStudies && renderCategoryList(vedicStudiesCategories)}
+
+          {/* Devotional Collection Section */}
+          <div className="section-header" onClick={() => toggleSection('devotionalCollection')}>
+            <h2>Devotional Collection (पूजन संग्रह)</h2>
+            <FaChevronDown className={`dropdown-icon ${expandedSections.devotionalCollection ? 'expanded' : ''}`} />
           </div>
-          <div className="featured-item">
-            <h3>Ramayana</h3>
-            <p>The epic story of Lord Rama and his divine journey</p>
-            <Link to="/epics/ramayana" className="featured-link">Read Now</Link>
+          {expandedSections.devotionalCollection && renderCategoryList(devotionalCollectionCategories)}
+
+          {/* Non-Vedic Section */}
+          <div className="section-header" onClick={() => toggleSection('nonVedic')}>
+            <h2>Non-Vedic (अनार्य साहित्य)</h2>
+            <FaChevronDown className={`dropdown-icon ${expandedSections.nonVedic ? 'expanded' : ''}`} />
           </div>
+          {expandedSections.nonVedic && renderCategoryList(nonVedicCategories)}
+        </div>
+
+        {/* Donation Section */}
+        <div className="donation-section">
+          <h3>Help us keep this Sanatan library Free..</h3>
+          <p>Even ₹50-₹100 of Laxmi Seva will help us Spread Dharma</p>
+          <button className="donate-btn">Donate Now</button>
         </div>
       </div>
     </div>

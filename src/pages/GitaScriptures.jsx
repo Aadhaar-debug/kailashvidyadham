@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './BhagavadGita.css';
+import './GitaScriptures.css';
 import { FaHome, FaBookOpen, FaPlay, FaWrench, FaBars, FaSearch, FaChevronDown, FaChevronRight, FaFacebook, FaInstagram, FaYoutube, FaSpotify, FaTwitter } from 'react-icons/fa';
 
-const BhagavadGita = () => {
+const GitaScriptures = () => {
   const [activeTab, setActiveTab] = useState('explore');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
@@ -22,7 +22,7 @@ const BhagavadGita = () => {
       name: 'Bhagavad-gītā',
       description: 'The Bhagavad-gītā is a dialogue between Śrī Kṛṣṇa and Arjuna at Kurukṣetra, summarizing the essence of Vedic wisdom in 700 verses. It offers timeless teachings on dharma, devotion, and self-realization.',
       count: 24,
-      path: '/bhagavad-gita/main'
+      path: '/scriptures/gita/bhagavad-gita'
     },
     {
       name: 'Aṣṭāvakra Gītā',
@@ -348,7 +348,7 @@ const BhagavadGita = () => {
             >
               Favourites
             </button>
-              </div>
+          </div>
 
           {/* Search Bar */}
           <div className="search-container">
@@ -360,7 +360,7 @@ const BhagavadGita = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-      </div>
+          </div>
 
           {/* Filter Buttons */}
           <div className="filter-buttons">
@@ -372,9 +372,9 @@ const BhagavadGita = () => {
               >
                 {filter}
               </button>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
         {/* Gita Categories */}
         <div className="scriptures-section">
@@ -384,7 +384,7 @@ const BhagavadGita = () => {
             <FaChevronDown className={`dropdown-icon ${expandedSections.gita ? 'expanded' : ''}`} />
           </div>
           {expandedSections.gita && renderCategoryList(gitaCategories)}
-          </div>
+        </div>
 
         {/* Donation Section */}
         <div className="donation-section">
@@ -397,4 +397,4 @@ const BhagavadGita = () => {
   );
 };
 
-export default BhagavadGita;
+export default GitaScriptures;
