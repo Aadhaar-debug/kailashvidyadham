@@ -5,6 +5,7 @@ import "./BookingDetails.css";
 const BookingDetails = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedEvent, setSelectedEvent] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,7 +23,13 @@ const BookingDetails = () => {
         { name: 'Ganesh Puja', price: '₹2,100', duration: '2-3 hours', description: 'Complete Ganesh puja with prasad and blessings' },
         { name: 'Shiv Puja', price: '₹3,500', duration: '3-4 hours', description: 'Traditional Shiv puja with rudrabhishek' },
         { name: 'Lakshmi Puja', price: '₹2,800', duration: '2-3 hours', description: 'Lakshmi puja for prosperity and wealth' },
-        { name: 'Durga Puja', price: '₹4,200', duration: '4-5 hours', description: 'Complete Durga puja with special rituals' }
+        { name: 'Durga Puja', price: '₹4,200', duration: '4-5 hours', description: 'Complete Durga puja with special rituals' },
+        { name: 'Vishnu Puja', price: '₹3,200', duration: '3-4 hours', description: 'Vishnu puja for peace and harmony' },
+        { name: 'Hanuman Puja', price: '₹2,500', duration: '2-3 hours', description: 'Hanuman puja for strength and protection' },
+        { name: 'Saraswati Puja', price: '₹2,600', duration: '2-3 hours', description: 'Saraswati puja for knowledge and wisdom' },
+        { name: 'Kali Puja', price: '₹4,500', duration: '4-5 hours', description: 'Kali puja for protection and power' },
+        { name: 'Ram Puja', price: '₹3,000', duration: '3-4 hours', description: 'Ram puja for righteousness and dharma' },
+        { name: 'Krishna Puja', price: '₹3,300', duration: '3-4 hours', description: 'Krishna puja for love and devotion' }
       ]
     },
     'life-cycle-events': {
@@ -49,9 +56,117 @@ const BookingDetails = () => {
         { name: 'Satyanarayan Puja', price: '₹2,500', duration: '2-3 hours', description: 'Traditional Satyanarayan katha and puja' },
         { name: 'Rudrabhishek', price: '₹7,500', duration: '5-6 hours', description: 'Complete Rudrabhishek ceremony' },
         { name: 'Vishnu Sahasranama', price: '₹4,800', duration: '3-4 hours', description: 'Recitation of 1000 names of Vishnu' },
-        { name: 'Bhagavad Gita Path', price: '₹3,200', duration: '2-3 hours', description: 'Complete Gita recitation' }
+        { name: 'Bhagavad Gita Path', price: '₹3,200', duration: '2-3 hours', description: 'Complete Gita recitation' },
+        { name: 'Ramayan Path', price: '₹5,500', duration: '4-5 hours', description: 'Complete Ramayan recitation' },
+        { name: 'Mahabharat Path', price: '₹6,800', duration: '5-6 hours', description: 'Mahabharat recitation ceremony' },
+        { name: 'Purana Path', price: '₹4,200', duration: '3-4 hours', description: 'Various Purana recitations' },
+        { name: 'Ved Path', price: '₹8,500', duration: '6-8 hours', description: 'Vedic mantras recitation' },
+        { name: 'Upanishad Path', price: '₹5,200', duration: '4-5 hours', description: 'Upanishad recitation' },
+        { name: 'Stotra Path', price: '₹3,800', duration: '2-3 hours', description: 'Devotional hymn recitation' }
+      ]
+    },
+    'festival-pujas': {
+      name: 'Festival Pujas',
+      events: [
+        { name: 'Diwali Puja', price: '₹3,500', duration: '3-4 hours', description: 'Diwali Lakshmi puja and celebrations' },
+        { name: 'Holi Puja', price: '₹2,800', duration: '2-3 hours', description: 'Holi festival puja and rituals' },
+        { name: 'Raksha Bandhan', price: '₹2,200', duration: '2-3 hours', description: 'Rakhi tying ceremony' },
+        { name: 'Janmashtami', price: '₹4,200', duration: '4-5 hours', description: 'Krishna birth celebration' },
+        { name: 'Ram Navami', price: '₹3,800', duration: '3-4 hours', description: 'Ram birth celebration' },
+        { name: 'Hanuman Jayanti', price: '₹3,200', duration: '3-4 hours', description: 'Hanuman birth celebration' },
+        { name: 'Ganesh Chaturthi', price: '₹3,500', duration: '3-4 hours', description: 'Ganesh birth celebration' },
+        { name: 'Navratri Puja', price: '₹5,500', duration: '5-6 hours', description: 'Nine nights Durga puja' },
+        { name: 'Makar Sankranti', price: '₹2,500', duration: '2-3 hours', description: 'Sun transition celebration' },
+        { name: 'Guru Purnima', price: '₹3,000', duration: '3-4 hours', description: 'Guru worship ceremony' }
+      ]
+    },
+    'business-pujas': {
+      name: 'Business & Success Pujas',
+      events: [
+        { name: 'Business Opening Puja', price: '₹4,500', duration: '3-4 hours', description: 'New business inauguration' },
+        { name: 'Office Griha Pravesh', price: '₹3,800', duration: '3-4 hours', description: 'Office opening ceremony' },
+        { name: 'Vehicle Puja', price: '₹2,200', duration: '1-2 hours', description: 'New vehicle blessing ceremony' },
+        { name: 'Machine Puja', price: '₹2,500', duration: '2-3 hours', description: 'Industrial equipment blessing' },
+        { name: 'Shop Opening Puja', price: '₹3,200', duration: '2-3 hours', description: 'Shop inauguration ceremony' },
+        { name: 'Factory Puja', price: '₹5,500', duration: '4-5 hours', description: 'Factory opening ceremony' },
+        { name: 'Success Puja', price: '₹3,500', duration: '3-4 hours', description: 'Career success puja' },
+        { name: 'Wealth Puja', price: '₹4,200', duration: '3-4 hours', description: 'Wealth and prosperity puja' },
+        { name: 'Job Puja', price: '₹2,800', duration: '2-3 hours', description: 'Job success puja' },
+        { name: 'Exam Puja', price: '₹2,500', duration: '2-3 hours', description: 'Academic success puja' }
+      ]
+    },
+    'health-pujas': {
+      name: 'Health & Wellness Pujas',
+      events: [
+        { name: 'Health Puja', price: '₹3,200', duration: '2-3 hours', description: 'General health and wellness puja' },
+        { name: 'Ayurveda Puja', price: '₹3,500', duration: '3-4 hours', description: 'Ayurvedic healing puja' },
+        { name: 'Mental Health Puja', price: '₹2,800', duration: '2-3 hours', description: 'Mental peace and clarity puja' },
+        { name: 'Recovery Puja', price: '₹3,000', duration: '2-3 hours', description: 'Illness recovery puja' },
+        { name: 'Long Life Puja', price: '₹4,200', duration: '3-4 hours', description: 'Longevity and health puja' },
+        { name: 'Child Health Puja', price: '₹2,500', duration: '2-3 hours', description: 'Children health puja' },
+        { name: 'Elder Care Puja', price: '₹3,800', duration: '3-4 hours', description: 'Elderly health and care puja' },
+        { name: 'Fertility Puja', price: '₹4,500', duration: '3-4 hours', description: 'Fertility and conception puja' },
+        { name: 'Pregnancy Puja', price: '₹3,200', duration: '2-3 hours', description: 'Safe pregnancy puja' },
+        { name: 'Postpartum Puja', price: '₹2,800', duration: '2-3 hours', description: 'Post-delivery wellness puja' }
+      ]
+    },
+    'relationship-pujas': {
+      name: 'Relationship & Harmony Pujas',
+      events: [
+        { name: 'Marriage Harmony Puja', price: '₹4,200', duration: '3-4 hours', description: 'Marital harmony puja' },
+        { name: 'Family Peace Puja', price: '₹3,500', duration: '3-4 hours', description: 'Family unity and peace puja' },
+        { name: 'Love Puja', price: '₹3,800', duration: '3-4 hours', description: 'Love and relationship puja' },
+        { name: 'Reconciliation Puja', price: '₹4,500', duration: '3-4 hours', description: 'Relationship reconciliation puja' },
+        { name: 'Friendship Puja', price: '₹2,500', duration: '2-3 hours', description: 'Friendship strengthening puja' },
+        { name: 'Parent-Child Puja', price: '₹3,200', duration: '2-3 hours', description: 'Parent-child relationship puja' },
+        { name: 'Sibling Harmony Puja', price: '₹2,800', duration: '2-3 hours', description: 'Sibling relationship puja' },
+        { name: 'In-Law Harmony Puja', price: '₹3,500', duration: '3-4 hours', description: 'In-law relationship puja' },
+        { name: 'Community Peace Puja', price: '₹5,500', duration: '4-5 hours', description: 'Community harmony puja' },
+        { name: 'Workplace Harmony Puja', price: '₹3,800', duration: '3-4 hours', description: 'Workplace peace puja' }
+      ]
+    },
+    'protection-pujas': {
+      name: 'Protection & Security Pujas',
+      events: [
+        { name: 'Home Protection Puja', price: '₹3,500', duration: '3-4 hours', description: 'Home security and protection puja' },
+        { name: 'Vehicle Protection Puja', price: '₹2,500', duration: '2-3 hours', description: 'Vehicle safety puja' },
+        { name: 'Travel Safety Puja', price: '₹2,800', duration: '2-3 hours', description: 'Safe journey puja' },
+        { name: 'Business Protection Puja', price: '₹4,200', duration: '3-4 hours', description: 'Business security puja' },
+        { name: 'Child Protection Puja', price: '₹3,000', duration: '2-3 hours', description: 'Children safety puja' },
+        { name: 'Elder Protection Puja', price: '₹3,200', duration: '2-3 hours', description: 'Elderly protection puja' },
+        { name: 'Property Protection Puja', price: '₹3,800', duration: '3-4 hours', description: 'Property security puja' },
+        { name: 'Legal Protection Puja', price: '₹4,500', duration: '3-4 hours', description: 'Legal case protection puja' },
+        { name: 'Negative Energy Removal', price: '₹5,200', duration: '4-5 hours', description: 'Remove negative energies' },
+        { name: 'Evil Eye Protection', price: '₹2,800', duration: '2-3 hours', description: 'Protection from evil eye' }
       ]
     }
+  };
+
+  // Search functionality
+  const getAllEvents = () => {
+    const allEvents = [];
+    Object.keys(eventCategories).forEach(category => {
+      eventCategories[category].events.forEach(event => {
+        allEvents.push({
+          ...event,
+          category: eventCategories[category].name,
+          categoryKey: category
+        });
+      });
+    });
+    return allEvents;
+  };
+
+  const filteredEvents = getAllEvents().filter(event =>
+    event.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    event.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    event.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const handleSearchSelect = (event) => {
+    setSelectedCategory(event.categoryKey);
+    setSelectedEvent(event.name);
+    setSearchTerm('');
   };
 
   const handleInputChange = (e) => {
@@ -129,17 +244,73 @@ const BookingDetails = () => {
             </div>
 
             <div className="info-section">
-              <h3>What's Included in Your Registration</h3>
-              <ul>
-                <li>✅ Experienced Vedic priests (15+ years)</li>
-                <li>✅ All puja materials and samagri</li>
-                <li>✅ Traditional prasad and offerings</li>
-                <li>✅ Sacred mantras and rituals</li>
-                <li>✅ Certificate of completion</li>
-                <li>✅ Photography and video recording</li>
-                <li>✅ Clean and sacred environment</li>
-                <li>✅ Post-ceremony guidance</li>
-              </ul>
+              <h3>Services, Facilities & Amenities</h3>
+              <div className="compact-grid">
+                <div className="compact-column">
+                  <h4>✅ Included Services</h4>
+                  <ul>
+                    <li>Experienced Vedic priests (15+ years)</li>
+                    <li>All puja materials and samagri</li>
+                    <li>Traditional prasad and offerings</li>
+                    <li>Sacred mantras and rituals</li>
+                    <li>Certificate of completion</li>
+                    <li>Photography and video recording</li>
+                  </ul>
+                </div>
+                <div className="compact-column">
+                  <h4>🏛️ Facilities</h4>
+                  <ul>
+                    <li><strong>Main Hall:</strong> 2,500 sq ft (200+ capacity)</li>
+                    <li><strong>Reception:</strong> 1,200 sq ft</li>
+                    <li><strong>Guest Rooms:</strong> 6 rooms (1,500 sq ft)</li>
+                    <li><strong>Parking:</strong> 3,000 sq ft (50+ vehicles)</li>
+                    <li><strong>Outdoor Space:</strong> 5,000 sq ft</li>
+                  </ul>
+                </div>
+                <div className="compact-column">
+                  <h4>🚗 Amenities</h4>
+                  <ul>
+                    <li>Free parking (50+ vehicles)</li>
+                    <li>Traditional vegetarian meals</li>
+                    <li>Clean guest rooms</li>
+                    <li>Modern restrooms</li>
+                    <li>Pure filtered water</li>
+                    <li>Free Wi-Fi</li>
+                    <li>24/7 power backup</li>
+                    <li>Wheelchair accessible</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="info-section">
+              <h3>Equipment & Business Services</h3>
+              <div className="compact-grid">
+                <div className="compact-column">
+                  <h4>🎤 Equipment</h4>
+                  <ul>
+                    <li>Professional PA system</li>
+                    <li>HD cameras and editing</li>
+                    <li>Professional photo services</li>
+                    <li>Decorative lighting</li>
+                    <li>Chairs, tables, seating</li>
+                    <li>Full kitchen facilities</li>
+                  </ul>
+                </div>
+                <div className="compact-column">
+                  <h4>📋 Business Services</h4>
+                  <ul>
+                    <li>Complete event planning</li>
+                    <li>Traditional decorations</li>
+                    <li>Experienced priests</li>
+                    <li>Bhajans and mantras</li>
+                    <li>Live streaming</li>
+                    <li>Legal documentation</li>
+                    <li>Transportation services</li>
+                    <li>Catering services</li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
             <div className="info-section">
@@ -155,13 +326,32 @@ const BookingDetails = () => {
             </div>
 
             <div className="info-section">
-              <h3>Need Help?</h3>
-              <ul>
-                <li><strong>Phone:</strong> +91-9419362813</li>
-                <li><strong>WhatsApp:</strong> +91-9419362813</li>
-                <li><strong>Email:</strong> booking@kailashvidyadham.com</li>
-                <li><strong>Address:</strong> Chinore, Jammu, J&K - 180013</li>
-              </ul>
+              <h3>Temple Location & Contact</h3>
+              <div className="location-contact-grid">
+                <div className="location-card">
+                  <div className="map-placeholder">
+                    <div className="map-icon">📍</div>
+                    <p>Kailash Vidya Dham</p>
+                    <p>Chinore, Jammu, J&K - 180013</p>
+                    <a 
+                      href="https://maps.google.com/?q=Chinore+Jammu+Jammu+and+Kashmir+180013" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="map-link"
+                    >
+                      📍 View on Google Maps
+                    </a>
+                  </div>
+                </div>
+                <div className="contact-info">
+                  <h4>📞 Need Help?</h4>
+                  <ul>
+                    <li><strong>Phone:</strong> +91-9419362813</li>
+                    <li><strong>WhatsApp:</strong> +91-9419362813</li>
+                    <li><strong>Email:</strong> booking@kailashvidyadham.com</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -173,6 +363,36 @@ const BookingDetails = () => {
               {/* Ceremony Selection */}
               <div className="form-section">
                 <h3>Select Your Ceremony</h3>
+                
+                {/* Search Functionality */}
+                <div className="search-section">
+                  <div className="form-group">
+                    <label htmlFor="search">Search Ceremonies</label>
+                    <input
+                      type="text"
+                      id="search"
+                      placeholder="Search by ceremony name, description, or category..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                  </div>
+                  
+                  {searchTerm && filteredEvents.length > 0 && (
+                    <div className="search-results">
+                      {filteredEvents.slice(0, 8).map((event, index) => (
+                        <div 
+                          key={index} 
+                          className="search-result-item"
+                          onClick={() => handleSearchSelect(event)}
+                        >
+                          <div className="result-name">{event.name}</div>
+                          <div className="result-category">{event.category}</div>
+                          <div className="result-price">{event.price}</div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 
                 <div className="form-group">
                   <label htmlFor="category">Ceremony Category *</label>

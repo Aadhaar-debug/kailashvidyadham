@@ -25,9 +25,214 @@
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   align-items: start;
+}
+
+/* Search Functionality Styles */
+.search-section {
+  margin-bottom: 20px;
+}
+
+.search-results {
+  background: white;
+  border: 2px solid #e1e5e9;
+  border-radius: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  position: relative;
+}
+
+.search-result-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-result-item:hover {
+  background-color: #f8f9fa;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.result-name {
+  font-weight: bold;
+  color: rgb(191, 0, 0);
+  flex: 1;
+  min-width: 200px;
+}
+
+.result-category {
+  color: #666;
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.result-price {
+  color: #28a745;
+  font-weight: bold;
+  flex: 0 0 auto;
+}
+
+/* Compact Grid Layouts for Left Card */
+.compact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.compact-column {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.compact-column h4 {
+  color: rgb(191, 0, 0);
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.compact-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.compact-column li {
+  padding: 3px 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #000;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.compact-column li:last-child {
+  border-bottom: none;
+}
+
+.compact-column strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.location-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.contact-info {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #e9ecef;
+}
+
+.contact-info h4 {
+  color: rgb(191, 0, 0);
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  padding: 3px 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #000;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.contact-info li:last-child {
+  border-bottom: none;
+}
+
+.contact-info strong {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Grid Layouts for Compact Content */
+.services-grid,
+.facilities-grid,
+.amenities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.service-column,
+.facility-column,
+.amenity-column {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #e9ecef;
+}
+
+.service-column h4,
+.facility-column h4,
+.amenity-column h4 {
+  color: rgb(191, 0, 0);
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.service-column ul,
+.facility-column ul,
+.amenity-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-column li,
+.facility-column li,
+.amenity-column li {
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #000;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.service-column li:last-child,
+.facility-column li:last-child,
+.amenity-column li:last-child {
+  border-bottom: none;
+}
+
+.service-column strong,
+.facility-column strong,
+.amenity-column strong {
+  color: #000;
+  font-weight: 600;
 }
 
 /* Left Card - Information */
@@ -200,6 +405,12 @@
   background: rgba(255, 255, 255, 0.95);
 }
 
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
 .form-group textarea {
   resize: vertical;
   min-height: 80px;
@@ -311,7 +522,59 @@
   transform: translateY(0);
 }
 
-/* Mobile Responsive */
+/* Location Card Styles */
+.location-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 10px;
+  border: 2px solid #dee2e6;
+  text-align: center;
+}
+
+.map-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.map-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.map-placeholder p {
+  margin: 0;
+  color: #000;
+  font-weight: 500;
+}
+
+.map-placeholder p:first-of-type {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgb(191, 0, 0);
+}
+
+.map-link {
+  display: inline-block;
+  background: rgb(191, 0, 0);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.map-link:hover {
+  background: #a00000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(191, 0, 0, 0.3);
+}
+
+/* Enhanced Mobile Responsive */
 @media (max-width: 1024px) {
   .container {
     gap: 30px;
@@ -320,6 +583,53 @@
   .info-card,
   .registration-card {
     padding: 25px;
+  }
+
+  .services-grid,
+  .facilities-grid,
+  .amenities-grid {
+    gap: 15px;
+  }
+
+  .service-column,
+  .facility-column,
+  .amenity-column {
+    padding: 12px;
+  }
+
+  /* Compact grid mobile styles */
+  .compact-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .compact-column {
+    padding: 10px;
+  }
+
+  .compact-column h4 {
+    font-size: 0.85rem;
+  }
+
+  .compact-column li {
+    font-size: 0.75rem;
+  }
+
+  .location-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact-info {
+    padding: 10px;
+  }
+
+  .contact-info h4 {
+    font-size: 0.85rem;
+  }
+
+  .contact-info li {
+    font-size: 0.75rem;
   }
 }
 
@@ -387,6 +697,50 @@
   .pay-now-btn {
     padding: 15px;
     font-size: 1.1rem;
+  }
+
+  /* Grid layouts mobile */
+  .services-grid,
+  .facilities-grid,
+  .amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .service-column,
+  .facility-column,
+  .amenity-column {
+    padding: 15px;
+  }
+
+  .service-column h4,
+  .facility-column h4,
+  .amenity-column h4 {
+    font-size: 1rem;
+  }
+
+  .service-column li,
+  .facility-column li,
+  .amenity-column li {
+    font-size: 0.9rem;
+  }
+
+  /* Location card mobile styles */
+  .location-card {
+    padding: 15px;
+  }
+
+  .map-icon {
+    font-size: 1.5rem;
+  }
+
+  .map-placeholder p:first-of-type {
+    font-size: 1rem;
+  }
+
+  .map-link {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }
 
@@ -479,5 +833,59 @@
   .pay-now-btn {
     padding: 12px;
     font-size: 1rem;
+  }
+
+  /* Search functionality mobile styles */
+  .search-section {
+    margin-bottom: 15px;
+  }
+
+  .search-results {
+    max-height: 250px;
+  }
+
+  .search-result-item {
+    padding: 10px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .result-name {
+    min-width: auto;
+    font-size: 0.95rem;
+  }
+
+  .result-category {
+    min-width: auto;
+    font-size: 0.85rem;
+  }
+
+  .result-price {
+    align-self: flex-end;
+    font-size: 0.9rem;
+  }
+
+  /* Location card small mobile styles */
+  .location-card {
+    padding: 12px;
+  }
+
+  .map-icon {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+
+  .map-placeholder p {
+    font-size: 0.9rem;
+  }
+
+  .map-placeholder p:first-of-type {
+    font-size: 0.95rem;
+  }
+
+  .map-link {
+    padding: 6px 12px;
+    font-size: 0.85rem;
   }
 }
