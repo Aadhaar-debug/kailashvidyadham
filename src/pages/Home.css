@@ -99,7 +99,8 @@
   }
   .maincontainer2 {
     background-color: rgb(255, 255, 255);
-    height: 985vh;
+    min-height: 985vh;
+    height: auto;
     width: 100%;
     margin-top: -6vh;
     border-radius: 50px;
@@ -108,7 +109,8 @@
   .mainmaincontainer2-1 {
     background-color: rgb(191,0,0);
     width: 100%;
-    height: 980vh;
+    min-height: 980vh;
+    height: auto;
     border-radius: 50px;
     padding: 2vh;
   }
