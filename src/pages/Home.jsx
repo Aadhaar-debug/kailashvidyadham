@@ -16,7 +16,9 @@ import donation from "../assets/images/donation.png";
 import photo4 from "../assets/images/photo (4).jpeg";   
 import photo18 from "../assets/images/photo (18).jpeg";   
 import photo19 from "../assets/images/photo (19).jpeg";   
-import templeimage10 from "../assets/images/templeimage.jpg";   
+import photo13 from "../assets/images/photo (13).jpeg";
+import mandir2 from "../assets/images/mandir2.jpg";
+   
 
 const Home = () => {
   return (
@@ -81,7 +83,7 @@ const Home = () => {
             <div className="onlineformcontainer">
               <div className="onlineform">
                 <div style={{color : 'rgb(191,0,0)' , fontSize  :'25px' , fontWeight: '700'}}>
-                  <div style={{marginLeft : '2vh' , marginTop : '-1vh' , marginBottom : '1vh'}}>Apply Online</div>
+                  <div style={{marginLeft : '2vh' , marginTop : '-1vh' , marginBottom : '1vh'}}>Subscribe to our Newsletter</div>
                   <form className="online-form">
                     <input type="text" placeholder="Your Name" required />
 
@@ -89,11 +91,11 @@ const Home = () => {
 
                     <input type="tel" placeholder="Your Phone" required />
 
-                    <input type="text" placeholder="Booking To and From Date" required />
+                    <input type="text" placeholder="Preferred Newsletter Frequency" required />
 
-                    <input type="text" placeholder="Pooja Category / Message" required />
+                    <input type="text" placeholder="Interests / Topics" required />
 
-                    <button type="submit">Submit</button>
+                    <button type="submit">Subscribe</button>
                   </form>
                 </div>
               </div>
@@ -154,6 +156,303 @@ const Home = () => {
               </div>
             </div>
           </div>
+
+          {/* Our Sacred Purpose Section */}
+          <section className="sacred-purpose-section" style={{ 
+            padding: '2rem 1rem', 
+            width: '100%', 
+            marginTop: '15vh'
+          }}>
+            <div className="sacred-purpose-content" style={{
+              display: 'flex',
+              gap: '3rem',
+              alignItems: 'center',
+              padding: '2rem',
+              maxWidth: '1200px',
+              margin: '1rem auto',
+              background: 'white',
+              borderRadius: '20px',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
+            }}>
+              <div className="sacred-purpose-image" style={{ flex: '1', position: 'relative' }}>
+                <img 
+                  src={photo13} 
+                  alt="Temple Main Hall" 
+                  style={{
+                    width: '100%',
+                    height: '500px',
+                    objectFit: 'cover',
+                    borderRadius: '20px',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
+                  }}
+                />
+              </div>
+              <div className="sacred-purpose-text" style={{ flex: '1', padding: '2rem', color: '#333' }}>
+                <h2 style={{ color: 'rgb(191,0,0)', fontSize: '2rem', marginBottom: '1.5rem' }}>Our Sacred Purpose</h2>
+                <p style={{ marginBottom: '1rem', lineHeight: '1.8', fontSize: '1.1rem' }}>
+                  At Kailash Vidya Dham, we are dedicated to preserving and promoting the rich tapestry of 
+                  Vedic traditions while making them accessible to contemporary seekers. Our temple serves 
+                  as a bridge between ancient wisdom and modern life, offering guidance and spiritual 
+                  sustenance to all who seek it.
+                </p>
+                <p style={{ marginBottom: '1rem', lineHeight: '1.8', fontSize: '1.1rem' }}>
+                  Through our various programs and initiatives, we strive to create an environment where 
+                  spiritual growth, cultural preservation, and community service come together in harmony.
+                  Our commitment extends beyond religious ceremonies to encompass holistic development 
+                  of individuals and society.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Features Section */}
+          <section className="features-section" style={{ 
+            padding: '2rem', 
+            margin: '1rem auto', 
+            maxWidth: '1200px',
+            marginTop: '15vh'
+          }}>
+            <div className="features-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '2rem'
+            }}>
+              <div className="feature-card" style={{
+                padding: '2rem',
+                borderRadius: '20px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                transition: 'transform 0.3s ease',
+                backdropFilter: 'blur(5px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <h3 style={{ color: 'gold', fontSize: '1.5rem', marginBottom: '1rem' }}>Rich Heritage</h3>
+                <p style={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.6' }}>
+                  Our temple stands as a living monument to centuries of spiritual tradition. The 
+                  architecture and sacred spaces are designed according to ancient Vastu principles, 
+                  creating an atmosphere of divine harmony and peace.
+                </p>
+              </div>
+              <div className="feature-card" style={{
+                padding: '2rem',
+                borderRadius: '20px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                transition: 'transform 0.3s ease',
+                backdropFilter: 'blur(5px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <h3 style={{ color: 'gold', fontSize: '1.5rem', marginBottom: '1rem' }}>Daily Rituals</h3>
+                <p style={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.6' }}>
+                  Experience the divine through our meticulously performed daily rituals, including 
+                  morning abhishekam, regular aartis, and special pujas. Our trained priests maintain 
+                  the highest standards of Vedic traditions.
+                </p>
+              </div>
+              <div className="feature-card" style={{
+                padding: '2rem',
+                borderRadius: '20px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                transition: 'transform 0.3s ease',
+                backdropFilter: 'blur(5px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <h3 style={{ color: 'gold', fontSize: '1.5rem', marginBottom: '1rem' }}>Spiritual Education</h3>
+                <p style={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.6' }}>
+                  Our comprehensive educational programs include Vedic studies, Sanskrit classes, 
+                  spiritual discourses, and cultural activities for all age groups, fostering a 
+                  deeper understanding of our ancient wisdom.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Temple Complex Section */}
+          <section className="temple-complex-section" style={{ 
+            padding: '2rem 1rem', 
+            width: '100%', 
+            marginTop: '15vh'
+          }}>
+            <div className="temple-complex-content" style={{
+              display: 'flex',
+              gap: '3rem',
+              alignItems: 'center',
+              padding: '2rem',
+              maxWidth: '1200px',
+              margin: '1rem auto',
+              background: 'white',
+              borderRadius: '20px',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+              flexDirection: 'row-reverse'
+            }}>
+              <div className="temple-complex-image" style={{ flex: '1', position: 'relative' }}>
+                <img 
+                  src={mandir2} 
+                  alt="Temple Complex" 
+                  style={{
+                    width: '100%',
+                    height: '500px',
+                    objectFit: 'cover',
+                    borderRadius: '20px',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
+                  }}
+                />
+              </div>
+              <div className="temple-complex-text" style={{ flex: '1', padding: '2rem', color: '#333' }}>
+                <h2 style={{ color: 'rgb(191,0,0)', fontSize: '2rem', marginBottom: '1.5rem' }}>Our Temple Complex</h2>
+                <p style={{ marginBottom: '1rem', lineHeight: '1.8', fontSize: '1.1rem' }}>
+                  Our temple complex is a testament to traditional temple architecture, featuring:
+                </p>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'rgb(191,0,0)', position: 'absolute', left: 0 }}>•</span>
+                    Main Temple Sanctum with Lord Shiva and Parvati
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'rgb(191,0,0)', position: 'absolute', left: 0 }}>•</span>
+                    Meditation Hall accommodating up to 100 practitioners
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'rgb(191,0,0)', position: 'absolute', left: 0 }}>•</span>
+                    Yagya Shala for sacred fire ceremonies
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'rgb(191,0,0)', position: 'absolute', left: 0 }}>•</span>
+                    Modern Learning Center for Vedic education
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'rgb(191,0,0)', position: 'absolute', left: 0 }}>•</span>
+                    Community Kitchen for prasad and annadaan
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'rgb(191,0,0)', position: 'absolute', left: 0 }}>•</span>
+                    Extensive Library of spiritual texts
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Initiatives Section */}
+          <section className="initiatives-section" style={{ 
+            padding: '2rem', 
+            margin: '1rem auto', 
+            maxWidth: '1200px',
+            marginTop: '15vh'
+          }}>
+            <div className="initiatives-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '2rem'
+            }}>
+              <div className="initiative-item" style={{
+                padding: '2rem',
+                borderRadius: '20px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(5px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <h3 style={{ color: 'gold', fontSize: '1.5rem', marginBottom: '1rem' }}>Spiritual Programs</h3>
+                <ul style={{ listStyle: 'none', padding: 0, color: 'rgba(255, 255, 255, 0.9)' }}>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Daily Rituals and Continuous Archana
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Special Festival Celebrations
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Guided Meditation Sessions
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    One-on-one Spiritual Counseling
+                  </li>
+                </ul>
+              </div>
+              <div className="initiative-item" style={{
+                padding: '2rem',
+                borderRadius: '20px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(5px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <h3 style={{ color: 'gold', fontSize: '1.5rem', marginBottom: '1rem' }}>Educational Activities</h3>
+                <ul style={{ listStyle: 'none', padding: 0, color: 'rgba(255, 255, 255, 0.9)' }}>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Regular Vedic Studies Classes
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Sanskrit Language Courses
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Cultural Programs and Training
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Youth Development Initiatives
+                  </li>
+                </ul>
+              </div>
+              <div className="initiative-item" style={{
+                padding: '2rem',
+                borderRadius: '20px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(5px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <h3 style={{ color: 'gold', fontSize: '1.5rem', marginBottom: '1rem' }}>Community Service</h3>
+                <ul style={{ listStyle: 'none', padding: 0, color: 'rgba(255, 255, 255, 0.9)' }}>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Daily Annadaan Service
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Charitable Initiatives
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Environmental Projects
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Regular Health Camps
+                  </li>
+                </ul>
+              </div>
+              <div className="initiative-item" style={{
+                padding: '2rem',
+                borderRadius: '20px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(5px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)'
+              }}>
+                <h3 style={{ color: 'gold', fontSize: '1.5rem', marginBottom: '1rem' }}>Cultural Preservation</h3>
+                <ul style={{ listStyle: 'none', padding: 0, color: 'rgba(255, 255, 255, 0.9)' }}>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Traditional Arts Support
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Festival Celebrations
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Knowledge Repository
+                  </li>
+                  <li style={{ marginBottom: '0.5rem', paddingLeft: '1.5rem', position: 'relative' }}>
+                    <span style={{ content: '"•"', color: 'gold', position: 'absolute', left: 0 }}>•</span>
+                    Skills Development Programs
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
           <div style={{ marginTop:'15vh',fontSize: '40px',color: 'gold' ,display:'flex', alignItems:'center', justifyContent:'center'}}>Photo Gallery</div>
             <div className="photogallerycontainer">
@@ -229,47 +528,196 @@ const Home = () => {
                 </a>
               </div>
 
-              <div style={{ marginTop:'-25vh',fontSize: '35px',color: 'gold' ,display:'flex', alignItems:'center', justifyContent:'center'}}>About</div>
 
-              <div className="homeaboutcontainer">
-                <div className="aboutbackgroundimage">
-                  <div>
-                    <img src={templeimage10} alt="prasaddaan" className="prasaddaan" style={{borderRadius:'50px'}}/>
+
+              {/* Vision Section */}
+              <section className="vision-section" style={{ 
+                textAlign: 'center',
+                padding: '2rem',
+                background: 'white',
+                margin: '1rem auto',
+                maxWidth: '1200px',
+                borderRadius: '20px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+                marginTop: '15vh'
+              }}>
+                <div className="vision-content" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                  <h2 style={{ color: 'rgb(191,0,0)', fontSize: '2.5rem', marginBottom: '1.5rem' }}>Our Vision</h2>
+                  <p style={{ color: '#333', lineHeight: '1.8', fontSize: '1.1rem', marginBottom: '1rem' }}>
+                    We envision Kailash Vidya Dham as a global center for spiritual excellence, where seekers 
+                    from all walks of life can find guidance, peace, and transformation. Our goal is to create 
+                    a space where ancient wisdom continues to illuminate modern lives, fostering a community 
+                    of conscious and compassionate individuals.
+                  </p>
+                  <p style={{ color: '#333', lineHeight: '1.8', fontSize: '1.1rem', marginBottom: '1rem' }}>
+                    Through strategic initiatives and dedicated efforts, we work towards establishing a 
+                    world-class Vedic research center, creating comprehensive spiritual training programs, 
+                    developing sustainable community service models, and promoting environmental consciousness 
+                    through spiritual wisdom.
+                  </p>
+                </div>
+              </section>
+
+              {/* Impact Achievements Section */}
+              <section className="achievements-section" style={{ 
+                padding: '2rem', 
+                margin: '1rem auto', 
+                maxWidth: '1200px',
+                marginTop: '15vh'
+              }}>
+                <h2 style={{ color: 'gold', fontSize: '2rem', textAlign: 'center', marginBottom: '2rem' }}>Our Impact & Achievements</h2>
+                <div className="achievements-grid" style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(4, 1fr)',
+                  gap: '1.5rem'
+                }}>
+                  <div className="achievement-card" style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    padding: '2rem',
+                    borderRadius: '20px',
+                    textAlign: 'center',
+                    backdropFilter: 'blur(5px)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    transition: 'transform 0.3s ease'
+                  }}>
+                    <div className="achievement-number" style={{ color: 'gold', fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>10,000+</div>
+                    <div className="achievement-title" style={{ color: 'white', fontSize: '1.2rem', fontWeight: '600', marginBottom: '0.5rem' }}>Ceremonies Performed</div>
+                    <div className="achievement-desc" style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.9rem' }}>Traditional ceremonies and rituals conducted annually</div>
                   </div>
-                  <div className="homeabouttext">
-                    <h1 style={{color:'gold'}}>Kailash Vidya Dham</h1>
-                    <div>
-                      <p>QRHQ+3JG, Chinore, Jammu, Jammu and Kashmir 180013</p>
+                  <div className="achievement-card" style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    padding: '2rem',
+                    borderRadius: '20px',
+                    textAlign: 'center',
+                    backdropFilter: 'blur(5px)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    transition: 'transform 0.3s ease'
+                  }}>
+                    <div className="achievement-number" style={{ color: 'gold', fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>5,000+</div>
+                    <div className="achievement-title" style={{ color: 'white', fontSize: '1.2rem', fontWeight: '600', marginBottom: '0.5rem' }}>Students Educated</div>
+                    <div className="achievement-desc" style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.9rem' }}>Trained in Vedic studies and Sanskrit</div>
+                  </div>
+                  <div className="achievement-card" style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    padding: '2rem',
+                    borderRadius: '20px',
+                    textAlign: 'center',
+                    backdropFilter: 'blur(5px)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    transition: 'transform 0.3s ease'
+                  }}>
+                    <div className="achievement-number" style={{ color: 'gold', fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>100,000+</div>
+                    <div className="achievement-title" style={{ color: 'white', fontSize: '1.2rem', fontWeight: '600', marginBottom: '0.5rem' }}>Meals Served</div>
+                    <div className="achievement-desc" style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.9rem' }}>Through our daily Annadaan service</div>
+                  </div>
+                  <div className="achievement-card" style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    padding: '2rem',
+                    borderRadius: '20px',
+                    textAlign: 'center',
+                    backdropFilter: 'blur(5px)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    transition: 'transform 0.3s ease'
+                  }}>
+                    <div className="achievement-number" style={{ color: 'gold', fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>60+</div>
+                    <div className="achievement-title" style={{ color: 'white', fontSize: '1.2rem', fontWeight: '600', marginBottom: '0.5rem' }}>Years of Service</div>
+                    <div className="achievement-desc" style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.9rem' }}>Dedicated to spiritual enlightenment</div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Reviews Section */}
+              <section className="reviews-section" style={{ 
+                padding: '2rem', 
+                margin: '1rem auto', 
+                maxWidth: '1200px',
+                marginTop: '15vh'
+              }}>
+                <h2 style={{ color: 'gold', fontSize: '2rem', textAlign: 'center', marginBottom: '2rem' }}>Devotee Experiences</h2>
+                <div className="reviews-grid" style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(3, 1fr)',
+                  gap: '1.5rem'
+                }}>
+                  <div className="review-card" style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    padding: '2rem',
+                    borderRadius: '20px',
+                    backdropFilter: 'blur(5px)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    transition: 'transform 0.3s ease'
+                  }}>
+                    <div className="review-stars" style={{ color: 'gold', fontSize: '1.5rem', marginBottom: '1rem' }}>★★★★★</div>
+                    <p className="review-text" style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '1rem', lineHeight: '1.6', marginBottom: '1.5rem', fontStyle: 'italic' }}>
+                      "A truly divine experience. The temple's spiritual atmosphere and the guidance of the 
+                      priests have deeply enriched my spiritual journey."
+                    </p>
+                    <div className="reviewer-info" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '1rem' }}>
+                      <div className="reviewer-name" style={{ color: 'white', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.25rem' }}>Rajesh Kumar</div>
+                      <div className="reviewer-location" style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>Delhi</div>
                     </div>
-                    <div>
-                      <p>For over six decades, Kailash Vidya Dham has been a beacon of spiritual enlightenment 
-                         and service to humanity. Our temple complex serves as a sacred space for devotees 
-                         seeking divine connection, knowledge of ancient scriptures, and the practice of 
-                         traditional rituals. We maintain the highest standards of Vedic traditions while 
-                         embracing modern amenities to serve our growing community of devotees.</p>
+                  </div>
+                  <div className="review-card" style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    padding: '2rem',
+                    borderRadius: '20px',
+                    backdropFilter: 'blur(5px)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    transition: 'transform 0.3s ease'
+                  }}>
+                    <div className="review-stars" style={{ color: 'gold', fontSize: '1.5rem', marginBottom: '1rem' }}>★★★★★</div>
+                    <p className="review-text" style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '1rem', lineHeight: '1.6', marginBottom: '1.5rem', fontStyle: 'italic' }}>
+                      "The Vedic education programs here are exceptional. My children have learned so much 
+                      about our culture and traditions."
+                    </p>
+                    <div className="reviewer-info" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '1rem' }}>
+                      <div className="reviewer-name" style={{ color: 'white', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.25rem' }}>Priya Sharma</div>
+                      <div className="reviewer-location" style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>Mumbai</div>
                     </div>
-                    <div style={{marginTop: '1rem'}}>
-                      <p>Our temple stands as a testament to the timeless wisdom of Sanatan Dharma, featuring 
-                         intricately designed sanctums, meditation halls, and learning spaces. The main temple 
-                         structure, built according to traditional Vastu Shastra principles, creates an 
-                         atmosphere of divine harmony and peace.</p>
-                    </div>
-                    <div style={{marginTop: '1rem'}}>
-                      <p>Join us in this spiritual journey as we continue to serve as a center for 
-                         spiritual growth, cultural preservation, and community welfare. Experience the 
-                         divine presence and timeless wisdom that has guided countless souls on their 
-                         path to enlightenment.</p>
-                    </div>
-                    <div className="social-icons" style={{ display: 'flex', gap: '20px', fontSize: '30px', color: 'gold', marginTop: '1.5rem' }}>
-                      <a href="https://instagram.com" target="_blank"><i className="bi bi-instagram"></i></a>
-                      <a href="https://youtube.com" target="_blank"><i className="bi bi-youtube"></i></a>
-                      <a href="https://facebook.com" target="_blank"><i className="bi bi-facebook"></i></a>
-                      <a href="https://twitter.com" target="_blank"><i className="bi bi-twitter-x"></i></a>
-                      <a href="mailto:someone@example.com"><i className="bi bi-envelope-fill"></i></a>
+                  </div>
+                  <div className="review-card" style={{
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    padding: '2rem',
+                    borderRadius: '20px',
+                    backdropFilter: 'blur(5px)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    transition: 'transform 0.3s ease'
+                  }}>
+                    <div className="review-stars" style={{ color: 'gold', fontSize: '1.5rem', marginBottom: '1rem' }}>★★★★★</div>
+                    <p className="review-text" style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '1rem', lineHeight: '1.6', marginBottom: '1.5rem', fontStyle: 'italic' }}>
+                      "The temple's community service initiatives are inspiring. Their dedication to serving 
+                      society while preserving our traditions is commendable."
+                    </p>
+                    <div className="reviewer-info" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '1rem' }}>
+                      <div className="reviewer-name" style={{ color: 'white', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.25rem' }}>Amit Patel</div>
+                      <div className="reviewer-location" style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>Bangalore</div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </section>
+
+              {/* Call to Action Section */}
+              <section className="cta-section" style={{ 
+                textAlign: 'center',
+                padding: '3rem 2rem',
+                margin: '1rem auto',
+                maxWidth: '800px',
+                marginTop: '15vh'
+              }}>
+                <h2 style={{ color: 'gold', fontSize: '2rem', marginBottom: '1rem' }}>Join Our Spiritual Journey</h2>
+                <p style={{ color: 'white', fontSize: '1.1rem', marginBottom: '2rem' }}>Experience the divine presence and timeless wisdom at Kailash Vidya Dham</p>
+                <button className="cta-button" style={{
+                  background: 'gold',
+                  color: 'rgb(191,0,0)',
+                  border: 'none',
+                  padding: '1rem 2rem',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  borderRadius: '30px',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}>Visit the Temple</button>
+              </section>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
-import About from '../pages/About';
+
 import Services from '../pages/Services';
 import Contact from '../pages/Contact';
 import Donations from '../pages/Donations';
@@ -16,7 +16,7 @@ const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
+
       <Route path="/scriptures-library" element={<ScripturesLibrary />} />
       <Route path="/scriptures/gita" element={<GitaScriptures />} />
       <Route path="/scriptures/gita/bhagavad-gita" element={<BhagavadGitaDetail />} />

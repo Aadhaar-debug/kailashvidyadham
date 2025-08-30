@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ScripturesLibrary.css';
-import { FaHome, FaBookOpen, FaPlay, FaWrench, FaBars, FaSearch, FaChevronDown, FaChevronRight, FaFacebook, FaInstagram, FaYoutube, FaSpotify, FaTwitter } from 'react-icons/fa';
+import { FaBookOpen, FaPlay, FaWrench, FaBars, FaSearch, FaChevronDown, FaChevronRight, FaFacebook, FaInstagram, FaYoutube, FaSpotify, FaTwitter } from 'react-icons/fa';
 
 const ScripturesLibrary = () => {
   const [activeTab, setActiveTab] = useState('explore');
@@ -353,42 +353,6 @@ const ScripturesLibrary = () => {
 
   return (
     <div className="scriptures-library">
-      {/* Left Sidebar Navigation */}
-      <div className="sidebar">
-        <nav className="sidebar-nav">
-          <Link to="/" className="nav-item">
-            <FaHome className="nav-icon" />
-            <span>Home</span>
-          </Link>
-          <Link to="/scriptures-library" className="nav-item active">
-            <FaBookOpen className="nav-icon" />
-            <span>Library</span>
-          </Link>
-          <Link to="/courses" className="nav-item">
-            <FaPlay className="nav-icon" />
-            <span>Courses</span>
-          </Link>
-          <Link to="/store" className="nav-item">
-            <FaWrench className="nav-icon" />
-            <span>Yoddha Store</span>
-          </Link>
-          <Link to="/more" className="nav-item">
-            <FaBars className="nav-icon" />
-            <span>More</span>
-          </Link>
-        </nav>
-
-        <div className="sidebar-footer">
-          <div className="social-icons">
-            <FaFacebook className="social-icon" />
-            <FaInstagram className="social-icon" />
-            <FaYoutube className="social-icon" />
-            <FaSpotify className="social-icon" />
-            <FaTwitter className="social-icon" />
-          </div>
-        </div>
-      </div>
-
       {/* Main Content Area */}
       <div className="main-content">
         {/* Content Header */}

@@ -16,6 +16,8 @@ const ChatButton = () => {
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         cursor: 'pointer',
         border: 'none',
+        zIndex: 1000,
+        transition: 'all 0.3s ease',
     };
 
     const iconStyle = {
@@ -30,7 +32,17 @@ const ChatButton = () => {
         rel="noopener noreferrer"
         style={{ textDecoration: 'none' }}
         >
-        <button style={buttonStyle}>
+        <button 
+            style={buttonStyle}
+            onMouseEnter={(e) => {
+                e.target.style.transform = "scale(1.05)";
+                e.target.style.boxShadow = "0 6px 12px rgba(0, 0, 0, 0.2)";
+            }}
+            onMouseLeave={(e) => {
+                e.target.style.transform = "scale(1)";
+                e.target.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
+            }}
+        >
             <FaWhatsapp style={iconStyle} />
             Chat
         </button>

@@ -4,6 +4,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import Navbar from "./components/Navbar";
 import AllRoutes from "./components/AllRoutes";
 import Footer from "./components/Footer";
+import Chat from "./components/chat";
+import MoveToTop from "./components/movetotop";
 import './App.css';
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
           <div className="content-wrap" style={{ backgroundColor: 'rgb(191, 0, 0)' }}>
             <AllRoutes />
           </div>
+          <MoveToTop />
+          <Chat />
           <Footer />
         </div>
       </Router>

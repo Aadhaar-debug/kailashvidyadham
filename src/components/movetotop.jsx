@@ -44,6 +44,16 @@ const MoveToTop = () => {
                         fontSize: "30px",
                         cursor: "pointer",
                         boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                        zIndex: 1001,
+                        transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                        e.target.style.transform = "scale(1.1)";
+                        e.target.style.boxShadow = "0 6px 12px rgba(0, 0, 0, 0.2)";
+                    }}
+                    onMouseLeave={(e) => {
+                        e.target.style.transform = "scale(1)";
+                        e.target.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
                     }}
                 >
                     ↑

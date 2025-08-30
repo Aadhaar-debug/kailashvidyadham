@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
           <div className="column">
             <h3>Information</h3>
-            <p>About Temple</p>
+
             <p>How to Reach</p>
             <p>Accommodation</p>
             <p>Rules & Customs</p>

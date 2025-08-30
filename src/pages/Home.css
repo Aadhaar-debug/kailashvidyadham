@@ -99,7 +99,7 @@
   }
   .maincontainer2 {
     background-color: rgb(255, 255, 255);
-    height: 440vh;
+    height: 985vh;
     width: 100%;
     margin-top: -6vh;
     border-radius: 50px;
@@ -108,7 +108,7 @@
   .mainmaincontainer2-1 {
     background-color: rgb(191,0,0);
     width: 100%;
-    height: 430vh;
+    height: 980vh;
     border-radius: 50px;
     padding: 2vh;
   }
@@ -253,33 +253,7 @@
     width: 100%;
     height: 30vh;
   }
-  .homeaboutcontainer {
-    width: 100%;
-    height:110vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .aboutbackgroundimage {
-    width: 90%;
-    height: 100vh;
-    background-color: rgb(184, 97, 97);
-    background-image: 
-  linear-gradient(rgba(184, 97, 97, 0.6), rgba(184, 97, 97, 0.6)),
-  url("/src/assets/images/mandir2.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .homeabouttext {
-    margin-top: 0vh;
-    color: white;
-    width: 90vh;
-    margin-left: 8%;
-  }
+
   .social-icons a {
     color: rgb(255, 255, 255);
     transition: 0.3s ease;
@@ -398,33 +372,155 @@
       height: auto;
       padding: 2vh;
     }
-    .homeaboutcontainer {
-      height: auto;
-      padding: 2vh;
+
+    
+    /* Our Sacred Purpose Section Mobile Styles */
+    .sacred-purpose-section {
+      padding: 1rem 0.5rem !important;
+      margin-top: 10vh !important;
     }
-    .aboutbackgroundimage {
-      height: auto;
-      flex-direction: column;
-      padding: 4vh 2vh;
-      margin-top: 0;
+    
+    .sacred-purpose-content {
+      flex-direction: column !important;
+      gap: 1.5rem !important;
+      padding: 1rem !important;
+      margin: 0.5rem auto !important;
     }
-    .aboutbackgroundimage img {
-      width: 90%;
-      height: auto;
-      margin-bottom: 2vh;
+    
+    .sacred-purpose-image {
+      flex: none !important;
+      width: 100% !important;
     }
-    .homeabouttext {
-      width: 90%;
-      margin: 0;
-      text-align: center;
+    
+    .sacred-purpose-image img {
+      height: 300px !important;
+      width: 100% !important;
     }
-    .homeabouttext h1 {
-      font-size: 24px;
-      margin-bottom: 2vh;
+    
+    .sacred-purpose-text {
+      flex: none !important;
+      width: 100% !important;
+      padding: 1rem !important;
     }
-    .homeabouttext p {
-      font-size: 14px;
-      line-height: 1.6;
+    
+    .sacred-purpose-text h2 {
+      font-size: 1.5rem !important;
+      margin-bottom: 1rem !important;
+      text-align: center !important;
+    }
+    
+    .sacred-purpose-text p {
+      font-size: 14px !important;
+      line-height: 1.6 !important;
+      text-align: justify !important;
+    }
+    
+    /* Features Section Mobile Styles */
+    .features-section {
+      padding: 1rem !important;
+      margin-top: 10vh !important;
+    }
+    
+    .features-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important;
+    }
+    
+    .feature-card {
+      padding: 1.5rem !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    .feature-card h3 {
+      font-size: 1.3rem !important;
+      text-align: center !important;
+    }
+    
+    .feature-card p {
+      font-size: 14px !important;
+      text-align: justify !important;
+    }
+    
+    /* Temple Complex Section Mobile Styles */
+    .temple-complex-section {
+      padding: 1rem 0.5rem !important;
+      margin-top: 10vh !important;
+    }
+    
+    .temple-complex-content {
+      flex-direction: column !important;
+      gap: 1.5rem !important;
+      padding: 1rem !important;
+      margin: 0.5rem auto !important;
+    }
+    
+    .temple-complex-image {
+      flex: none !important;
+      width: 100% !important;
+    }
+    
+    .temple-complex-image img {
+      height: 300px !important;
+      width: 100% !important;
+    }
+    
+    .temple-complex-text {
+      flex: none !important;
+      width: 100% !important;
+      padding: 1rem !important;
+    }
+    
+    .temple-complex-text h2 {
+      font-size: 1.5rem !important;
+      margin-bottom: 1rem !important;
+      text-align: center !important;
+    }
+    
+    .temple-complex-text p {
+      font-size: 14px !important;
+      line-height: 1.6 !important;
+      text-align: justify !important;
+    }
+    
+    .temple-complex-text ul {
+      margin-top: 1rem !important;
+    }
+    
+    .temple-complex-text li {
+      font-size: 14px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 0.75rem !important;
+    }
+    
+    /* Initiatives Section Mobile Styles */
+    .initiatives-section {
+      padding: 1rem !important;
+      margin-top: 10vh !important;
+    }
+    
+    .initiatives-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important;
+    }
+    
+    .initiative-item {
+      padding: 1.5rem !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    .initiative-item h3 {
+      font-size: 1.3rem !important;
+      text-align: center !important;
+    }
+    
+    .initiative-item ul {
+      margin-top: 1rem !important;
+    }
+    
+    .initiative-item li {
+      font-size: 14px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 0.75rem !important;
     }
   }
 
@@ -458,7 +554,308 @@
     .dscard {
       width: 95%;
     }
-    .homeabouttext {
-      width: 95%;
+
+    
+    /* Our Sacred Purpose Section Small Mobile Styles */
+    .sacred-purpose-section {
+      padding: 0.5rem !important;
+      margin-top: 8vh !important;
+    }
+    
+    .sacred-purpose-content {
+      padding: 0.5rem !important;
+      margin: 0.25rem auto !important;
+    }
+    
+    .sacred-purpose-image img {
+      height: 250px !important;
+    }
+    
+    .sacred-purpose-text {
+      padding: 0.5rem !important;
+    }
+    
+    .sacred-purpose-text h2 {
+      font-size: 1.3rem !important;
+    }
+    
+    .sacred-purpose-text p {
+      font-size: 13px !important;
+    }
+    
+    /* Features Section Small Mobile Styles */
+    .features-section {
+      padding: 0.5rem !important;
+      margin-top: 8vh !important;
+    }
+    
+    .features-grid {
+      gap: 1rem !important;
+    }
+    
+    .feature-card {
+      padding: 1rem !important;
+    }
+    
+    .feature-card h3 {
+      font-size: 1.2rem !important;
+    }
+    
+    .feature-card p {
+      font-size: 13px !important;
+    }
+    
+    /* Temple Complex Section Small Mobile Styles */
+    .temple-complex-section {
+      padding: 0.5rem !important;
+      margin-top: 8vh !important;
+    }
+    
+    .temple-complex-content {
+      padding: 0.5rem !important;
+      margin: 0.25rem auto !important;
+    }
+    
+    .temple-complex-image img {
+      height: 250px !important;
+    }
+    
+    .temple-complex-text {
+      padding: 0.5rem !important;
+    }
+    
+    .temple-complex-text h2 {
+      font-size: 1.3rem !important;
+    }
+    
+    .temple-complex-text p {
+      font-size: 13px !important;
+    }
+    
+    .temple-complex-text li {
+      font-size: 13px !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    /* Initiatives Section Small Mobile Styles */
+    .initiatives-section {
+      padding: 0.5rem !important;
+      margin-top: 8vh !important;
+    }
+    
+    .initiatives-grid {
+      gap: 1rem !important;
+    }
+    
+    .initiative-item {
+      padding: 1rem !important;
+    }
+    
+    .initiative-item h3 {
+      font-size: 1.2rem !important;
+    }
+    
+    .initiative-item li {
+      font-size: 13px !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    /* Vision Section Mobile Styles */
+    .vision-section {
+      padding: 1rem !important;
+      margin-top: 10vh !important;
+    }
+    
+    .vision-content h2 {
+      font-size: 1.8rem !important;
+    }
+    
+    .vision-content p {
+      font-size: 14px !important;
+    }
+    
+    /* Achievements Section Mobile Styles */
+    .achievements-section {
+      padding: 1rem !important;
+      margin-top: 10vh !important;
+    }
+    
+    .achievements-section h2 {
+      font-size: 1.5rem !important;
+    }
+    
+    .achievements-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 1rem !important;
+    }
+    
+    .achievement-card {
+      padding: 1.5rem !important;
+    }
+    
+    .achievement-number {
+      font-size: 2rem !important;
+    }
+    
+    .achievement-title {
+      font-size: 1rem !important;
+    }
+    
+    .achievement-desc {
+      font-size: 0.8rem !important;
+    }
+    
+    /* Reviews Section Mobile Styles */
+    .reviews-section {
+      padding: 1rem !important;
+      margin-top: 10vh !important;
+    }
+    
+    .reviews-section h2 {
+      font-size: 1.5rem !important;
+    }
+    
+    .reviews-grid {
+      grid-template-columns: 1fr !important;
+      gap: 1.5rem !important;
+    }
+    
+    .review-card {
+      padding: 1.5rem !important;
+    }
+    
+    .review-stars {
+      font-size: 1.2rem !important;
+    }
+    
+    .review-text {
+      font-size: 14px !important;
+    }
+    
+    .reviewer-name {
+      font-size: 1rem !important;
+    }
+    
+    .reviewer-location {
+      font-size: 0.8rem !important;
+    }
+    
+    /* CTA Section Mobile Styles */
+    .cta-section {
+      padding: 2rem 1rem !important;
+      margin-top: 10vh !important;
+    }
+    
+    .cta-section h2 {
+      font-size: 1.5rem !important;
+    }
+    
+    .cta-section p {
+      font-size: 14px !important;
+    }
+    
+    .cta-button {
+      padding: 0.8rem 1.5rem !important;
+      font-size: 1rem !important;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    /* Vision Section Small Mobile Styles */
+    .vision-section {
+      padding: 0.5rem !important;
+      margin-top: 8vh !important;
+    }
+    
+    .vision-content h2 {
+      font-size: 1.5rem !important;
+    }
+    
+    .vision-content p {
+      font-size: 13px !important;
+    }
+    
+    /* Achievements Section Small Mobile Styles */
+    .achievements-section {
+      padding: 0.5rem !important;
+      margin-top: 8vh !important;
+    }
+    
+    .achievements-section h2 {
+      font-size: 1.3rem !important;
+    }
+    
+    .achievements-grid {
+      grid-template-columns: 1fr !important;
+      gap: 0.8rem !important;
+    }
+    
+    .achievement-card {
+      padding: 1rem !important;
+    }
+    
+    .achievement-number {
+      font-size: 1.8rem !important;
+    }
+    
+    .achievement-title {
+      font-size: 0.9rem !important;
+    }
+    
+    .achievement-desc {
+      font-size: 0.7rem !important;
+    }
+    
+    /* Reviews Section Small Mobile Styles */
+    .reviews-section {
+      padding: 0.5rem !important;
+      margin-top: 8vh !important;
+    }
+    
+    .reviews-section h2 {
+      font-size: 1.3rem !important;
+    }
+    
+    .reviews-grid {
+      gap: 1rem !important;
+    }
+    
+    .review-card {
+      padding: 1rem !important;
+    }
+    
+    .review-stars {
+      font-size: 1rem !important;
+    }
+    
+    .review-text {
+      font-size: 13px !important;
+    }
+    
+    .reviewer-name {
+      font-size: 0.9rem !important;
+    }
+    
+    .reviewer-location {
+      font-size: 0.7rem !important;
+    }
+    
+    /* CTA Section Small Mobile Styles */
+    .cta-section {
+      padding: 1.5rem 0.5rem !important;
+      margin-top: 8vh !important;
+    }
+    
+    .cta-section h2 {
+      font-size: 1.3rem !important;
+    }
+    
+    .cta-section p {
+      font-size: 13px !important;
+    }
+    
+    .cta-button {
+      padding: 0.7rem 1.2rem !important;
+      font-size: 0.9rem !important;
     }
   }

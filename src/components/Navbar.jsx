@@ -27,7 +27,7 @@ const Navbar = () => {
 
           <div className={isMobile ? "nav-links-mobile" : "nav-links"}>
             <Link to="/" onClick={() => setIsMobile(false)}>Home</Link>
-            <Link to="/about" onClick={() => setIsMobile(false)}>About</Link>
+
             <Link to="/scriptures-library" onClick={() => setIsMobile(false)}>Scriptures</Link>
             <Link to="/services" onClick={() => setIsMobile(false)}>Services</Link>
             <Link to="/donations" onClick={() => setIsMobile(false)}>Donations</Link>
