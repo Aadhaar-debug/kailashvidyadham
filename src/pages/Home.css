@@ -36,6 +36,10 @@
     transition: background 0.3s ease;
     animation: pulse 1s ease-in-out infinite;
     transition: transform 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
   }
   @keyframes pulse {
     0% {

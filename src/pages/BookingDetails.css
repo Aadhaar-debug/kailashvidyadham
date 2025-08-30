@@ -1,0 +1,483 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Booking Page Styles - Red Background Theme */
+.booking-page {
+  min-height: 100vh;
+  background: rgb(191, 0, 0);
+  font-family: Arial, sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+/* Main Content */
+.booking-main {
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Left Card - Information */
+.info-card {
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  height: fit-content;
+  position: relative;
+  z-index: 1;
+}
+
+.info-card h2 {
+  color: rgb(191, 0, 0);
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.info-section {
+  margin-bottom: 30px;
+}
+
+.info-section:last-child {
+  margin-bottom: 0;
+}
+
+.info-section h3 {
+  color: rgb(191, 0, 0);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.info-section ul,
+.info-section ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-section li {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #000;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.info-section li:last-child {
+  border-bottom: none;
+}
+
+.info-section strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.info-section ol li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 25px;
+}
+
+.info-section ol li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  background: rgb(191, 0, 0);
+  color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Right Card - Registration Form */
+.registration-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.registration-card h2 {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-section {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 25px;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.form-section h3 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: white;
+  font-size: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Selected Event Display */
+.selected-event {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.selected-event h4 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.event-price {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.event-duration {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Payment Section */
+.payment-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 20px;
+}
+
+.payment-section h3 {
+  color: rgb(191, 0, 0);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.payment-summary {
+  margin-bottom: 25px;
+}
+
+.payment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 1rem;
+}
+
+.payment-row:last-child {
+  border-bottom: none;
+}
+
+.payment-row.total {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: rgb(191, 0, 0);
+  border-top: 2px solid #dee2e6;
+  border-bottom: 2px solid #dee2e6;
+  margin: 10px 0;
+  padding: 15px 0;
+}
+
+.payment-row.advance {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 1.1rem;
+}
+
+.pay-now-btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.pay-now-btn:hover {
+  background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+}
+
+.pay-now-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .container {
+    gap: 30px;
+  }
+  
+  .info-card,
+  .registration-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-main {
+    padding: 30px 15px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .info-card,
+  .registration-card {
+    padding: 20px;
+  }
+
+  .info-card h2,
+  .registration-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .info-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .info-section li {
+    font-size: 0.9rem;
+  }
+
+  .form-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .selected-event {
+    padding: 15px;
+  }
+
+  .payment-section {
+    padding: 20px;
+  }
+
+  .payment-row {
+    font-size: 0.95rem;
+  }
+
+  .payment-row.total,
+  .payment-row.advance {
+    font-size: 1rem;
+  }
+
+  .pay-now-btn {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-main {
+    padding: 20px 10px;
+  }
+
+  .info-card,
+  .registration-card {
+    padding: 15px;
+  }
+
+  .info-card h2,
+  .registration-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .info-section {
+    margin-bottom: 20px;
+  }
+
+  .info-section h3 {
+    font-size: 1rem;
+  }
+
+  .info-section li {
+    font-size: 0.85rem;
+    padding: 8px 0;
+  }
+
+  .form-section {
+    padding-bottom: 20px;
+  }
+
+  .form-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  .selected-event {
+    padding: 12px;
+  }
+
+  .selected-event h4 {
+    font-size: 1rem;
+  }
+
+  .event-price {
+    font-size: 1rem;
+  }
+
+  .event-duration {
+    font-size: 0.9rem;
+  }
+
+  .payment-section {
+    padding: 15px;
+  }
+
+  .payment-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .payment-row {
+    font-size: 0.9rem;
+    padding: 10px 0;
+  }
+
+  .payment-row.total,
+  .payment-row.advance {
+    font-size: 0.95rem;
+  }
+
+  .pay-now-btn {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}

@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 
 import Services from '../pages/Services';
+import BookingDetails from '../pages/BookingDetails';
 import Contact from '../pages/Contact';
 import Donations from '../pages/Donations';
 import ScripturesLibrary from '../pages/ScripturesLibrary';
@@ -16,6 +17,7 @@ const AllRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/booking" element={<BookingDetails />} />
 
       <Route path="/scriptures-library" element={<ScripturesLibrary />} />
       <Route path="/scriptures/gita" element={<GitaScriptures />} />

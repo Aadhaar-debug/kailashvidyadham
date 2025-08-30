@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 
 import Services from './pages/Services';
+import BookingDetails from './pages/BookingDetails';
 import ServiceDetails from './components/ServiceDetails';
 import Contact from './pages/Contact';
 import Donations from './pages/Donations';
@@ -33,8 +34,8 @@ function App() {
         <div className="content-wrap">
           <Routes>
             {/* Public Routes */}
-            <Route path="/" element={<Home />} />
-
+                        <Route path="/" element={<Home />} />
+            <Route path="/booking" element={<BookingDetails />} />
             <Route path="/services" element={<Services serviceCategories={serviceCategories} />} />
             <Route path="/services/:serviceId" element={<ServiceDetails serviceCategories={serviceCategories} />} />
             <Route path="/contact" element={<Contact />} />

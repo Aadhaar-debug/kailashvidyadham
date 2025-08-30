@@ -16,7 +16,7 @@ import donation from "../assets/images/donation.png";
 import photo4 from "../assets/images/photo (4).jpeg";   
 import photo18 from "../assets/images/photo (18).jpeg";   
 import photo19 from "../assets/images/photo (19).jpeg";   
-import photo13 from "../assets/images/photo (13).jpeg";
+// import photo13 from "../assets/images/photo (13).jpeg";
 import mandir2 from "../assets/images/mandir2.jpg";
    
 
@@ -36,7 +36,7 @@ const Home = () => {
           <h3 style={{marginTop: '2vh'}}>Perform your pooja with the Best group of</h3>
           <div className="dividingline"></div>
           <h1 style={{color: 'rgb(191,0,0)'}}>Professional Purohits & Pandits</h1>
-          <button className="banner-button">Book Now</button>
+          <Link to="/booking" className="banner-button" style={{ textDecoration: 'none', color: 'white' }}>Book Now</Link>
         </div>
         
         <div className="progressicons">
@@ -176,7 +176,7 @@ const Home = () => {
             }}>
               <div className="sacred-purpose-image" style={{ flex: '1', position: 'relative' }}>
                 <img 
-                  src={photo13} 
+                  src={mandir2} 
                   alt="Temple Main Hall" 
                   style={{
                     width: '100%',
@@ -656,7 +656,7 @@ const Home = () => {
                       <div className="reviewer-name" style={{ color: 'white', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.25rem' }}>Rajesh Kumar</div>
                       <div className="reviewer-location" style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>Delhi</div>
                     </div>
-                  </div>
+                    </div>
                   <div className="review-card" style={{
                     background: 'rgba(255, 255, 255, 0.05)',
                     padding: '2rem',
@@ -674,7 +674,7 @@ const Home = () => {
                       <div className="reviewer-name" style={{ color: 'white', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.25rem' }}>Priya Sharma</div>
                       <div className="reviewer-location" style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem' }}>Mumbai</div>
                     </div>
-                  </div>
+                    </div>
                   <div className="review-card" style={{
                     background: 'rgba(255, 255, 255, 0.05)',
                     padding: '2rem',
