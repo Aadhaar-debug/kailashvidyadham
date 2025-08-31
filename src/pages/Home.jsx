@@ -467,43 +467,43 @@ const Home = () => {
                 borderRadius: '50px',
                 padding: '2rem'
               }}>
-                <div 
-                  id="carouselExampleIndicators" 
-                  className="carousel slide" 
-                  data-bs-ride="carousel" 
-                  data-bs-interval="3000"
-                >
-                  
-                  <div className="carousel-inner">
-                    <div className="carousel-item active">
-                      <img 
-                        src={photo4} 
+                  <div 
+                    id="carouselExampleIndicators" 
+                    className="carousel slide" 
+                    data-bs-ride="carousel" 
+                    data-bs-interval="3000"
+                  >
+                    
+                    <div className="carousel-inner">
+                      <div className="carousel-item active">
+                        <img 
+                          src={photo4} 
                         alt="Temple Photo 1" 
                         style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '30px' }} 
-                      />
-                    </div>
-                    <div className="carousel-item">
-                      <img 
-                        src={photo18} 
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img 
+                          src={photo18} 
                         alt="Temple Photo 2" 
                         style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '30px' }} 
-                      />
-                    </div>
-                    <div className="carousel-item">
-                      <img 
-                        src={photo19} 
+                        />
+                      </div>
+                      <div className="carousel-item">
+                        <img 
+                          src={photo19} 
                         alt="Temple Photo 3" 
                         style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '30px' }} 
-                      />
+                        />
+                      </div>
                     </div>
-                  </div>
 
-                  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon"></span>
-                  </button>
-                  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span className="carousel-control-next-icon"></span>
-                  </button>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span className="carousel-control-prev-icon"></span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span className="carousel-control-next-icon"></span>
+                    </button>
 
                 </div>
               </div>
