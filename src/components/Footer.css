@@ -127,7 +127,7 @@
 
 .contact-info {
     margin: 1.5rem 0;
-    background-color: rgb(191,0,0);
+    background-color: rgb(191,0,0) !important;
     padding: 1rem;
     border-radius: 10px;
 }

@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 
 import Services from '../pages/Services';
+import ServiceDetails from '../pages/ServiceDetails';
 import BookingDetails from '../pages/BookingDetails';
 import Contact from '../pages/Contact';
 import Donations from '../pages/Donations';
@@ -25,7 +26,11 @@ const AllRoutes = () => {
       <Route path="/vedas" element={<Vedas />} />
       <Route path="/bhagavad-gita" element={<BhagavadGita />} />
       <Route path="/puranas" element={<Puranas />} />
+      
+      {/* Put dynamic route before static route */}
+      <Route path="/services/:serviceId" element={<ServiceDetails />} />
       <Route path="/services" element={<Services />} />
+      
       <Route path="/contact" element={<Contact />} />
       <Route path="/donations" element={<Donations />} />
     </Routes>
