@@ -1,277 +1,344 @@
-/* Add styles for the entire page */
-body {
-  background-color: rgb(191, 0, 0);
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
+.mothercontainer {
+    min-height: 100vh;
+    padding: 4vh 2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: rgb(191,0,0);
+    color: white;
 }
 
-/* Ensure the container takes full height */
-#root {
-  min-height: 100vh;
-  background-color: rgb(191, 0, 0);
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.donations-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: rgb(191, 0, 0);
-  min-height: calc(100vh - 4rem);
-  color: gold;
+.contactcontain {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 25px;
 }
 
-.donations-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  color: gold;
-  padding: 2rem;
-  border-bottom: 2px solid gold;
+.contactphoto {
+    flex: 1;
+    min-height: 400px;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: rgb(191,0,0);
 }
 
-.donations-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: gold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+.contactphoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+    transition: transform 0.3s ease;
 }
 
-.donations-header p {
-  font-size: 1.2rem;
-  color: gold;
-  opacity: 0.9;
+.contactphoto img:hover {
+    transform: scale(1.02);
 }
 
-.donations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+.contacttext {
+    flex: 1;
+    padding: 2rem;
+    background-color: rgb(191,0,0);
+    border-radius: 25px;
+    color: white;
 }
 
-.donation-card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid gold;
-  border-radius: 8px;
-  padding: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-}
-
-.donation-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.donation-card.selected {
-  background: rgba(255, 215, 0, 0.1);
-  border: 2px solid gold;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-}
-
-.donation-card h3 {
-  color: gold;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.donation-card p {
-  color: gold;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-.min-amount {
-  color: gold !important;
-  font-weight: bold;
-  margin-top: 1rem;
-  font-size: 1.1rem !important;
-}
-
-.donation-form-container {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  border: 2px solid gold;
-  backdrop-filter: blur(5px);
-}
-
-.donation-form-container h2 {
-  color: gold;
-  text-align: center;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.donation-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .form-group label {
-  font-weight: 600;
-  color: gold;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: gold;
+    font-weight: 600;
 }
 
 .form-group input,
 .form-group select {
-  padding: 0.8rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid gold;
-  border-radius: 4px;
-  font-size: 1rem;
-  color: gold;
-  transition: all 0.3s ease;
-}
-
-.form-group input::placeholder {
-  color: rgba(255, 215, 0, 0.6);
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-  outline: none;
-  border-color: gold;
-  box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
-  background-color: rgba(255, 255, 255, 0.15);
+    outline: none;
+    border-color: gold;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='gold' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+    cursor: pointer;
 }
 
 .form-group select option {
-  background-color: rgb(191, 0, 0);
-  color: gold;
+    background-color: rgb(191,0,0);
+    color: white;
+    padding: 0.75rem;
 }
 
-.donate-button {
-  background-color: gold;
-  color: rgb(191, 0, 0);
-  padding: 1rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 1rem;
+.form-group select:invalid {
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.donate-button:hover {
-  background-color: #FFD700;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+.form-group select:focus option {
+    color: white;
 }
 
-.success-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  backdrop-filter: blur(5px);
+.submit-button {
+    background-color: gold;
+    color: rgb(191,0,0);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.popup-content {
-  background-color: rgb(191, 0, 0);
-  padding: 2rem;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  border: 2px solid gold;
-  color: gold;
+.submit-button:hover {
+    background-color: #ffd700;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
-.popup-content h3 {
-  color: gold;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+.submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.contactothertext {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 25px;
+    margin: 2rem auto;
+    max-width: 1400px;
+}
+
+.donation-benefits {
+    margin-bottom: 2rem;
+}
+
+.donation-benefits h3 {
+    margin-bottom: 1rem;
+}
+
+.donation-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.donation-benefits li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.donation-benefits li:before {
+    content: "✓";
+    color: gold;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
 .donation-info {
-  margin-top: 3rem;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  border: 2px solid gold;
-  backdrop-filter: blur(5px);
+    margin-bottom: 2rem;
 }
 
 .donation-info h3 {
-  color: gold;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
 }
 
-.donation-info ul {
-  list-style-type: none;
-  padding: 0;
+.donation-info p {
+    margin-bottom: 0.5rem;
 }
 
-.donation-info li {
-  margin-bottom: 0.8rem;
-  color: gold;
-  padding-left: 1.5rem;
-  position: relative;
-  opacity: 0.9;
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
 }
 
-.donation-info li::before {
-  content: "•";
-  color: gold;
-  position: absolute;
-  left: 0;
-  font-size: 1.2em;
+.social-links a {
+    transition: transform 0.3s ease;
+    display: inline-block;
 }
 
-@media (max-width: 768px) {
-  .donations-container {
-    padding: 1rem;
-  }
-
-  .donations-header h1 {
-    font-size: 2rem;
-  }
-
-  .donations-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .donation-form-container {
-    padding: 1.5rem;
-    margin: 1rem;
-  }
+.social-links a:hover {
+    transform: translateY(-3px);
 }
 
-@media (max-width: 480px) {
-  .donations-header h1 {
-    font-size: 1.8rem;
-  }
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .contactcontain {
+        padding: 1.5rem;
+    }
+    
+    .contacttext {
+        padding: 1.5rem;
+    }
+    
+    .contactphoto img {
+        border-radius: 20px;
+    }
+}
 
-  .donation-form-container {
-    padding: 1rem;
-  }
+@media screen and (max-width: 768px) {
+    .mothercontainer {
+        padding: 2vh 1vh;
+    }
 
-  .form-group input,
-  .form-group select {
-    padding: 0.6rem;
-  }
+    .contactcontain {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
+
+    .contactphoto {
+        min-height: 300px;
+        padding: 1.5rem;
+    }
+
+    .contacttext {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .contactphoto img {
+        border-radius: 20px;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+    }
+
+    .donation-benefits ul {
+        text-align: left;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mothercontainer {
+        padding: 1vh 0.5vh;
+    }
+
+    .contactcontain {
+        padding: 1rem;
+        margin: 0 0.5rem;
+        border-radius: 15px;
+    }
+
+    .contacttext {
+        padding: 1rem;
+    }
+
+    .contactphoto {
+        min-height: 250px;
+        padding: 1rem;
+        border-radius: 15px;
+    }
+
+    .contactphoto img {
+        border-radius: 15px;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .submit-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-links img {
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .donation-benefits li {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .donation-info p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation for form elements */
+.form-group input,
+.form-group select {
+    transition: all 0.3s ease;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Success and error states */
+.form-group input:valid {
+    border-color: rgba(0, 255, 0, 0.3);
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+/* Loading state for button */
+.submit-button:disabled {
+    background-color: #ccc;
+    color: #666;
 } 

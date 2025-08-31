@@ -455,51 +455,56 @@ const Home = () => {
           </section>
 
           <div style={{ marginTop:'15vh',fontSize: '40px',color: 'gold' ,display:'flex', alignItems:'center', justifyContent:'center'}}>Photo Gallery</div>
-            <div className="photogallerycontainer">
-              <div className="photogallerycontainer-2">
-                <div className="container" style={{ marginTop: '5vh' }}>
-                  <div 
-                    id="carouselExampleIndicators" 
-                    className="carousel slide" 
-                    data-bs-ride="carousel" 
-                    data-bs-interval="3000"
-                  >
-                    
-                    <div className="carousel-inner">
-                      <div className="carousel-item active">
-                        <img 
-                          src={photo4} 
-                          alt="prasaddaan" 
-                          className="prasaddaan" 
-                          style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '50px' }} 
-                        />
-                      </div>
-                      <div className="carousel-item">
-                        <img 
-                          src={photo18} 
-                          alt="prasaddaan" 
-                          className="prasaddaan" 
-                          style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '50px' }} 
-                        />
-                      </div>
-                      <div className="carousel-item">
-                        <img 
-                          src={photo19} 
-                          alt="prasaddaan" 
-                          className="prasaddaan" 
-                          style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '50px' }} 
-                        />
-                      </div>
+            <div style={{ 
+              padding: '2rem 1rem', 
+              width: '100%', 
+              marginTop: '5vh'
+            }}>
+              <div style={{
+                maxWidth: '1200px',
+                margin: '0 auto',
+                background: 'rgb(191,0,0)',
+                borderRadius: '50px',
+                padding: '2rem'
+              }}>
+                <div 
+                  id="carouselExampleIndicators" 
+                  className="carousel slide" 
+                  data-bs-ride="carousel" 
+                  data-bs-interval="3000"
+                >
+                  
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <img 
+                        src={photo4} 
+                        alt="Temple Photo 1" 
+                        style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '30px' }} 
+                      />
                     </div>
-
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                      <span className="carousel-control-prev-icon"></span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                      <span className="carousel-control-next-icon"></span>
-                    </button>
-
+                    <div className="carousel-item">
+                      <img 
+                        src={photo18} 
+                        alt="Temple Photo 2" 
+                        style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '30px' }} 
+                      />
+                    </div>
+                    <div className="carousel-item">
+                      <img 
+                        src={photo19} 
+                        alt="Temple Photo 3" 
+                        style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '30px' }} 
+                      />
+                    </div>
                   </div>
+
+                  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon"></span>
+                  </button>
+                  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span className="carousel-control-next-icon"></span>
+                  </button>
+
                 </div>
               </div>
             </div>
@@ -507,8 +512,7 @@ const Home = () => {
               display: 'flex', 
               justifyContent: 'center', 
               alignItems: 'center', 
-              height: '100vh' ,
-              marginTop : '-40vh'
+              marginTop: '2rem'
               }}>
                 <a 
                   href="https://google.com" 
@@ -520,8 +524,9 @@ const Home = () => {
                     color: 'gold', 
                     padding: '15px 30px', 
                     borderRadius: '10px', 
-                    fontSize: '1.5rem',  // approx h3 size
-                    fontWeight: 'bold' 
+                    fontSize: '1.5rem',
+                    fontWeight: 'bold',
+                    transition: 'all 0.3s ease'
                   }}
                 >
                   View More 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import './Donations.css';
+import Popup from '../components/Popup';
+import photo19 from '../assets/images/photo (19).jpeg';
 
 const donationCategories = [
   {
@@ -108,27 +110,68 @@ const Donations = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [pan, setPan] = useState('');
-  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [popup, setPopup] = useState({ show: false, message: '', type: '' });
+
+  const closePopup = () => {
+    setPopup({ show: false, message: '', type: '' });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would integrate with a payment gateway
-    // For now, we'll just show a success message
-    setShowSuccessPopup(true);
-    setTimeout(() => {
-      setShowSuccessPopup(false);
-      // Reset form
-      setSelectedCategory('');
-      setAmount('');
-      setName('');
-      setEmail('');
-      setPhone('');
-      setPan('');
-    }, 3000);
+    
+    if (!selectedCategory) {
+      setPopup({
+        show: true,
+        type: 'error',
+        message: 'Please select a donation category'
+      });
+      return;
+    }
+
+    const selectedCat = donationCategories.find(cat => cat.id === selectedCategory);
+    if (parseInt(amount) < selectedCat.minAmount) {
+      setPopup({
+        show: true,
+        type: 'error',
+        message: `Minimum amount for ${selectedCat.name} is ₹${selectedCat.minAmount}`
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Here you would integrate with a payment gateway
+      // For now, we'll simulate a successful payment
+      setTimeout(() => {
+        setPopup({
+          show: true,
+          type: 'success',
+          message: 'Thank you for your donation! Your contribution will help make a difference.'
+        });
+        
+        // Reset form
+        setSelectedCategory('');
+        setAmount('');
+        setName('');
+        setEmail('');
+        setPhone('');
+        setPan('');
+        setIsSubmitting(false);
+      }, 2000);
+    } catch (error) {
+      setPopup({
+        show: true,
+        type: 'error',
+        message: 'Payment failed. Please try again later.'
+      });
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <div className="donations-container">
+    <div className="mothercontainer">
       <Helmet>
         <title>Donate to Kailash Vidya Dham | Support Our Temple & Community Services</title>
         <meta name="description" content="Make a donation to Kailash Vidya Dham temple's various charitable causes including Gurukul, Gaushala, orphan care, and more. Support our community services." />
@@ -136,121 +179,155 @@ const Donations = () => {
         <link rel="canonical" href="https://kailashvidyadham.com/donations" />
       </Helmet>
 
-      <div className="donations-header">
-        <h1>Support Our Causes</h1>
-        <p>Your contributions help us serve the community and maintain our sacred traditions</p>
-      </div>
-
-      <div className="donations-grid">
-        {donationCategories.map((category) => (
-          <div 
-            key={category.id} 
-            className={`donation-card ${selectedCategory === category.id ? 'selected' : ''}`}
-            onClick={() => setSelectedCategory(category.id)}
-          >
-            <h3>{category.name}</h3>
-            <p>{category.description}</p>
-            <p className="min-amount">Min. Amount: ₹{category.minAmount}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className="donation-form-container">
-        <h2>Make a Donation</h2>
-        <form onSubmit={handleSubmit} className="donation-form">
-          <div className="form-group">
-            <label>Select Category</label>
-            <select 
-              value={selectedCategory} 
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              required
-            >
-              <option value="">Choose a category</option>
-              {donationCategories.map(category => (
-                <option key={category.id} value={category.id}>
-                  {category.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="form-group">
-            <label>Amount (₹)</label>
-            <input
-              type="number"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              min={selectedCategory ? donationCategories.find(c => c.id === selectedCategory)?.minAmount : 0}
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label>Full Name</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label>Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label>Phone Number</label>
-            <input
-              type="tel"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              pattern="[0-9]{10}"
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label>PAN Number (Optional)</label>
-            <input
-              type="text"
-              value={pan}
-              onChange={(e) => setPan(e.target.value)}
-              pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"
-              title="Enter valid PAN number"
-            />
-          </div>
-
-          <button type="submit" className="donate-button">
-            Proceed to Pay
-          </button>
-        </form>
-      </div>
-
-      {showSuccessPopup && (
-        <div className="success-popup">
-          <div className="popup-content">
-            <h3>Thank You for Your Donation!</h3>
-            <p>Your contribution will help make a difference.</p>
-          </div>
+      <h1 className="page-title" style={{color:'gold'}}>Make a Donation</h1>
+      
+      <div className="contactcontain">
+        <div className="contactphoto">
+          <img src={photo19} alt="Temple Donation" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '25px' }} />
         </div>
-      )}
+        <div className="contacttext">
+          <h2 style={{color: 'gold', marginBottom: '1.5rem'}}>Donation Form</h2>
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="form-group">
+              <label htmlFor="category">Donation Category</label>
+              <select 
+                id="category" 
+                name="category" 
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                required
+              >
+                <option value="" disabled>Select a category</option>
+                {donationCategories.map(category => (
+                  <option key={category.id} value={category.id}>
+                    {category.name} (Min: ₹{category.minAmount})
+                  </option>
+                ))}
+              </select>
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="amount">Amount (₹)</label>
+              <input 
+                type="number" 
+                id="amount" 
+                name="amount" 
+                placeholder="Enter amount"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                min={selectedCategory ? donationCategories.find(c => c.id === selectedCategory)?.minAmount : 0}
+                required
+              />
+            </div>
 
-      <div className="donation-info">
-        <h3>Important Information</h3>
-        <ul>
-          <li>All donations are tax-deductible under Section 80G</li>
-          <li>You will receive a receipt via email after your donation</li>
-          <li>For donations above ₹2000, PAN number is mandatory</li>
-          <li>For any queries, please contact our office at +91-9419362813</li>
-        </ul>
+            <div className="form-group">
+              <label htmlFor="name">Full Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="Enter your full name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required 
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required 
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="phone">Phone Number</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                placeholder="Enter your phone number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required 
+                pattern="[0-9]{10}"
+                title="Please enter a valid 10-digit phone number"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="pan">PAN Number (Optional)</label>
+              <input 
+                type="text" 
+                id="pan" 
+                name="pan" 
+                placeholder="Enter PAN number for tax benefits"
+                value={pan}
+                onChange={(e) => setPan(e.target.value)}
+                pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"
+                title="Enter valid PAN number"
+              />
+            </div>
+
+            <button 
+              type="submit" 
+              className="submit-button"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Processing...' : 'Pay Now'}
+            </button>
+          </form>
+        </div>
       </div>
+
+      <div className="contactothertext">
+        <div className="donation-benefits">
+          <h3 style={{color: 'gold'}}>Benefits of Donating</h3>
+          <ul style={{textAlign: 'left', maxWidth: '600px', margin: '0 auto'}}>
+            <li>Tax deduction under Section 80G of Income Tax Act</li>
+            <li>Contribute to meaningful social causes</li>
+            <li>Support preservation of Vedic traditions</li>
+            <li>Help provide education and care to underprivileged</li>
+          </ul>
+        </div>
+        
+        <div className="donation-info">
+          <h3 style={{color: 'gold', marginBottom: '1rem'}}>Important Information</h3>
+          <p>All donations are tax-deductible under Section 80G</p>
+          <p>You will receive a receipt via email after your donation</p>
+          <p>For donations above ₹2000, PAN number is mandatory</p>
+          <p>For any queries, please contact: +91-9419362813</p>
+        </div>
+
+        <div className="social-links">
+          <a href="https://facebook.com" target="_blank" rel="noreferrer">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style={{ width: '30px', height: '30px' }} />
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noreferrer">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" style={{ width: '30px', height: '30px' }} />
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style={{ width: '30px', height: '30px' }} />
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noreferrer">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" style={{ width: '30px', height: '30px' }} />
+          </a>
+        </div>
+      </div>
+
+      {popup.show && (
+        <Popup
+          message={popup.message}
+          type={popup.type}
+          onClose={closePopup}
+        />
+      )}
     </div>
   );
 };
