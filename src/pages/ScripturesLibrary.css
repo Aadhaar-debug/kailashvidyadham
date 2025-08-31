@@ -1,7 +1,7 @@
 .scriptures-library {
   min-height: 100vh;
   display: flex;
-  background: #f5f5f0;
+  background: rgb(191,0,0) !important;
   color: #333;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -9,8 +9,8 @@
 /* Left Sidebar */
 .sidebar {
   width: 280px;
-  background: #8B4513;
-  color: white;
+  background: white !important;
+  color: #333;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -18,6 +18,7 @@
   left: 0;
   top: 0;
   z-index: 1;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-nav {
@@ -31,30 +32,31 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  color: white;
+  color: #333;
   text-decoration: none;
   transition: all 0.3s ease;
   border-left: 3px solid transparent;
 }
 
 .nav-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-left-color: #FF8C00;
+  background: rgba(191, 0, 0, 0.1);
+  border-left-color: rgb(191, 0, 0);
 }
 
 .nav-item.active {
-  background: rgba(255, 255, 255, 0.15);
-  border-left-color: #FF8C00;
+  background: rgba(191, 0, 0, 0.15);
+  border-left-color: rgb(191, 0, 0);
 }
 
 .nav-icon {
   font-size: 1.2rem;
   width: 20px;
+  color: rgb(191, 0, 0);
 }
 
 .sidebar-footer {
   padding: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(191, 0, 0, 0.2);
   margin-top: auto; /* Push to bottom */
   margin-bottom: 2rem; /* Space from bottom edge */
   margin-top: calc(auto + 3vh); /* Push to bottom and add 3vh down */
@@ -68,33 +70,45 @@
 
 .social-icon {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(191, 0, 0, 0.7);
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .social-icon:hover {
-  color: #FF8C00;
+  color: rgb(191, 0, 0);
 }
 
 /* Main Content Area */
 .main-content {
   flex: 1;
   margin-left: 0;
-  background: #f5f5f0;
+  background: rgb(191,0,0) !important;
   min-height: 100vh;
   position: relative;
   z-index: 10;
   width: 100%;
 }
 
+/* Ensure the page has the correct background */
+body .scriptures-library,
+#root .scriptures-library {
+  background: rgb(191,0,0) !important;
+}
+
+/* Debug styles to ensure changes are visible */
+.scriptures-library {
+  border: 3px solid gold !important;
+}
+
 /* Content Header */
 .content-header {
   padding: 2rem;
-  background: white;
-  border-bottom: 1px solid #e0e0e0;
+  background: rgb(191, 0, 0) !important;
   position: relative;
   z-index: 10;
+  margin: 1rem;
+  border-radius: 10px;
 }
 
 /* Tab Navigation */
@@ -111,7 +125,7 @@
   border: none;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #666;
+  color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
   border-bottom: 2px solid transparent;
@@ -119,12 +133,12 @@
 }
 
 .tab:hover {
-  color: #FF8C00;
+  color: rgb(191, 0, 0);
 }
 
 .tab.active {
-  color: #FF8C00;
-  border-bottom-color: #FF8C00;
+  color: rgb(191, 0, 0);
+  border-bottom-color: rgb(191, 0, 0);
 }
 
 /* Search Container */
@@ -155,7 +169,7 @@
 
 .search-input:focus {
   outline: none;
-  border-color: #FF8C00;
+  border-color: rgb(191, 0, 0);
 }
 
 .search-input::placeholder {
@@ -182,15 +196,15 @@
 }
 
 .filter-btn:hover {
-  background: #FF8C00;
+  background: rgb(191, 0, 0);
   color: white;
-  border-color: #FF8C00;
+  border-color: rgb(191, 0, 0);
 }
 
 .filter-btn.active {
-  background: #FF8C00;
+  background: rgb(191, 0, 0);
   color: white;
-  border-color: #FF8C00;
+  border-color: rgb(191, 0, 0);
 }
 
 /* Scriptures Section */
@@ -205,29 +219,30 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid #e0e0e0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .section-header:hover {
-  background: rgba(255, 140, 0, 0.05);
-  border-radius: 8px;
-  padding: 1rem;
-  margin: 0 -1rem 2rem -1rem;
+  background: #f8f8f8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .section-header h2 {
   font-size: 1.8rem;
-  color: #333;
+  color: gold !important;
   font-weight: 600;
   margin: 0;
 }
 
 .dropdown-icon {
   font-size: 1.2rem;
-  color: #666;
+  color: rgb(191, 0, 0);
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -237,7 +252,7 @@
 }
 
 .dropdown-icon:hover {
-  color: #FF8C00;
+  color: gold;
 }
 
 /* Scriptures List */
@@ -254,28 +269,29 @@
   gap: 1.5rem;
   padding: 1.5rem;
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   color: #333;
   transition: all 0.3s ease;
   border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .scripture-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  border-color: #FF8C00;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgb(191, 0, 0);
 }
 
 .scripture-icon {
   width: 50px;
   height: 50px;
-  background: #f0f0f0;
+  background: rgb(191, 0, 0);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: white;
   font-size: 1.2rem;
   flex-shrink: 0;
 }
@@ -294,12 +310,12 @@
 .scripture-header h3 {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #333;
+  color: rgb(191, 0, 0);
   margin: 0;
 }
 
 .scripture-count {
-  background: #FF8C00;
+  background: rgb(191, 0, 0);
   color: white;
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
@@ -308,50 +324,52 @@
 }
 
 .scripture-description {
-  color: #666;
+  color: #000 !important;
   font-size: 0.95rem;
   line-height: 1.5;
   margin: 0;
 }
 
 .arrow-icon {
-  color: #999;
+  color: rgb(191, 0, 0);
   font-size: 1.1rem;
   transition: transform 0.3s ease;
 }
 
 .scripture-item:hover .arrow-icon {
   transform: translateX(5px);
-  color: #FF8C00;
+  color: gold;
 }
 
 /* Donation Section */
 .donation-section {
-  background: linear-gradient(135deg, #FF8C00, #FFA500);
-  color: white;
+  background: white;
+  color: #333;
   padding: 3rem 2rem;
   text-align: center;
   margin: 2rem;
   border-radius: 15px;
   position: relative;
   z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .donation-section h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   font-weight: 600;
+  color: gold;
 }
 
 .donation-section p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  opacity: 0.9;
+  color: #000;
 }
 
 .donate-btn {
-  background: white;
-  color: #FF8C00;
+  background: rgb(191, 0, 0);
+  color: white;
   border: none;
   padding: 1rem 2.5rem;
   border-radius: 25px;
@@ -359,13 +377,13 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(191, 0, 0, 0.3);
 }
 
 .donate-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  background: #f8f8f8;
+  box-shadow: 0 8px 25px rgba(191, 0, 0, 0.4);
+  background: #a00000;
 }
 
 /* Responsive Design */
@@ -407,6 +425,7 @@
   
   .content-header {
     padding: 1rem;
+    margin: 0.5rem;
   }
   
   .tab-navigation {
@@ -443,6 +462,11 @@
   .scripture-description {
     font-size: 0.9rem;
   }
+  
+  .donation-section {
+    margin: 1rem;
+    padding: 2rem 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -456,6 +480,7 @@
   
   .content-header {
     padding: 0.8rem;
+    margin: 0.5rem;
   }
   
   .search-container {
@@ -479,5 +504,10 @@
   .scripture-header {
     flex-direction: column;
     gap: 0.5rem;
+  }
+  
+  .donation-section {
+    margin: 0.5rem;
+    padding: 1.5rem 1rem;
   }
 }

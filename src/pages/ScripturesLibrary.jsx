@@ -377,7 +377,7 @@ const ScripturesLibrary = () => {
             <FaSearch className="search-icon" />
           <input 
             type="text" 
-              placeholder="Q Find in veducation library"
+              placeholder="Find in veducation library"
               className="search-input"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}

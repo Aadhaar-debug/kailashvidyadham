@@ -206,6 +206,7 @@
   justify-content: space-between;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
+  border-radius: 50px;
   border-bottom: 2px solid #e0e0e0;
   cursor: pointer;
   transition: all 0.3s ease;
