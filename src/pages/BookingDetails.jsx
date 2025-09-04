@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import "./BookingDetails.css";
+import { processPayment, createPaymentOrder } from '../utils/razorpay';
 
 const BookingDetails = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -218,11 +219,65 @@ const BookingDetails = () => {
     return '';
   };
 
-  const handlePayNow = (e) => {
+  const handlePayNow = async (e) => {
     e.preventDefault();
-    // Handle payment logic here
-    console.log('Payment initiated for:', formData);
-    alert('Payment gateway will open here. This is a demo.');
+    
+    if (!selectedEvent) {
+      alert('Please select an event first.');
+      return;
+    }
+
+    try {
+      // Extract price from the selected event (remove ₹ symbol and commas)
+      const priceString = selectedEvent.price.replace('₹', '').replace(/,/g, '');
+      const basePrice = parseInt(priceString);
+      const registrationFee = 500;
+      const taxAmount = Math.round((basePrice + registrationFee) * 0.02);
+      const totalAmount = basePrice + registrationFee + taxAmount;
+
+      // Create payment order
+      const orderDetails = await createPaymentOrder(totalAmount);
+      
+      // Process payment
+      processPayment(
+        {
+          ...orderDetails,
+          description: `${selectedEvent.name} Booking`,
+          serviceName: selectedEvent.name
+        },
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address
+        },
+        (response) => {
+          // Payment success
+          console.log('Payment successful:', response);
+          alert('Payment successful! Your booking has been confirmed.');
+          
+          // Reset form
+          setSelectedEvent('');
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            date: '',
+            time: '',
+            address: '',
+            specialRequests: ''
+          });
+        },
+        (error) => {
+          // Payment failed
+          console.error('Payment failed:', error);
+          alert('Payment failed. Please try again.');
+        }
+      );
+    } catch (error) {
+      console.error('Error processing payment:', error);
+      alert('Error processing payment. Please try again.');
+    }
   };
 
   return (

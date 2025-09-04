@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { serviceCategories, servicePrices } from '../data/services';
 import Popup from '../components/Popup';
 import "./ServiceDetails.css";
+import { processPayment, createPaymentOrder } from '../utils/razorpay';
 
 const ServiceDetails = () => {
   const { serviceId } = useParams();
@@ -194,19 +195,55 @@ const ServiceDetails = () => {
     return totalBeforeTax + taxAmount;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate payment processing
-    setTimeout(() => {
+    try {
+      // Create payment order
+      const orderDetails = await createPaymentOrder(getTotalAmount());
+      
+      // Process payment
+      processPayment(
+        {
+          ...orderDetails,
+          description: `${service.title} Booking`,
+          serviceName: service.title
+        },
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.address
+        },
+        (response) => {
+          // Payment success
+          setIsSubmitting(false);
+          setPopup({
+            show: true,
+            message: `Payment successful! Your ${service.title} has been booked. You will receive a confirmation email shortly.`,
+            type: 'success'
+          });
+        },
+        (error) => {
+          // Payment failed
+          setIsSubmitting(false);
+          setPopup({
+            show: true,
+            message: `Payment failed: ${error}. Please try again.`,
+            type: 'error'
+          });
+        }
+      );
+    } catch (error) {
+      console.error('Error processing payment:', error);
       setIsSubmitting(false);
       setPopup({
         show: true,
-        message: `Payment successful! Your ${service.title} has been booked. You will receive a confirmation email shortly.`,
-        type: 'success'
+        message: 'Error processing payment. Please try again.',
+        type: 'error'
       });
-    }, 2000);
+    }
   };
 
   const closePopup = () => {

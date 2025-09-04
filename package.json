@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^14.4.3",
     "bootstrap": "^5.3.5",
     "lucide-react": "^0.487.0",
+    "razorpay": "^2.9.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
@@ -20,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start:prod": "set REACT_APP_RAZORPAY_KEY_ID=rzp_live_RA1C2dbaJiUkbn && set NODE_ENV=production && set PORT=5000 && react-scripts start",
+    "build:prod": "set REACT_APP_RAZORPAY_KEY_ID=rzp_live_RA1C2dbaJiUkbn && set NODE_ENV=production && react-scripts build"
   },
   "eslintConfig": {
     "extends": [

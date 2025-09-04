@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import "./Home.css";
@@ -18,9 +18,75 @@ import photo18 from "../assets/images/photo (18).jpeg";
 import photo19 from "../assets/images/photo (19).jpeg";   
 // import photo13 from "../assets/images/photo (13).jpeg";
 import mandir2 from "../assets/images/mandir2.jpg";
+import { processPayment, createPaymentOrder } from '../utils/razorpay';
+import { serviceCategories, servicePrices } from '../data/services';
    
 
 const Home = () => {
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [paymentForm, setPaymentForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: 'Garbhadhana Sanskar'
+  });
+
+  const handleBookNow = (e) => {
+    e.preventDefault();
+    setShowPaymentModal(true);
+  };
+
+  const handlePaymentSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      // Get the selected service price
+      const selectedServicePrice = servicePrices[paymentForm.service] || 1500;
+      const registrationFee = 500;
+      const taxAmount = Math.round((selectedServicePrice + registrationFee) * 0.02);
+      const totalAmount = selectedServicePrice + registrationFee + taxAmount;
+      
+      // Create payment order
+      const orderDetails = await createPaymentOrder(totalAmount);
+      
+      // Process payment
+      processPayment(
+        {
+          ...orderDetails,
+          description: `${paymentForm.service} Booking`,
+          serviceName: paymentForm.service
+        },
+        {
+          name: paymentForm.name,
+          email: paymentForm.email,
+          phone: paymentForm.phone
+        },
+        (response) => {
+          // Payment success
+          console.log('Payment successful:', response);
+          setShowPaymentModal(false);
+          setPaymentForm({ name: '', email: '', phone: '', service: 'Garbhadhana Sanskar' });
+          alert('Payment successful! Your booking has been confirmed.');
+        },
+        (error) => {
+          // Payment failed
+          console.error('Payment failed:', error);
+          alert('Payment failed. Please try again.');
+        }
+      );
+    } catch (error) {
+      console.error('Error processing payment:', error);
+      alert('Error processing payment. Please try again.');
+    }
+  };
+
+  const handleInputChange = (e) => {
+    setPaymentForm({
+      ...paymentForm,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <div>
       <Helmet>
@@ -36,7 +102,7 @@ const Home = () => {
           <h3 style={{marginTop: '2vh'}}>Perform your pooja with the Best group of</h3>
           <div className="dividingline"></div>
           <h1 style={{color: 'rgb(191,0,0)'}}>Professional Purohits & Pandits</h1>
-          <Link to="/booking" className="banner-button" style={{ textDecoration: 'none', color: 'white' }}>Book Now</Link>
+          <button onClick={handleBookNow} className="banner-button" style={{ textDecoration: 'none', color: 'white', border: 'none', background: 'rgb(191,0,0)', cursor: 'pointer' }}>Book Now</button>
         </div>
         
         <div className="progressicons">
@@ -725,6 +791,188 @@ const Home = () => {
               </section>
         </div>
       </div>
+
+      {/* Payment Modal */}
+      {showPaymentModal && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: 1000
+        }}>
+          <div style={{
+            backgroundColor: 'white',
+            padding: '2rem',
+            borderRadius: '15px',
+            maxWidth: '500px',
+            width: '90%',
+            maxHeight: '90vh',
+            overflowY: 'auto'
+          }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginBottom: '1.5rem'
+            }}>
+              <h2 style={{ color: 'rgb(191,0,0)', margin: 0 }}>Book Puja Service</h2>
+              <button 
+                onClick={() => setShowPaymentModal(false)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                  color: '#666'
+                }}
+              >
+                ×
+              </button>
+            </div>
+            
+            <form onSubmit={handlePaymentSubmit}>
+              <div style={{ marginBottom: '1rem' }}>
+                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>
+                  Select Hindu Ritual Event
+                </label>
+                <select
+                  name="service"
+                  value={paymentForm.service}
+                  onChange={handleInputChange}
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem',
+                    border: '1px solid #ddd',
+                    borderRadius: '5px',
+                    fontSize: '1rem'
+                  }}
+                >
+                  {serviceCategories.map((category) => (
+                    <optgroup key={category.title} label={category.title}>
+                      {category.services.map((service) => (
+                        <option key={service.title} value={service.title}>
+                          {service.title} - ₹{servicePrices[service.title]?.toLocaleString() || 'N/A'}
+                        </option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </select>
+              </div>
+              
+              <div style={{ marginBottom: '1rem' }}>
+                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>
+                  Your Name *
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={paymentForm.name}
+                  onChange={handleInputChange}
+                  required
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem',
+                    border: '1px solid #ddd',
+                    borderRadius: '5px',
+                    fontSize: '1rem'
+                  }}
+                  placeholder="Enter your full name"
+                />
+              </div>
+              
+              <div style={{ marginBottom: '1rem' }}>
+                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={paymentForm.email}
+                  onChange={handleInputChange}
+                  required
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem',
+                    border: '1px solid #ddd',
+                    borderRadius: '5px',
+                    fontSize: '1rem'
+                  }}
+                  placeholder="Enter your email"
+                />
+              </div>
+              
+              <div style={{ marginBottom: '1rem' }}>
+                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={paymentForm.phone}
+                  onChange={handleInputChange}
+                  required
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem',
+                    border: '1px solid #ddd',
+                    borderRadius: '5px',
+                    fontSize: '1rem'
+                  }}
+                  placeholder="Enter your phone number"
+                />
+              </div>
+              
+              <div style={{
+                backgroundColor: '#f8f9fa',
+                padding: '1rem',
+                borderRadius: '8px',
+                marginBottom: '1.5rem'
+              }}>
+                <h4 style={{ margin: '0 0 0.5rem 0', color: 'rgb(191,0,0)' }}>Payment Summary</h4>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                  <span>Service Cost:</span>
+                  <span>₹{servicePrices[paymentForm.service]?.toLocaleString() || '1,500'}</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                  <span>Registration Fee:</span>
+                  <span>₹500</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                  <span>Service Tax (2%):</span>
+                  <span>₹{Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02).toLocaleString()}</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: '1.1rem' }}>
+                  <span>Total Amount:</span>
+                  <span>₹{((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02)).toLocaleString()}</span>
+                </div>
+              </div>
+              
+              <button
+                type="submit"
+                style={{
+                  width: '100%',
+                  background: 'rgb(191,0,0)',
+                  color: 'white',
+                  border: 'none',
+                  padding: '1rem',
+                  borderRadius: '8px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  cursor: 'pointer'
+                }}
+              >
+                Pay Now - ₹{((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02)).toLocaleString()}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

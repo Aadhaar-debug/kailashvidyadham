@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import './Donations.css';
 import Popup from '../components/Popup';
 import photo19 from '../assets/images/photo (19).jpeg';
+import { processPayment, createPaymentOrder } from '../utils/razorpay';
 
 const donationCategories = [
   {
@@ -142,29 +143,55 @@ const Donations = () => {
     setIsSubmitting(true);
 
     try {
-      // Here you would integrate with a payment gateway
-      // For now, we'll simulate a successful payment
-      setTimeout(() => {
-        setPopup({
-          show: true,
-          type: 'success',
-          message: 'Thank you for your donation! Your contribution will help make a difference.'
-        });
-        
-        // Reset form
-        setSelectedCategory('');
-        setAmount('');
-        setName('');
-        setEmail('');
-        setPhone('');
-        setPan('');
-        setIsSubmitting(false);
-      }, 2000);
+      // Create payment order
+      const orderDetails = await createPaymentOrder(parseInt(amount));
+      
+      // Process payment
+      processPayment(
+        {
+          ...orderDetails,
+          description: `Donation to ${selectedCat.name}`,
+          serviceName: `Donation - ${selectedCat.name}`
+        },
+        {
+          name: name,
+          email: email,
+          phone: phone,
+          address: 'Kailash Vidya Dham, Jammu'
+        },
+        (response) => {
+          // Payment success
+          setPopup({
+            show: true,
+            type: 'success',
+            message: 'Thank you for your donation! Your contribution will help make a difference.'
+          });
+          
+          // Reset form
+          setSelectedCategory('');
+          setAmount('');
+          setName('');
+          setEmail('');
+          setPhone('');
+          setPan('');
+          setIsSubmitting(false);
+        },
+        (error) => {
+          // Payment failed
+          setPopup({
+            show: true,
+            type: 'error',
+            message: `Payment failed: ${error}. Please try again.`
+          });
+          setIsSubmitting(false);
+        }
+      );
     } catch (error) {
+      console.error('Error processing payment:', error);
       setPopup({
         show: true,
         type: 'error',
-        message: 'Payment failed. Please try again later.'
+        message: 'Error processing payment. Please try again later.'
       });
       setIsSubmitting(false);
     }
