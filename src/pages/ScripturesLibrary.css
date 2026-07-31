@@ -59,12 +59,7 @@
   border-top: 1px solid rgba(191, 0, 0, 0.2);
   margin-top: auto; /* Push to bottom */
   margin-bottom: 2rem; /* Space from bottom edge */
-  margin-top: calc(auto + 3vh); /* Push to bottom and add 3vh down */
-}
 
-.social-icons {
-  display: flex;
-  gap: 1rem;
   justify-content: center;
 }
 
