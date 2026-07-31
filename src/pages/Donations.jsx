@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import './Donations.css';
 import Popup from '../components/Popup';
 import photo19 from '../assets/images/photo (19).jpeg';
-import { processPayment, createPaymentOrder } from '../utils/razorpay';
+import donationQr from '../assets/images/donation-qr.svg';
 
 const donationCategories = [
   {
@@ -142,59 +142,13 @@ const Donations = () => {
 
     setIsSubmitting(true);
 
-    try {
-      // Create payment order
-      const orderDetails = await createPaymentOrder(parseInt(amount));
-      
-      // Process payment
-      processPayment(
-        {
-          ...orderDetails,
-          description: `Donation to ${selectedCat.name}`,
-          serviceName: `Donation - ${selectedCat.name}`
-        },
-        {
-          name: name,
-          email: email,
-          phone: phone,
-          address: 'Kailash Vidya Dham, Jammu'
-        },
-        (response) => {
-          // Payment success
-          setPopup({
-            show: true,
-            type: 'success',
-            message: 'Thank you for your donation! Your contribution will help make a difference.'
-          });
-          
-          // Reset form
-          setSelectedCategory('');
-          setAmount('');
-          setName('');
-          setEmail('');
-          setPhone('');
-          setPan('');
-          setIsSubmitting(false);
-        },
-        (error) => {
-          // Payment failed
-          setPopup({
-            show: true,
-            type: 'error',
-            message: `Payment failed: ${error}. Please try again.`
-          });
-          setIsSubmitting(false);
-        }
-      );
-    } catch (error) {
-      console.error('Error processing payment:', error);
-      setPopup({
-        show: true,
-        type: 'error',
-        message: 'Error processing payment. Please try again later.'
-      });
-      setIsSubmitting(false);
-    }
+    // Show QR code instructions instead of using a payment gateway
+    setPopup({
+      show: true,
+      type: 'success',
+      message: 'Thank you! Please scan the QR code displayed on this page to complete your donation.'
+    });
+    setIsSubmitting(false);
   };
 
   return (
@@ -307,9 +261,15 @@ const Donations = () => {
               className="submit-button"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Processing...' : 'Pay Now'}
+              {isSubmitting ? 'Processing...' : 'Submit & Scan QR'}
             </button>
           </form>
+
+          <div className="qr-section">
+            <h3>Scan to Donate</h3>
+            <p>Please scan this QR code using PhonePe, Google Pay, or your UPI app to complete your donation.</p>
+            <img src={donationQr} alt="Donation QR Code" className="donation-qr" />
+          </div>
         </div>
       </div>
 
