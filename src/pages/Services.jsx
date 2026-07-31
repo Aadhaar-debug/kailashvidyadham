@@ -2,9 +2,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 // import mandir2 from "../assets/images/mandir2.jpg";
-import photo19 from "../assets/images/photo (19).jpeg";
-import photo5 from "../assets/images/photo (5).jpeg";
-import photo16 from "../assets/images/photo (16).jpeg";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Services.css";
