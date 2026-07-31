@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
 import { serviceCategories, servicePrices } from '../data/services';
 import Popup from '../components/Popup';
+import QRSidePanel from '../components/QRSidePanel';
+import donationQr from '../assets/images/donation-qr.svg';
 import "./ServiceDetails.css";
 import { processPayment, createPaymentOrder } from '../utils/razorpay';
 
@@ -20,6 +22,7 @@ const ServiceDetails = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [popup, setPopup] = useState({ show: false, message: '', type: '' });
+  const [showQrPanel, setShowQrPanel] = useState(false);
 
   console.log('🚀 ServiceDetails: Component loaded with serviceId:', serviceId);
 
@@ -197,6 +200,7 @@ const ServiceDetails = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setShowQrPanel(true);
     setIsSubmitting(true);
 
     try {
@@ -570,6 +574,11 @@ const ServiceDetails = () => {
           onClose={closePopup}
         />
       )}
+      <QRSidePanel
+        show={showQrPanel}
+        onClose={() => setShowQrPanel(false)}
+        qrSrc={donationQr}
+      />
     </div>
   );
 };

@@ -18,12 +18,15 @@ import photo18 from "../assets/images/photo (18).jpeg";
 import photo19 from "../assets/images/photo (19).jpeg";   
 // import photo13 from "../assets/images/photo (13).jpeg";
 import mandir2 from "../assets/images/mandir2.jpg";
+import donationQr from '../assets/images/donation-qr.svg';
+import QRSidePanel from '../components/QRSidePanel';
 import { processPayment, createPaymentOrder } from '../utils/razorpay';
 import { serviceCategories, servicePrices } from '../data/services';
    
 
 const Home = () => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [showQrPanel, setShowQrPanel] = useState(false);
   const [paymentForm, setPaymentForm] = useState({
     name: '',
     email: '',
@@ -38,6 +41,7 @@ const Home = () => {
 
   const handlePaymentSubmit = async (e) => {
     e.preventDefault();
+    setShowQrPanel(true);
     
     try {
       // Get the selected service price
@@ -973,6 +977,11 @@ const Home = () => {
           </div>
         </div>
       )}
+      <QRSidePanel
+        show={showQrPanel}
+        onClose={() => setShowQrPanel(false)}
+        qrSrc={donationQr}
+      />
     </div>
   );
 };

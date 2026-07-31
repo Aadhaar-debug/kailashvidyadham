@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import "./BookingDetails.css";
 import { processPayment, createPaymentOrder } from '../utils/razorpay';
+import QRSidePanel from '../components/QRSidePanel';
+import donationQr from '../assets/images/donation-qr.svg';
 
 const BookingDetails = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedEvent, setSelectedEvent] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+  const [showQrPanel, setShowQrPanel] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -221,6 +224,7 @@ const BookingDetails = () => {
 
   const handlePayNow = async (e) => {
     e.preventDefault();
+    setShowQrPanel(true);
     
     if (!selectedEvent) {
       alert('Please select an event first.');
@@ -636,6 +640,11 @@ const BookingDetails = () => {
           </div>
         </div>
       </div>
+      <QRSidePanel
+        show={showQrPanel}
+        onClose={() => setShowQrPanel(false)}
+        qrSrc={donationQr}
+      />
     </div>
   );
 };
