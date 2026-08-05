@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Services.css";
 import { serviceCategories, servicePrices } from '../data/services';
+import { buildUpiLink } from '../utils/upi';
 import { Helmet } from 'react-helmet-async';
 
 const Services = () => {
@@ -387,13 +388,15 @@ const Services = () => {
                             <span className="price-label">Starting from</span>
                             <span className="service-price-amount">₹{service.price}</span>
                           </div>
-                          <Link 
-                            to={service.link}
-                            className="btn btn-primary"
-                          >
-                            <span>Learn More</span>
-                            <span className="btn-icon">→</span>
-                          </Link>
+                          <div className="service-actions">
+                            <Link 
+                              to={service.link}
+                              className="btn btn-primary"
+                            >
+                              <span>Learn More</span>
+                              <span className="btn-icon">→</span>
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
 import { serviceCategories, servicePrices } from '../data/services';
 import Popup from '../components/Popup';
-import QRSidePanel from '../components/QRSidePanel';
-import donationQr from '../assets/images/donation-qr.svg';
+import { buildUpiLink } from '../utils/upi';
 import "./ServiceDetails.css";
 import { processPayment, createPaymentOrder } from '../utils/razorpay';
 
@@ -21,8 +20,7 @@ const ServiceDetails = () => {
     specialRequests: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [popup, setPopup] = useState({ show: false, message: '', type: '' });
-  const [showQrPanel, setShowQrPanel] = useState(false);
+  const [popup, setPopup] = useState({ show: false, message: '', type: '', qrSrc: null });
 
   console.log('🚀 ServiceDetails: Component loaded with serviceId:', serviceId);
 
@@ -200,12 +198,14 @@ const ServiceDetails = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowQrPanel(true);
     setIsSubmitting(true);
-
+    // build UPI popup with the exact total amount displayed on this page
+    const totalAmount = getTotalAmount();
+    const upiLink = buildUpiLink('91495390088@ibl', totalAmount, 'Kailash Vidya Dham', `${service.title} Booking`);
+    setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to complete payment. Payments are final. For refunds contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '91495390088@ibl', upiAmount: totalAmount.toString(), upiLink });
     try {
       // Create payment order
-      const orderDetails = await createPaymentOrder(getTotalAmount());
+      const orderDetails = await createPaymentOrder(totalAmount);
       
       // Process payment
       processPayment(
@@ -232,26 +232,29 @@ const ServiceDetails = () => {
         (error) => {
           // Payment failed
           setIsSubmitting(false);
-          setPopup({
-            show: true,
-            message: `Payment failed: ${error}. Please try again.`,
-            type: 'error'
-          });
+          // keep QR-only red popup visible with amount
+          const upiLinkFail = buildUpiLink('91495390088@ibl', getTotalAmount(), 'Kailash Vidya Dham', `${service.title} Booking`);
+          setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to retry. For disputes contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '91495390088@ibl', upiAmount: getTotalAmount().toString(), upiLink: upiLinkFail });
         }
       );
     } catch (error) {
       console.error('Error processing payment:', error);
       setIsSubmitting(false);
+      const upiLinkCatch = buildUpiLink('91495390088@ibl', getTotalAmount(), 'Kailash Vidya Dham', `${service.title} Booking`);
       setPopup({
         show: true,
-        message: 'Error processing payment. Please try again.',
-        type: 'error'
+        message: 'Please scan the QR or use the UPI ID below to retry. For disputes contact booking@kailashvidyadham.com.',
+        type: 'error',
+        qrSrc: '/qr.png',
+        upiId: '91495390088@ibl',
+        upiAmount: getTotalAmount().toString(),
+        upiLink: upiLinkCatch
       });
     }
   };
 
   const closePopup = () => {
-    setPopup({ show: false, message: '', type: '' });
+    setPopup({ show: false, message: '', type: '', qrSrc: null });
   };
 
   if (!service) {
@@ -572,13 +575,13 @@ const ServiceDetails = () => {
           message={popup.message}
           type={popup.type}
           onClose={closePopup}
+          qrSrc={popup.qrSrc}
+          upiId={popup.upiId}
+          upiAmount={popup.upiAmount}
+          upiLink={popup.upiLink}
         />
       )}
-      <QRSidePanel
-        show={showQrPanel}
-        onClose={() => setShowQrPanel(false)}
-        qrSrc={donationQr}
-      />
+      {/* QR is shown in the red popup on failure */}
     </div>
   );
 };
