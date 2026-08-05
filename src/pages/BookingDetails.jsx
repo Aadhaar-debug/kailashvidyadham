@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
 import "./BookingDetails.css";
 import { processPayment, createPaymentOrder } from '../utils/razorpay';
 import Popup from '../components/Popup';

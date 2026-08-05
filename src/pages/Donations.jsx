@@ -160,8 +160,6 @@ const Donations = () => {
     setIsSubmitting(false);
   };
 
-  const donationAmount = amount ? parseInt(amount, 10) : 0;
-
   return (
     <div className="mothercontainer">
       <Helmet>
