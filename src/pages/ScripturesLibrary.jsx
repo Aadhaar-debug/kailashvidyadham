@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ScripturesLibrary.css';
-import { FaBookOpen, FaPlay, FaWrench, FaBars, FaSearch, FaChevronDown, FaChevronRight, FaFacebook, FaInstagram, FaYoutube, FaSpotify, FaTwitter } from 'react-icons/fa';
+import { FaBookOpen, FaSearch, FaChevronDown, FaChevronRight } from 'react-icons/fa';
 
 const ScripturesLibrary = () => {
   const [activeTab, setActiveTab] = useState('explore');

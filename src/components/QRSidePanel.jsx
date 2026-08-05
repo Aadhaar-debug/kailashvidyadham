@@ -3,6 +3,8 @@ import React from 'react';
 const QRSidePanel = ({ show, onClose, qrSrc }) => {
   if (!show) return null;
 
+  const src = qrSrc || '/qr.png';
+
   return (
     <div style={{
       position: 'fixed',
@@ -38,15 +40,10 @@ const QRSidePanel = ({ show, onClose, qrSrc }) => {
 
       <div style={{ textAlign: 'center' }}>
         <img
-          src={qrSrc}
+          src={src}
           alt="Payment QR Code"
           style={{ width: '100%', maxWidth: '280px', height: 'auto', borderRadius: '16px', border: '1px solid rgba(0, 0, 0, 0.08)' }}
         />
-      </div>
-
-      <div style={{ marginTop: '1rem', color: '#333', fontSize: '0.95rem' }}>
-        <p><strong>Tip:</strong> Use PhonePe, Google Pay, or any UPI app.</p>
-        <p>After scanning, complete the payment and return to the page.</p>
       </div>
     </div>
   );

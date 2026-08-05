@@ -211,6 +211,9 @@ const Contact = () => {
           message={popup.message}
           type={popup.type}
           onClose={closePopup}
+          qrSrc={popup.qrSrc}
+          upiId={popup.upiId}
+          upiAmount={popup.upiAmount}
         />
       )}
     </div>

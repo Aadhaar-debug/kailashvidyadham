@@ -6,7 +6,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Services.css";
 import { serviceCategories, servicePrices } from '../data/services';
-import { buildUpiLink } from '../utils/upi';
 import { Helmet } from 'react-helmet-async';
 
 const Services = () => {

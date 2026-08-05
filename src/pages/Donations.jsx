@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import './Donations.css';
+import { buildUpiLink } from '../utils/upi';
 import Popup from '../components/Popup';
 import photo19 from '../assets/images/photo (19).jpeg';
 import donationQr from '../assets/images/donation-qr.svg';
@@ -112,11 +113,13 @@ const Donations = () => {
   const [phone, setPhone] = useState('');
   const [pan, setPan] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [popup, setPopup] = useState({ show: false, message: '', type: '' });
+  const [popup, setPopup] = useState({ show: false, message: '', type: '', qrSrc: null });
 
   const closePopup = () => {
-    setPopup({ show: false, message: '', type: '' });
+    setPopup({ show: false, message: '', type: '', qrSrc: null, upiId: '', upiAmount: '', upiLink: '' });
   };
+
+  const selectedCat = donationCategories.find(cat => cat.id === selectedCategory);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -130,7 +133,6 @@ const Donations = () => {
       return;
     }
 
-    const selectedCat = donationCategories.find(cat => cat.id === selectedCategory);
     if (parseInt(amount) < selectedCat.minAmount) {
       setPopup({
         show: true,
@@ -143,13 +145,22 @@ const Donations = () => {
     setIsSubmitting(true);
 
     // Show QR code instructions instead of using a payment gateway
+    // Show red popup with QR and compliance text for manual scanning
+    const donationAmount = amount ? parseFloat(amount) : 0;
+    const upiLink = buildUpiLink('91495390088@ibl', donationAmount, 'Kailash Vidya Dham', `${selectedCat ? selectedCat.name : 'Donation'}`);
     setPopup({
       show: true,
-      type: 'success',
-      message: 'Thank you! Please scan the QR code displayed on this page to complete your donation.'
+      type: 'error',
+      message: 'Please scan the QR or use the UPI ID below to complete your donation. Donations are final. For receipts contact donations@kailashvidyadham.com.',
+      qrSrc: '/qr.png',
+      upiId: '91495390088@ibl',
+      upiAmount: amount ? amount.toString() : '',
+      upiLink
     });
     setIsSubmitting(false);
   };
+
+  const donationAmount = amount ? parseInt(amount, 10) : 0;
 
   return (
     <div className="mothercontainer">
@@ -269,6 +280,18 @@ const Donations = () => {
             <h3>Scan to Donate</h3>
             <p>Please scan this QR code using PhonePe, Google Pay, or your UPI app to complete your donation.</p>
             <img src={donationQr} alt="Donation QR Code" className="donation-qr" />
+            {selectedCategory && amount && parseFloat(amount) > 0 && (
+              <div style={{ marginTop: '1rem' }}>
+                <a
+                  href={buildUpiLink('91495390088@ibl', parseFloat(amount), 'Kailash Vidya Dham', `${selectedCat ? selectedCat.name : 'Donation'}`)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="popup-upi-btn"
+                >
+                  Pay via UPI (direct donation link)
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -313,6 +336,10 @@ const Donations = () => {
           message={popup.message}
           type={popup.type}
           onClose={closePopup}
+          qrSrc={popup.qrSrc}
+          upiId={popup.upiId}
+          upiAmount={popup.upiAmount}
+          upiLink={popup.upiLink}
         />
       )}
     </div>

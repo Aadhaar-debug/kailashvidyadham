@@ -18,15 +18,16 @@ import photo18 from "../assets/images/photo (18).jpeg";
 import photo19 from "../assets/images/photo (19).jpeg";   
 // import photo13 from "../assets/images/photo (13).jpeg";
 import mandir2 from "../assets/images/mandir2.jpg";
-import donationQr from '../assets/images/donation-qr.svg';
-import QRSidePanel from '../components/QRSidePanel';
+// Uses public/IMG_3657 2.jpg as payment QR (placed in public folder)
 import { processPayment, createPaymentOrder } from '../utils/razorpay';
+import { buildUpiLink } from '../utils/upi';
+import Popup from '../components/Popup';
 import { serviceCategories, servicePrices } from '../data/services';
    
 
 const Home = () => {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
-  const [showQrPanel, setShowQrPanel] = useState(false);
+  const [popup, setPopup] = useState({ show: false, message: '', type: '', qrSrc: null });
   const [paymentForm, setPaymentForm] = useState({
     name: '',
     email: '',
@@ -41,14 +42,15 @@ const Home = () => {
 
   const handlePaymentSubmit = async (e) => {
     e.preventDefault();
-    setShowQrPanel(true);
-    
+    // start payment flow -> compute amount and show QR in red popup with amount
     try {
       // Get the selected service price
       const selectedServicePrice = servicePrices[paymentForm.service] || 1500;
       const registrationFee = 500;
       const taxAmount = Math.round((selectedServicePrice + registrationFee) * 0.02);
       const totalAmount = selectedServicePrice + registrationFee + taxAmount;
+      const upiLink = buildUpiLink('91495390088@ibl', totalAmount, 'Kailash Vidya Dham', `${paymentForm.service} Booking`);
+      setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to complete payment. Payments are final. For refunds contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '91495390088@ibl', upiAmount: totalAmount.toString(), upiLink });
       
       // Create payment order
       const orderDetails = await createPaymentOrder(totalAmount);
@@ -70,17 +72,20 @@ const Home = () => {
           console.log('Payment successful:', response);
           setShowPaymentModal(false);
           setPaymentForm({ name: '', email: '', phone: '', service: 'Garbhadhana Sanskar' });
-          alert('Payment successful! Your booking has been confirmed.');
+          setPopup({ show: true, message: 'Payment successful! Your booking has been confirmed.', type: 'success', qrSrc: null });
         },
         (error) => {
           // Payment failed
           console.error('Payment failed:', error);
-          alert('Payment failed. Please try again.');
+          // keep QR visible in red popup (no failure prefix) with amount
+          const upiLinkFail = buildUpiLink('91495390088@ibl', totalAmount ? totalAmount : '', 'Kailash Vidya Dham', `${paymentForm.service} Booking`);
+          setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to retry. For disputes contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '91495390088@ibl', upiAmount: totalAmount ? totalAmount.toString() : '', upiLink: upiLinkFail });
         }
       );
     } catch (error) {
       console.error('Error processing payment:', error);
-      alert('Error processing payment. Please try again.');
+      const upiLinkCatch = buildUpiLink('91495390088@ibl', '', 'Kailash Vidya Dham', `${paymentForm.service} Booking`);
+      setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to retry. For disputes contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '91495390088@ibl', upiAmount: '', upiLink: upiLinkCatch });
     }
   };
 
@@ -548,21 +553,21 @@ const Home = () => {
                       <div className="carousel-item active">
                         <img 
                           src={photo4} 
-                        alt="Temple Photo 1" 
+                        alt="Temple sanctuary view" 
                         style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '30px' }} 
                         />
                       </div>
                       <div className="carousel-item">
                         <img 
                           src={photo18} 
-                        alt="Temple Photo 2" 
+                        alt="Temple courtyard scene" 
                         style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '30px' }} 
                         />
                       </div>
                       <div className="carousel-item">
                         <img 
                           src={photo19} 
-                        alt="Temple Photo 3" 
+                        alt="Temple exterior architecture" 
                         style={{ height: '70vh', width: '100%', objectFit: 'cover', borderRadius: '30px' }} 
                         />
                       </div>
@@ -827,7 +832,7 @@ const Home = () => {
             }}>
               <h2 style={{ color: 'rgb(191,0,0)', margin: 0 }}>Book Puja Service</h2>
               <button 
-                onClick={() => setShowPaymentModal(false)}
+                onClick={() => { setShowPaymentModal(false); }}
                 style={{
                   background: 'none',
                   border: 'none',
@@ -839,149 +844,164 @@ const Home = () => {
                 ×
               </button>
             </div>
-            
-            <form onSubmit={handlePaymentSubmit}>
-              <div style={{ marginBottom: '1rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>
-                  Select Hindu Ritual Event
-                </label>
-                <select
-                  name="service"
-                  value={paymentForm.service}
-                  onChange={handleInputChange}
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid #ddd',
-                    borderRadius: '5px',
-                    fontSize: '1rem'
-                  }}
-                >
-                  {serviceCategories.map((category) => (
-                    <optgroup key={category.title} label={category.title}>
-                      {category.services.map((service) => (
-                        <option key={service.title} value={service.title}>
-                          {service.title} - ₹{servicePrices[service.title]?.toLocaleString() || 'N/A'}
-                        </option>
-                      ))}
-                    </optgroup>
-                  ))}
-                </select>
-              </div>
-              
-              <div style={{ marginBottom: '1rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>
-                  Your Name *
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={paymentForm.name}
-                  onChange={handleInputChange}
-                  required
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid #ddd',
-                    borderRadius: '5px',
-                    fontSize: '1rem'
-                  }}
-                  placeholder="Enter your full name"
-                />
-              </div>
-              
-              <div style={{ marginBottom: '1rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={paymentForm.email}
-                  onChange={handleInputChange}
-                  required
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid #ddd',
-                    borderRadius: '5px',
-                    fontSize: '1rem'
-                  }}
-                  placeholder="Enter your email"
-                />
-              </div>
-              
-              <div style={{ marginBottom: '1rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>
-                  Phone Number *
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={paymentForm.phone}
-                  onChange={handleInputChange}
-                  required
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid #ddd',
-                    borderRadius: '5px',
-                    fontSize: '1rem'
-                  }}
-                  placeholder="Enter your phone number"
-                />
-              </div>
-              
-              <div style={{
-                backgroundColor: '#f8f9fa',
-                padding: '1rem',
-                borderRadius: '8px',
-                marginBottom: '1.5rem'
-              }}>
-                <h4 style={{ margin: '0 0 0.5rem 0', color: 'rgb(191,0,0)' }}>Payment Summary</h4>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                  <span>Service Cost:</span>
-                  <span>₹{servicePrices[paymentForm.service]?.toLocaleString() || '1,500'}</span>
+
+            (
+              <form onSubmit={handlePaymentSubmit}>
+                <div style={{ marginBottom: '1rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>
+                    Select Hindu Ritual Event
+                  </label>
+                  <select
+                    name="service"
+                    value={paymentForm.service}
+                    onChange={handleInputChange}
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '1px solid #ddd',
+                      borderRadius: '5px',
+                      fontSize: '1rem'
+                    }}
+                  >
+                    {serviceCategories.map((category) => (
+                      <optgroup key={category.title} label={category.title}>
+                        {category.services.map((service) => (
+                          <option key={service.title} value={service.title}>
+                            {service.title} - ₹{servicePrices[service.title]?.toLocaleString() || 'N/A'}
+                          </option>
+                        ))}
+                      </optgroup>
+                    ))}
+                  </select>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                  <span>Registration Fee:</span>
-                  <span>₹500</span>
+
+                <div style={{ marginBottom: '1rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>
+                    Your Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={paymentForm.name}
+                    onChange={handleInputChange}
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '1px solid #ddd',
+                      borderRadius: '5px',
+                      fontSize: '1rem'
+                    }}
+                    placeholder="Enter your full name"
+                  />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                  <span>Service Tax (2%):</span>
-                  <span>₹{Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02).toLocaleString()}</span>
+
+                <div style={{ marginBottom: '1rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={paymentForm.email}
+                    onChange={handleInputChange}
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '1px solid #ddd',
+                      borderRadius: '5px',
+                      fontSize: '1rem'
+                    }}
+                    placeholder="Enter your email"
+                  />
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: '1.1rem' }}>
-                  <span>Total Amount:</span>
-                  <span>₹{((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02)).toLocaleString()}</span>
+
+                <div style={{ marginBottom: '1rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={paymentForm.phone}
+                    onChange={handleInputChange}
+                    required
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '1px solid #ddd',
+                      borderRadius: '5px',
+                      fontSize: '1rem'
+                    }}
+                    placeholder="Enter your phone number"
+                  />
                 </div>
-              </div>
-              
-              <button
-                type="submit"
-                style={{
-                  width: '100%',
-                  background: 'rgb(191,0,0)',
-                  color: 'white',
-                  border: 'none',
+
+                <div style={{
+                  backgroundColor: '#f8f9fa',
                   padding: '1rem',
                   borderRadius: '8px',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  cursor: 'pointer'
-                }}
-              >
-                Pay Now - ₹{((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02)).toLocaleString()}
-              </button>
-            </form>
+                  marginBottom: '1.5rem'
+                }}>
+                  <h4 style={{ margin: '0 0 0.5rem 0', color: 'rgb(191,0,0)' }}>Payment Summary</h4>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                    <span>Service Cost:</span>
+                    <span>₹{servicePrices[paymentForm.service]?.toLocaleString() || '1,500'}</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                    <span>Registration Fee:</span>
+                    <span>₹500</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                    <span>Service Tax (2%):</span>
+                    <span>₹{Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02).toLocaleString()}</span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: '1.1rem' }}>
+                    <span>Total Amount:</span>
+                      <span>₹{(((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02))).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  style={{
+                    width: '100%',
+                    background: 'rgb(191,0,0)',
+                    color: 'white',
+                    border: 'none',
+                    padding: '1rem',
+                    borderRadius: '8px',
+                    fontSize: '1.1rem',
+                    fontWeight: '600',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Pay Now - ₹{((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02)).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                </button>
+                {paymentForm.service && (
+                  <div style={{ marginTop: '0.6rem' }}>
+                    <a href={buildUpiLink('91495390088@ibl', ((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02)), 'Kailash Vidya Dham', `${paymentForm.service} Booking`)} target="_blank" rel="noreferrer" className="popup-upi-btn">
+                      Pay via UPI (direct link)
+                    </a>
+                  </div>
+                )}
+              </form>
+            )}
           </div>
         </div>
       )}
-      <QRSidePanel
-        show={showQrPanel}
-        onClose={() => setShowQrPanel(false)}
-        qrSrc={donationQr}
-      />
+      {popup.show && (
+        <Popup
+          message={popup.message}
+          type={popup.type}
+          onClose={() => setPopup({ show: false, message: '', type: '', qrSrc: null, upiId: '', upiAmount: '', upiLink: '' })}
+          qrSrc={popup.qrSrc}
+          upiId={popup.upiId}
+          upiAmount={popup.upiAmount}
+          upiLink={popup.upiLink}
+        />
+      )}
     </div>
   );
 };

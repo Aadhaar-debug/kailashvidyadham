@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import "./BookingDetails.css";
 import { processPayment, createPaymentOrder } from '../utils/razorpay';
-import QRSidePanel from '../components/QRSidePanel';
-import donationQr from '../assets/images/donation-qr.svg';
+import Popup from '../components/Popup';
+import { buildUpiLink } from '../utils/upi';
 
 const BookingDetails = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedEvent, setSelectedEvent] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const [showQrPanel, setShowQrPanel] = useState(false);
+  
+  const [popup, setPopup] = useState({ show: false, message: '', type: '', qrSrc: null });
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -188,6 +189,11 @@ const BookingDetails = () => {
     return '';
   };
 
+  const formatRupees = (n) => {
+    if (typeof n !== 'number') return '';
+    return `₹${n.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  };
+
   const getCeremonyPriceNumeric = () => {
     if (selectedCategory && selectedEvent) {
       const event = eventCategories[selectedCategory].events.find(e => e.name === selectedEvent);
@@ -203,7 +209,7 @@ const BookingDetails = () => {
     const registrationFee = 500;
     const totalBeforeTax = ceremonyPrice + registrationFee;
     const taxAmount = Math.round(totalBeforeTax * 0.02); // 2% tax
-    return `₹${taxAmount.toLocaleString()}`;
+    return formatRupees(taxAmount);
   };
 
   const getTotalAmount = () => {
@@ -216,7 +222,7 @@ const BookingDetails = () => {
         const totalBeforeTax = ceremonyPrice + registrationFee;
         const taxAmount = Math.round(totalBeforeTax * 0.02); // 2% tax
         const totalAmount = totalBeforeTax + taxAmount;
-        return `₹${totalAmount.toLocaleString()}`;
+        return formatRupees(totalAmount);
       }
     }
     return '';
@@ -224,20 +230,22 @@ const BookingDetails = () => {
 
   const handlePayNow = async (e) => {
     e.preventDefault();
-    setShowQrPanel(true);
-    
     if (!selectedEvent) {
       alert('Please select an event first.');
       return;
     }
-
+    let totalAmount = 0;
     try {
-      // Extract price from the selected event (remove ₹ symbol and commas)
-      const priceString = selectedEvent.price.replace('₹', '').replace(/,/g, '');
-      const basePrice = parseInt(priceString);
+      // Find selected event object and extract numeric price
+      const eventObj = selectedCategory && selectedEvent ? eventCategories[selectedCategory].events.find(e => e.name === selectedEvent) : null;
+      const basePrice = eventObj ? parseInt(eventObj.price.replace(/[₹,]/g, ''), 10) : 0;
       const registrationFee = 500;
       const taxAmount = Math.round((basePrice + registrationFee) * 0.02);
-      const totalAmount = basePrice + registrationFee + taxAmount;
+      totalAmount = basePrice + registrationFee + taxAmount;
+
+      // Build per-page UPI link and show QR popup with that link
+      const upiLink = buildUpiLink('91495390088@ibl', totalAmount, 'Kailash Vidya Dham', `${selectedEvent.name} Booking`);
+      setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to complete payment. Payments are final. For refunds contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '91495390088@ibl', upiAmount: totalAmount.toString(), upiLink });
 
       // Create payment order
       const orderDetails = await createPaymentOrder(totalAmount);
@@ -258,7 +266,7 @@ const BookingDetails = () => {
         (response) => {
           // Payment success
           console.log('Payment successful:', response);
-          alert('Payment successful! Your booking has been confirmed.');
+          setPopup({ show: true, message: 'Payment successful! Your booking has been confirmed.', type: 'success', qrSrc: null });
           
           // Reset form
           setSelectedEvent('');
@@ -275,19 +283,23 @@ const BookingDetails = () => {
         (error) => {
           // Payment failed
           console.error('Payment failed:', error);
-          alert('Payment failed. Please try again.');
+          // keep QR-only red popup visible (no failure prefix)
+          const upiLinkFail = buildUpiLink('91495390088@ibl', totalAmount, 'Kailash Vidya Dham', `${selectedEvent.name} Booking`);
+          setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to retry. For disputes contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '91495390088@ibl', upiAmount: totalAmount.toString(), upiLink: upiLinkFail });
         }
       );
     } catch (error) {
-      console.error('Error processing payment:', error);
-      alert('Error processing payment. Please try again.');
-    }
+        console.error('Error processing payment:', error);
+        const upiLinkCatch = buildUpiLink('91495390088@ibl', typeof totalAmount !== 'undefined' ? totalAmount : '', 'Kailash Vidya Dham', `${selectedEvent.name} Booking`);
+        setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to retry. For disputes contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '91495390088@ibl', upiAmount: ''+ (typeof totalAmount !== 'undefined' ? totalAmount : ''), upiLink: upiLinkCatch });
+      }
   };
 
   return (
     <div className="booking-page">
       <div className="booking-main">
         <div className="container">
+          {/* QR is shown in the red popup on failure */}
           {/* Left Card - Information & Details */}
           <div className="info-card">
             <h2>Registration & Process Details</h2>
@@ -627,24 +639,38 @@ const BookingDetails = () => {
                     </div>
                     <div className="payment-row total">
                       <span>Total Amount:</span>
-                      <span>{getTotalAmount()}</span>
+                        <span>{getTotalAmount()}</span>
                     </div>
                   </div>
                   
-                  <button type="submit" className="pay-now-btn">
-                    Pay Now - {getTotalAmount()}
-                  </button>
+                    <button type="submit" className="pay-now-btn">
+                      Pay Now - {getTotalAmount()}
+                    </button>
+                    {selectedEvent && (
+                      <div style={{ marginTop: '0.6rem' }}>
+                        <a href={buildUpiLink('91495390088@ibl', parseInt(getTotalAmount().replace(/[₹,]/g, ''), 10), 'Kailash Vidya Dham', `${selectedEvent} Booking`)} target="_blank" rel="noreferrer" className="popup-upi-btn">
+                          Pay via UPI (direct link)
+                        </a>
+                      </div>
+                    )}
                 </div>
               )}
             </form>
           </div>
         </div>
       </div>
-      <QRSidePanel
-        show={showQrPanel}
-        onClose={() => setShowQrPanel(false)}
-        qrSrc={donationQr}
-      />
+      {/* QR modal is now inline above */}
+      {popup.show && (
+        <Popup
+          message={popup.message}
+          type={popup.type}
+          onClose={() => setPopup({ show: false, message: '', type: '', qrSrc: null, upiId: '', upiAmount: '', upiLink: '' })}
+          qrSrc={popup.qrSrc}
+          upiId={popup.upiId}
+          upiAmount={popup.upiAmount}
+          upiLink={popup.upiLink}
+        />
+      )}
     </div>
   );
 };
