@@ -4,20 +4,43 @@ import './Popup.css';
 const Popup = ({ message, type, onClose, qrSrc, upiId, upiAmount, upiLink }) => {
   const displayUpi = upiId || '91495390088@ibl';
 
-  // Allow an explicit upiLink to be provided per-page; otherwise build from props
+  const formatAmount = (amount) => {
+    const num = Number(amount);
+    return Number.isFinite(num) ? num.toFixed(2) : '';
+  };
+
+  const formattedAmount = formatAmount(upiAmount);
+
   const buildHref = () => {
     if (upiLink) return upiLink;
-    const amountParam = upiAmount ? `&am=${encodeURIComponent(upiAmount)}` : '';
+    const amountParam = formattedAmount ? `&am=${encodeURIComponent(formattedAmount)}` : '';
     return `upi://pay?pa=${encodeURIComponent(displayUpi)}&pn=${encodeURIComponent('Kailash Vidya Dham')}&tn=${encodeURIComponent('Payment')}${amountParam}&cu=INR`;
   };
 
-  const openUpiApp = (event) => {
-    event.preventDefault();
-    const upiHref = buildHref();
-    window.location.href = upiHref;
+  const buildAppLink = (app) => {
+    const amountParam = formattedAmount ? `&am=${encodeURIComponent(formattedAmount)}` : '';
+    const pa = encodeURIComponent(displayUpi);
+    const pn = encodeURIComponent('SWAMI DIVYANAND');
+    const mc = '0000';
+    const mode = '02';
+    const purpose = '00';
+
+    if (app === 'gpay') {
+      return `gpay://upi/pay?pa=${pa}&pn=${pn}&mc=${mc}&mode=${mode}&purpose=${purpose}${amountParam}&cu=INR`;
+    }
+    if (app === 'phonepe') {
+      return `phonepe://pay?pa=${pa}&pn=${pn}&mc=${mc}&mode=${mode}&purpose=${purpose}${amountParam}&cu=INR`;
+    }
+    if (app === 'paytm') {
+      return `paytmmp://pay?pa=${pa}&pn=${pn}&mc=${mc}&mode=${mode}&purpose=${purpose}${amountParam}&cu=INR`;
+    }
+    return buildHref();
   };
 
-  const upiHref = buildHref();
+  const openApp = (event, href) => {
+    event.preventDefault();
+    window.location.href = href;
+  };
 
   return (
     <div className="popup-overlay" onClick={onClose}>
@@ -46,10 +69,30 @@ const Popup = ({ message, type, onClose, qrSrc, upiId, upiAmount, upiLink }) => 
                 </div>
               )}
             </div>
-            <div className="popup-actions">
-              <a className="popup-upi-btn" href={upiHref} onClick={openUpiApp}>Pay via UPI</a>
+            <div className="popup-actions popup-app-grid">
+              <a
+                className="popup-app-btn gpay"
+                href={buildAppLink('gpay')}
+                onClick={(e) => openApp(e, buildAppLink('gpay'))}
+              >
+                GPay
+              </a>
+              <a
+                className="popup-app-btn phonepe"
+                href={buildAppLink('phonepe')}
+                onClick={(e) => openApp(e, buildAppLink('phonepe'))}
+              >
+                PhonePe
+              </a>
+              <a
+                className="popup-app-btn paytm"
+                href={buildAppLink('paytm')}
+                onClick={(e) => openApp(e, buildAppLink('paytm'))}
+              >
+                Paytm
+              </a>
             </div>
-            <p className="popup-note">Do not refresh the page while completing payment. Use the QR code or UPI button above.</p>
+            <p className="popup-note">Do not refresh the page while completing payment. Use the QR code or a payments app above.</p>
           </div>
         </div>
         <button className="popup-close" onClick={onClose} aria-label="Close popup">
