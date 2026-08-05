@@ -126,6 +126,20 @@
   object-fit: contain;
 }
 
+.popup-whatsapp-notice {
+  background: rgba(255, 202, 40, 0.12);
+  border: 1px dashed rgba(255, 202, 40, 0.4);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  color: #ffca28;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 .popup-details {
   display: flex;
   flex-direction: column;

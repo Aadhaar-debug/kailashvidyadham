@@ -92,6 +92,10 @@ const Popup = ({ message, type, onClose, qrSrc, upiId, upiAmount, upiLink }) => 
               </a>
             </div>
 
+            <div className="popup-whatsapp-notice">
+              Please share the screenshot of the payment to our WhatsApp chat for verification.
+            </div>
+
             <div className="popup-details">
               <div className="popup-detail-item">
                 <span>UPI ID</span>
