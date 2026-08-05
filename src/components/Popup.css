@@ -54,21 +54,61 @@
   min-width: 0;
 }
 
+.popup-header {
+  margin-bottom: 1rem;
+}
+
+.popup-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.popup-subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+}
+
 .popup-message {
   color: #fff;
-  font-size: clamp(1rem, 1.1vw, 1.2rem);
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.7;
   margin: 0 0 1rem;
 }
 
-.popup-upi {
+.popup-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
   margin-top: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+}
+
+.popup-detail-item {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.popup-detail-item span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.popup-detail-item strong {
+  color: #fff;
+  font-size: 1rem;
+  word-break: break-word;
 }
 
 .popup-actions {
-  margin-top: 1.1rem;
+  margin-top: 1.4rem;
 }
 
 .popup-upi-btn {
@@ -76,13 +116,14 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 260px;
-  background: #ffffff;
+  max-width: 100%;
+  background: #fff;
   color: rgb(191, 0, 0);
-  padding: 0.9rem 1.1rem;
-  border-radius: 28px;
+  padding: 1rem 1.2rem;
+  border-radius: 32px;
   font-weight: 800;
   text-decoration: none;
+  letter-spacing: 0.02em;
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
@@ -117,6 +158,7 @@
   font-weight: 900;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 
 .popup-close:hover {
@@ -147,7 +189,7 @@
 
 @media (max-width: 740px) {
   .popup-content {
-    padding: 1.4rem;
+    padding: 1.3rem;
   }
 
   .popup-body {
@@ -157,7 +199,7 @@
 
   .popup-qr {
     width: 100%;
-    max-width: 260px;
+    max-width: 280px;
     padding: 0.75rem;
   }
 
@@ -170,6 +212,10 @@
     width: 100%;
   }
 
+  .popup-details {
+    grid-template-columns: 1fr;
+  }
+
   .popup-actions {
     display: flex;
     flex-direction: column;
@@ -177,7 +223,8 @@
   }
 
   .popup-close {
-    width: 100%;
+    top: 0.85rem;
+    right: 0.85rem;
   }
 }
 
@@ -187,13 +234,24 @@
     border-radius: 16px;
   }
 
+  .popup-qr {
+    padding: 0.65rem;
+  }
+
   .popup-upi-btn {
-    padding: 0.9rem 1rem;
-    font-size: 0.97rem;
-    max-width: 100%;
+    padding: 0.95rem 1rem;
+    font-size: 0.95rem;
   }
 
   .popup-message {
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .popup-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .popup-subtitle {
+    font-size: 0.9rem;
   }
 }
