@@ -45,9 +45,12 @@ const Popup = ({ message, type, onClose, qrSrc, upiId, upiAmount, upiLink }) => 
   return (
     <div className="popup-overlay" onClick={onClose}>
       <div className={`popup-content ${type}`} onClick={e => e.stopPropagation()}>
+        <button className="popup-close" onClick={onClose} aria-label="Close popup">
+          &times;
+        </button>
         <div className="popup-header">
           <h2>Pay securely via UPI</h2>
-          <p className="popup-subtitle">Scan the QR code or tap the button to open your UPI app and complete payment.</p>
+          <p className="popup-subtitle">Scan the QR code or tap to pay directly from your phone.</p>
         </div>
         <div className="popup-body">
           {qrSrc && (
@@ -57,6 +60,37 @@ const Popup = ({ message, type, onClose, qrSrc, upiId, upiAmount, upiLink }) => 
           )}
           <div className="popup-info">
             {message && <p className="popup-message">{message}</p>}
+            
+            <div className="popup-actions popup-app-grid">
+              <a
+                className="popup-app-btn gpay"
+                href={buildAppLink('gpay')}
+                title="Open in GPay"
+                aria-label="Open in GPay"
+                onClick={(e) => openApp(e, buildAppLink('gpay'))}
+              >
+                <img src="/gpay.svg" alt="Google Pay" className="popup-app-logo-img" />
+              </a>
+              <a
+                className="popup-app-btn phonepe"
+                href={buildAppLink('phonepe')}
+                title="Open in PhonePe"
+                aria-label="Open in PhonePe"
+                onClick={(e) => openApp(e, buildAppLink('phonepe'))}
+              >
+                <img src="/phonepe.svg" alt="PhonePe" className="popup-app-logo-img" />
+              </a>
+              <a
+                className="popup-app-btn paytm"
+                href={buildAppLink('paytm')}
+                title="Open in Paytm"
+                aria-label="Open in Paytm"
+                onClick={(e) => openApp(e, buildAppLink('paytm'))}
+              >
+                <img src="/paytm.svg" alt="Paytm" className="popup-app-logo-img" />
+              </a>
+            </div>
+
             <div className="popup-details">
               <div className="popup-detail-item">
                 <span>UPI ID</span>
@@ -69,35 +103,10 @@ const Popup = ({ message, type, onClose, qrSrc, upiId, upiAmount, upiLink }) => 
                 </div>
               )}
             </div>
-            <div className="popup-actions popup-app-grid">
-              <a
-                className="popup-app-btn gpay"
-                href={buildAppLink('gpay')}
-                onClick={(e) => openApp(e, buildAppLink('gpay'))}
-              >
-                GPay
-              </a>
-              <a
-                className="popup-app-btn phonepe"
-                href={buildAppLink('phonepe')}
-                onClick={(e) => openApp(e, buildAppLink('phonepe'))}
-              >
-                PhonePe
-              </a>
-              <a
-                className="popup-app-btn paytm"
-                href={buildAppLink('paytm')}
-                onClick={(e) => openApp(e, buildAppLink('paytm'))}
-              >
-                Paytm
-              </a>
-            </div>
-            <p className="popup-note">Do not refresh the page while completing payment. Use the QR code or a payments app above.</p>
+            
+            <p className="popup-note">Do not refresh the page while completing payment.</p>
           </div>
         </div>
-        <button className="popup-close" onClick={onClose} aria-label="Close popup">
-          ×
-        </button>
       </div>
     </div>
   );
