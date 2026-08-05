@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './BhagavadGitaDetail.css';
-import { FaBookOpen, FaPlay, FaWrench, FaBars, FaSearch, FaFacebook, FaInstagram, FaYoutube, FaSpotify, FaTwitter, FaBook } from 'react-icons/fa';
+import { FaBook, FaSearch } from 'react-icons/fa';
 
 const BhagavadGitaDetail = () => {
   const [activeTab, setActiveTab] = useState('explore');
