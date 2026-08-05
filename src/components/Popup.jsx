@@ -2,7 +2,7 @@ import React from 'react';
 import './Popup.css';
 
 const Popup = ({ message, type, onClose, qrSrc, upiId, upiAmount, upiLink }) => {
-  const displayUpi = upiId || '91495390088@ibl';
+  const displayUpi = upiId || '9149539088@ibl';
 
   const formatAmount = (amount) => {
     const num = Number(amount);
@@ -14,7 +14,7 @@ const Popup = ({ message, type, onClose, qrSrc, upiId, upiAmount, upiLink }) => 
   const buildHref = () => {
     if (upiLink) return upiLink;
     const amountParam = formattedAmount ? `&am=${encodeURIComponent(formattedAmount)}` : '';
-    return `upi://pay?pa=${encodeURIComponent(displayUpi)}&pn=${encodeURIComponent('Kailash Vidya Dham')}&tn=${encodeURIComponent('Payment')}${amountParam}&cu=INR`;
+    return `upi://pay?pa=${encodeURIComponent(displayUpi)}&pn=${encodeURIComponent('SWAMI DIVYANAND')}&tn=${encodeURIComponent('Payment')}${amountParam}&cu=INR`;
   };
 
   const buildAppLink = (app) => {

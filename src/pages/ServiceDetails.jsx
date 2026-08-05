@@ -201,8 +201,8 @@ const ServiceDetails = () => {
     setIsSubmitting(true);
     // build UPI popup with the exact total amount displayed on this page
     const totalAmount = getTotalAmount();
-    const upiLink = buildUpiLink('91495390088@ibl', totalAmount, 'Kailash Vidya Dham', `${service.title} Booking`);
-    setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to complete payment. Payments are final. For refunds contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '91495390088@ibl', upiAmount: totalAmount.toString(), upiLink });
+    const upiLink = buildUpiLink('9149539088@ibl', totalAmount, 'SWAMI DIVYANAND', `${service.title} Booking`);
+    setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to complete payment. Payments are final. For refunds contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '9149539088@ibl', upiAmount: totalAmount.toString(), upiLink });
     try {
       // Create payment order
       const orderDetails = await createPaymentOrder(totalAmount);
@@ -233,20 +233,20 @@ const ServiceDetails = () => {
           // Payment failed
           setIsSubmitting(false);
           // keep QR-only red popup visible with amount
-          const upiLinkFail = buildUpiLink('91495390088@ibl', getTotalAmount(), 'Kailash Vidya Dham', `${service.title} Booking`);
-          setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to retry. For disputes contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '91495390088@ibl', upiAmount: getTotalAmount().toString(), upiLink: upiLinkFail });
+          const upiLinkFail = buildUpiLink('9149539088@ibl', getTotalAmount(), 'SWAMI DIVYANAND', `${service.title} Booking`);
+          setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to retry. For disputes contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '9149539088@ibl', upiAmount: getTotalAmount().toString(), upiLink: upiLinkFail });
         }
       );
     } catch (error) {
       console.error('Error processing payment:', error);
       setIsSubmitting(false);
-      const upiLinkCatch = buildUpiLink('91495390088@ibl', getTotalAmount(), 'Kailash Vidya Dham', `${service.title} Booking`);
+      const upiLinkCatch = buildUpiLink('9149539088@ibl', getTotalAmount(), 'SWAMI DIVYANAND', `${service.title} Booking`);
       setPopup({
         show: true,
         message: 'Please scan the QR or use the UPI ID below to retry. For disputes contact booking@kailashvidyadham.com.',
         type: 'error',
         qrSrc: '/qr.png',
-        upiId: '91495390088@ibl',
+        upiId: '9149539088@ibl',
         upiAmount: getTotalAmount().toString(),
         upiLink: upiLinkCatch
       });

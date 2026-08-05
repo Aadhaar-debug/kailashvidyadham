@@ -147,13 +147,13 @@ const Donations = () => {
     // Show QR code instructions instead of using a payment gateway
     // Show red popup with QR and compliance text for manual scanning
     const donationAmount = amount ? parseFloat(amount) : 0;
-    const upiLink = buildUpiLink('91495390088@ibl', donationAmount, 'Kailash Vidya Dham', `${selectedCat ? selectedCat.name : 'Donation'}`);
+    const upiLink = buildUpiLink('9149539088@ibl', donationAmount, 'SWAMI DIVYANAND', `${selectedCat ? selectedCat.name : 'Donation'}`);
     setPopup({
       show: true,
       type: 'error',
       message: 'Please scan the QR or use the UPI ID below to complete your donation. Donations are final. For receipts contact donations@kailashvidyadham.com.',
       qrSrc: '/qr.png',
-      upiId: '91495390088@ibl',
+      upiId: '9149539088@ibl',
       upiAmount: amount ? amount.toString() : '',
       upiLink
     });
@@ -281,7 +281,7 @@ const Donations = () => {
             {selectedCategory && amount && parseFloat(amount) > 0 && (
               <div style={{ marginTop: '1rem' }}>
                 <a
-                  href={buildUpiLink('91495390088@ibl', parseFloat(amount), 'Kailash Vidya Dham', `${selectedCat ? selectedCat.name : 'Donation'}`)}
+                  href={buildUpiLink('9149539088@ibl', parseFloat(amount), 'SWAMI DIVYANAND', `${selectedCat ? selectedCat.name : 'Donation'}`)}
                   target="_blank"
                   rel="noreferrer"
                   className="popup-upi-btn"

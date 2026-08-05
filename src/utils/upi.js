@@ -1,4 +1,4 @@
-export function buildUpiLink(upiId, amount, payeeName = 'Kailash Vidya Dham', note = 'Payment') {
+export function buildUpiLink(upiId, amount, payeeName = 'SWAMI DIVYANAND', note = 'Payment') {
   // amount expected as number (rupees). Build UPI deep-link with &am param formatted as decimal (two places).
   const pa = encodeURIComponent(upiId);
   const pn = encodeURIComponent(payeeName);
