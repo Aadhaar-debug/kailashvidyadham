@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import './Popup.css';
 
 const Popup = ({ message, type, onClose, qrSrc, upiId, upiAmount, upiLink }) => {
@@ -42,7 +43,7 @@ const Popup = ({ message, type, onClose, qrSrc, upiId, upiAmount, upiLink }) => 
     window.location.href = href;
   };
 
-  return (
+  return createPortal(
     <div className="popup-overlay" onClick={onClose}>
       <div className={`popup-content ${type}`} onClick={e => e.stopPropagation()}>
         <button className="popup-close" onClick={onClose} aria-label="Close popup">
@@ -108,7 +109,8 @@ const Popup = ({ message, type, onClose, qrSrc, upiId, upiAmount, upiLink }) => 
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
