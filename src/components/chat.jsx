@@ -16,7 +16,7 @@ const ChatButton = () => {
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         cursor: 'pointer',
         border: 'none',
-        zIndex: 1000,
+        zIndex: 2147483647,
         transition: 'all 0.3s ease',
     };
 
