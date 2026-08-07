@@ -254,6 +254,17 @@ export const serviceCategories = [
         link: "/services/sarpa-dosha"
       }
     ]
+  },
+  {
+    title: "Example Services",
+    description: "Testing and example services for payment verification",
+    services: [
+      {
+        title: "Example Service",
+        description: "An example test service priced at ₹1 for payment flow verification and demonstration.",
+        link: "/services/example"
+      }
+    ]
   }
 ];
 
@@ -302,5 +313,6 @@ export const servicePrices = {
   "Mrityunjaya Homa": 7100,
   "Dhanvantari Puja": 5100,
   "Arogya Puja": 3100,
-  "Sarpa Dosha Nivaran": 5100
+  "Sarpa Dosha Nivaran": 5100,
+  "Example Service": 1
 }; 

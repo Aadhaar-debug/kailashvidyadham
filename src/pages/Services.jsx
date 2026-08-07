@@ -165,7 +165,8 @@ const Services = () => {
       "Mrityunjaya Homa": "3-4 hours",
       "Dhanvantari Puja": "2-3 hours",
       "Arogya Puja": "2-3 hours",
-      "Sarpa Dosha Nivaran": "3-4 hours"
+      "Sarpa Dosha Nivaran": "3-4 hours",
+      "Example Service": "30 mins"
     };
     return durations[serviceTitle] || "1-2 hours";
   };
@@ -203,7 +204,8 @@ const Services = () => {
       "Mrityunjaya Homa": "3 priests",
       "Dhanvantari Puja": "2 priests",
       "Arogya Puja": "2 priests",
-      "Sarpa Dosha Nivaran": "2-3 priests"
+      "Sarpa Dosha Nivaran": "2-3 priests",
+      "Example Service": "1 priest"
     };
     return priestCounts[serviceTitle] || "1 priest";
   };

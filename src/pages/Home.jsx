@@ -46,8 +46,8 @@ const Home = () => {
     try {
       // Get the selected service price
       const selectedServicePrice = servicePrices[paymentForm.service] || 1500;
-      const registrationFee = 500;
-      const taxAmount = Math.round((selectedServicePrice + registrationFee) * 0.02);
+      const registrationFee = paymentForm.service === "Example Service" ? 0 : 500;
+      const taxAmount = paymentForm.service === "Example Service" ? 0 : Math.round((selectedServicePrice + registrationFee) * 0.02);
       const totalAmount = selectedServicePrice + registrationFee + taxAmount;
       const upiLink = buildUpiLink('9149539088@ibl', totalAmount, 'SWAMI DIVYANAND', `${paymentForm.service} Booking`);
       setPopup({ show: true, message: 'Please scan the QR or use the UPI ID below to complete payment. Payments are final. For refunds contact booking@kailashvidyadham.com.', type: 'error', qrSrc: '/qr.png', upiId: '9149539088@ibl', upiAmount: totalAmount.toString(), upiLink });
@@ -951,15 +951,15 @@ const Home = () => {
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
                     <span>Registration Fee:</span>
-                    <span>₹500</span>
+                    <span>₹{paymentForm.service === "Example Service" ? 0 : 500}</span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
                     <span>Service Tax (2%):</span>
-                    <span>₹{Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02).toLocaleString()}</span>
+                    <span>₹{paymentForm.service === "Example Service" ? 0 : Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02).toLocaleString()}</span>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: '1.1rem' }}>
                     <span>Total Amount:</span>
-                      <span>₹{(((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02))).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                      <span>₹{(paymentForm.service === "Example Service" ? 1 : ((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02))).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                   </div>
                 </div>
 
@@ -977,11 +977,11 @@ const Home = () => {
                     cursor: 'pointer'
                   }}
                 >
-                  Pay Now - ₹{((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02)).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  Pay Now - ₹{(paymentForm.service === "Example Service" ? 1 : ((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02))).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                 </button>
                 {paymentForm.service && (
                   <div style={{ marginTop: '0.6rem' }}>
-                    <a href={buildUpiLink('9149539088@ibl', ((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02)), 'SWAMI DIVYANAND', `${paymentForm.service} Booking`)} target="_blank" rel="noreferrer" className="popup-upi-btn">
+                    <a href={buildUpiLink('9149539088@ibl', (paymentForm.service === "Example Service" ? 1 : ((servicePrices[paymentForm.service] || 1500) + 500 + Math.round(((servicePrices[paymentForm.service] || 1500) + 500) * 0.02))), 'SWAMI DIVYANAND', `${paymentForm.service} Booking`)} target="_blank" rel="noreferrer" className="popup-upi-btn">
                       Pay via UPI (direct link)
                     </a>
                   </div>

@@ -128,7 +128,8 @@ const ServiceDetails = () => {
       "Mrityunjaya Homa": "3-4 hours",
       "Dhanvantari Puja": "2-3 hours",
       "Arogya Puja": "2-3 hours",
-      "Sarpa Dosha Nivaran": "2-3 hours"
+      "Sarpa Dosha Nivaran": "2-3 hours",
+      "Example Service": "30 mins"
     };
     return durations[serviceTitle] || "1-2 hours";
   };
@@ -178,19 +179,22 @@ const ServiceDetails = () => {
       "Mrityunjaya Homa": "3 priests",
       "Dhanvantari Puja": "2 priests",
       "Arogya Puja": "2 priests",
-      "Sarpa Dosha Nivaran": "2 priests"
+      "Sarpa Dosha Nivaran": "2 priests",
+      "Example Service": "1 priest"
     };
     return priestCounts[serviceTitle] || "1 priest";
   };
 
   const getTaxAmount = () => {
     if (!service) return 0;
+    if (service.title === "Example Service") return 0;
     const totalBeforeTax = service.price + 500; // service price + registration fee
     return Math.round(totalBeforeTax * 0.02); // 2% tax
   };
 
   const getTotalAmount = () => {
     if (!service) return 0;
+    if (service.title === "Example Service") return 1;
     const totalBeforeTax = service.price + 500; // service price + registration fee
     const taxAmount = Math.round(totalBeforeTax * 0.02); // 2% tax
     return totalBeforeTax + taxAmount;
@@ -545,7 +549,7 @@ const ServiceDetails = () => {
                   </div>
                   <div className="payment-row">
                     <span>Registration Fee:</span>
-                    <span>₹500</span>
+                    <span>₹{service.title === "Example Service" ? 0 : 500}</span>
                   </div>
                   <div className="payment-row">
                     <span>Service Tax (2%):</span>
